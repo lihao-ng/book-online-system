@@ -9,7 +9,7 @@
 5. Copy The `.env.example` to `.env`
 6. Generate App Key `php artisan key:generate`
 7. Generate The Storage Link `php artisan storage:link`
-8. Change The `APP_URL` to `local.kl-jamm.com` for local
+8. Change The `APP_URL` to `local.book-system.com` for local
 9. Change The Database Keys to Match Your local Database
 
 
