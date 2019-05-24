@@ -5,24 +5,39 @@
     </a>
   </li>
   <li class="sidebar-account active">
-    <a href="#">Account</a>
+    <a href="#">
+      <i class="fa fa-line-chart" aria-hidden="true"></i>
+      Dashboard
+    </a>
   </li>
   <li>
-    <a href="#">Shortcuts</a>
+    <a href="{{ route('admin.admins.index') }}">
+      <i class="fa fa-user" aria-hidden="true"></i>
+      Admins
+    </a>
   </li>
   <li>
-    <a href="#">Overview</a>
+    <a href="#">
+      <i class="fa fa-users" aria-hidden="true"></i>
+      Customers
+    </a>
   </li>
   <li>
-    <a href="#">Events</a>
+    <a href="#">
+      <i class="fa fa-book" aria-hidden="true"></i>
+      Books
+    </a>
   </li>
   <li>
-    <a href="#">About</a>
+    <a href="#">
+      <i class="fa fa-money" aria-hidden="true"></i>
+      Sales
+    </a>
   </li>
   <li>
-    <a href="#">Services</a>
-  </li>
-  <li>
-    <a href="#">Contact</a>
+    <a href="#">
+      <i class="fa fa-address-book" aria-hidden="true"></i>
+      Authors
+    </a>
   </li>
 </ul>

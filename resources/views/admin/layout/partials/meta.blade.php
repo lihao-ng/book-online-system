@@ -17,6 +17,6 @@
       </div>
     </div>
     <script src="{{ mix('js/admin.js') }}"></script>
-    @yield('script')
+    @yield('scripts')
   </body>
 </html>
