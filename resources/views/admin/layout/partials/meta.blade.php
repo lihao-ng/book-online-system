@@ -11,12 +11,12 @@
     <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
   </head>
   <body>
-    <div id="admin-app">
-      @yield('master-content')
+    <div>
+      <div id="admin-app">
+        @yield('content')
+      </div>
     </div>
-
     <script src="{{ mix('js/admin.js') }}"></script>
-
     @yield('script')
   </body>
 </html>
