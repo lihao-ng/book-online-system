@@ -1,6 +1,6 @@
 @extends('admin.layout.stranger')
 
-@section('content')
+@section('stranger-content')
 <div class="container" style="margin-top:150px;">
   <form method="post" action="{{ route('admin.login') }}">
     @csrf
