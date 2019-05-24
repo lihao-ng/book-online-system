@@ -10662,3 +10662,7 @@ a.text-dark:focus {
   }
 }
 
+.active {
+  background-color: #FEEAE6;
+}
+
