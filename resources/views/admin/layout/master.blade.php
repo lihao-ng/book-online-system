@@ -8,12 +8,12 @@
         @include('admin.layout.partials.sidebar')    
       </div>
 
-      <div class="col-12 offset-md-3 col-md-9 offset-lg-2 col-lg-10" id="main-content">
-        <div class="main-panel">
+      <div class="col-12 offset-md-3 col-md-9 offset-lg-2 col-lg-10 p-0" id="main-content">
+        <div class="main-panel p-0">
           @include('admin.layout.partials.navbar')
 
           <div class="content">
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding: 20px 30px 20px 30px;">
               <div class="row">
                 <div class="col-md-12">
                   @yield('master-content')
