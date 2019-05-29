@@ -1,11 +1,11 @@
 @extends('admin.layout.master')
 
 @section('master-content')
-<div class="page-title">
-  <span class="page-text">Admins</span>
-</div>
+@section('title')
+  Customers
+@endsection
 
-<div class="card bootstrap-table mt-5">
+<div class="card bootstrap-table">
   <div class="card-body table-full-width">
     <div class="toolbar d-flex">
       <a href="{{ route('admin.admins.create') }}" class="ml-2">
@@ -19,7 +19,7 @@
         <th data-field="id" class="text-center" data-sortable="true">ID</th>
         <th data-field="name" data-sortable="true">Name</th>
         <th data-field="email" data-sortable="true">Email Address</th>
-        <th data-field="join_date" data-sortable="true">Join Date</th>
+        <th data-field="join_date">Join Date</th>
         <th data-field="actions" class="td-actions text-center"  data-events="operateEvents" data-formatter="operateFormatter">Actions</th>
       </thead>
     </table>

@@ -9,29 +9,27 @@
     list-style: none;
     padding: 0;
 
-    li {
-      padding: 7px 0 7px 0;
-      margin: 5px 0 5px 0;
-      border-radius: 5px;
-      
-      &:hover {
-        background-color: $tertiary-color;
+    a {
+      color: $black;
+      text-decoration: none;
+      font-size: 20px;
+
+      i {
+        width: 25px;
+        height: 25px;
       }
 
-      &:active {
-        background-color: $tertiary-color;
-      }
+      li {
+        padding: 7px 0 7px 10px;
+        margin: 5px 0 5px 0;
+        border-radius: 5px;
 
-      a {
-        color: $black;
-        text-decoration: none;
-        font-size: 20px;
-        font-style: bold;
-        padding: 0 0 0 10px;
+        &:hover {
+          background-color: $tertiary-color;
+        }
 
-        i {
-          width: 25px;
-          height: 25px;
+        &:active {
+          background-color: $tertiary-color;
         }
       }
     }

@@ -24,7 +24,7 @@ class AdminsController extends Controller {
   }
 
   public function create() {
-        //
+    return view($this->path . 'create');
   }
 
   public function store(Request $request) {

@@ -14078,6 +14078,10 @@ div.fixed-table-scroll-outer {
   }
 }
 
+#main-content {
+  background-color: rgba(203, 203, 210, 0.15);
+}
+
 .stranger-wrapper {
   background-image: url("/images/galaxy.jpg");
   display: block;
@@ -14099,31 +14103,29 @@ div.fixed-table-scroll-outer {
   padding: 0;
 }
 
-#sidebar ul.sidebar-nav li {
-  padding: 7px 0 7px 0;
+#sidebar ul.sidebar-nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#sidebar ul.sidebar-nav a i {
+  width: 25px;
+  height: 25px;
+}
+
+#sidebar ul.sidebar-nav a li {
+  padding: 7px 0 7px 10px;
   margin: 5px 0 5px 0;
   border-radius: 5px;
 }
 
-#sidebar ul.sidebar-nav li:hover {
+#sidebar ul.sidebar-nav a li:hover {
   background-color: #FEEAE6;
 }
 
-#sidebar ul.sidebar-nav li:active {
+#sidebar ul.sidebar-nav a li:active {
   background-color: #FEEAE6;
-}
-
-#sidebar ul.sidebar-nav li a {
-  color: black;
-  text-decoration: none;
-  font-size: 20px;
-  font-style: bold;
-  padding: 0 0 0 10px;
-}
-
-#sidebar ul.sidebar-nav li a i {
-  width: 25px;
-  height: 25px;
 }
 
 #sidebar ul.sidebar-nav .sidebar-brand {
@@ -14137,6 +14139,10 @@ div.fixed-table-scroll-outer {
 #sidebar ul.sidebar-nav .sidebar-brand a {
   font-size: 30px;
   padding: 0;
+}
+
+.topnav {
+  background-color: white;
 }
 
 .bootstrap-table {
