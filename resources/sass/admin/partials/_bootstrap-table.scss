@@ -1,0 +1,80 @@
+.bootstrap-table {
+  border: 0;
+
+  // button[name=refresh], button[name=create] {
+    .btn-secondary{
+      border-radius: 22px;
+      border-color: $secondary-color;
+      width: 60px;
+      height: 45px;
+      background-color: transparent;
+      color: $secondary-color;
+      font-size: 20px;
+    }
+
+    table, thead tr th, td {
+      border: 0;
+    }
+
+    tbody tr {
+      border-right: 0;
+      border-left: 0;
+      border-top: 0;
+      border-bottom: 1px solid $secondary-color;
+    }
+
+    td {
+      .btn-link {
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+      }
+
+      .remove {
+        color: $red;
+      }
+
+      .edit {
+        color: $yellow;
+      }
+    }
+
+    // Left pagination
+    .page-list {
+      .dropdown {
+        .btn-secondary {
+          width: 70px;
+
+          &:active {
+            background-color: $secondary-color;
+          }
+        }
+
+        a.active {
+          background-color: $secondary-color;
+        }
+      }
+    }
+
+    // Right pagination
+    .float-right.pagination {
+      ul {
+        li {
+          margin: 0 5px 0 5px;
+
+          a {
+            border: 0;
+            color: $black;
+          }
+        }
+
+        li.active {
+          a {
+            border-radius: 16px;
+            background-color: $secondary-color;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
