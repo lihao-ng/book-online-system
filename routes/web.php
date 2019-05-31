@@ -17,12 +17,16 @@ Route::prefix('admin')->name('admin.')->group(function(){
   Route::middleware('guest')->group(function(){
     Route::get('login','Admin\AuthController@viewLogin')->name('login.show');
     Route::post('login','Admin\AuthController@login')->name('login');
+
+    Route::get('register','Admin\AuthController@viewRegister')->name('register.show');
+    Route::post('register','Admin\AuthController@register')->name('register');
   });
 
   // Route::middleware(['auth', 'admin.auth'])->group(function(){
   Route::middleware('auth')->group(function(){
     Route::get('dashboard','Admin\DashboardController@dashboard')->name('dashboard');
     Route::resource('admins', 'Admin\AdminsController');
+
   });  
 });
 

@@ -24,7 +24,7 @@ class AuthController extends Controller {
     $user->save();
     Auth::login($user);
 
-    return redirect()->route('admin.dashboard');
+    return redirect()->route('admin.dashboard') ;
   }
 
   public function viewLogin(){

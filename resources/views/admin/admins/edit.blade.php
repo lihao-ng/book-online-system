@@ -7,11 +7,11 @@
 </div>
 
 <div class="page-title">
-  <span class="page-text">Create Admin</span>
+  <span class="page-text">Edit Admin</span>
 </div>
 
 <div class="col-md-12 mt-5">
-  {!! Form::open(['route' => 'admin.admins.store', 'class' => 'form', 'id' => 'form-validation']) !!}
+  {!! Form::model($admin, ['route' => ['admin.admins.update', $admin], 'method' => 'put', 'id' => 'FormValidation']) !!}
   <div class="card">
     <div class="card-body py-4 px-5">
       <div class="row">
@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="text-right">
-						<button type="submit" class="btn btn-warning btn-fill btn-wd">Create</button>
+						<button type="submit" class="btn btn-warning btn-fill btn-wd">Save</button>
 			</div>
     </div>
   </div>
