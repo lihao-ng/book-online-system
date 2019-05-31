@@ -16,7 +16,7 @@
       Admins
     </li>
   </a>
-  <a href="#">
+  <a href="{{ route('admin.customers.index') }}">
     <li class="{{ is_active('customers') }}">
       <i class="fa fa-users" aria-hidden="true"></i>
       Customers
