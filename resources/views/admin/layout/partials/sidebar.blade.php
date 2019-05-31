@@ -22,7 +22,7 @@
       Customers
     </li>
   </a>
-  <a href="#">
+  <a href="{{ route('admin.books.index') }}">
     <li class="{{ is_active('books') }}">
       <i class="fa fa-book" aria-hidden="true"></i>
       Books

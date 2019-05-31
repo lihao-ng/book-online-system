@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use App\Services\Admin\AdminService;
 use App\User as Admin;
 
@@ -16,7 +17,7 @@ class AdminsController extends Controller {
   }
 
   public function index(Request $request) {
-    if ($request->isJson()) {
+    if ($request->wantsJson()) {
       return $this->adminService->all($request);
     }
 
@@ -45,5 +46,9 @@ class AdminsController extends Controller {
 
   public function destroy(Admin $admin) {
     return success();
+  }
+
+  public function search(Request $request) {
+    return $this->adminService->search($request);
   }
 }

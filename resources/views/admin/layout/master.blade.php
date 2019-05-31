@@ -3,7 +3,7 @@
 @section('content')
 <div class="wrapper">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row h-vh-100">
       <div class="d-none d-md-block col-md-3 col-lg-2" style="position:fixed;" id="sidebar">
         @include('admin.layout.partials.sidebar')    
       </div>

@@ -22,7 +22,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
   // Route::middleware(['auth', 'admin.auth'])->group(function(){
   Route::middleware('auth')->group(function(){
     Route::get('dashboard','Admin\DashboardController@dashboard')->name('dashboard');
+
+    Route::post('admins/search','Admin\AdminsController@search')->name('admins.search');
     Route::resource('admins', 'Admin\AdminsController');
+
+    Route::resource('books', 'Admin\BooksController');
   });  
 });
 
