@@ -16,12 +16,37 @@ class AdminService extends TransformerService {
     $query = $request->search ? $request->search : '';
 
     // $admins = Admin::where('id', '!=', current_user()->id)->where('role', 1)->where('name', 'like', "%{$query}%")->orderBy($sort, $order);
-    $admins = Admin::where('role', 0)->where('name', 'like', "%{$query}%")->orderBy($sort, $order);
+    $admins = Admin::where('role', 1)->where('name', 'like', "%{$query}%")->orderBy($sort, $order);
     $listCount = $admins->count();
 
     $admins = $admins->limit($limit)->offset($offset)->get();
 
     return respond(['rows' => $this->transformCollection($admins), 'total' => $listCount]);
+  }
+
+  public function create(Request $request) {
+    $request->validate([
+      "name" => 'required|string|max:255',
+      "email" => 'required|email|unique:users'
+    ]);
+
+    Admin::create([
+      'name' => $request->name,
+      'email' => $request->email,
+      'password' => "secret",
+      'role' => 1
+    ]);
+
+      return redirect()->route("admin.admins.index");
+  }
+  
+  public function update(Request $request, Admin $admin){
+    $request->validate([
+      "name" => 'required|string|max:255',
+      "email" => 'required|email,'.$admin->id
+    ]);
+
+    
   }
 
   public function transform($admin){
