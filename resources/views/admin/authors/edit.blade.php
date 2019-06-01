@@ -1,19 +1,16 @@
 @extends('admin.layout.master')
 
 @section('master-content')
-@section('title')
-Books
-@endsection
 <div class="row btn-back mb-4 ml-1">
   <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
-  <a href="{{ route('admin.admins.index') }}">Books</a>
+  <a href="{{ route('admin.authors.index') }}">Authors</a>
 </div>
 
 <div class="page-title">
-  <span class="page-text">Create Book</span>
+  <span class="page-text">Edit Author</span>
 </div>
 
 <div class="col-md-12 mt-5">
-  <book-component></book-component>
+  <author-component :default-author="{{ $author }}"></author-component>
 </div>
 @endsection

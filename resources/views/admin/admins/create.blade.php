@@ -1,6 +1,10 @@
 @extends('admin.layout.master')
 
 @section('master-content')
+@section('title')
+  Admins
+@endsection
+
 <div class="row btn-back mb-4 ml-1">
   <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
   <a href="{{ route('admin.admins.index') }}">Admins</a>

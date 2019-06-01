@@ -1,20 +1,24 @@
 <template>
   <div class="row">
-    <div class="col-sm-12">
-      <label>Authors <span class="star">*</span></label> 
-      
-      <ul>
-        <li v-for="(author, index) in authors" v-bind:key="index" @click="onDeleteAuthor(index)" v-if="!author.deleted">{{ author.name }}</li>
+    <div class="col-12" >
+      <ul class="multiple-list">
+        <li class="mb-2" v-for="(author, index) in authors" v-bind:key="index" @click="onDeleteAuthor(index)" v-if="!author.deleted">
+          {{ author.name }} <i class="fa fa-remove"></i>
+        </li>
       </ul>
-      
-      <input type="text" class="form-control" name="author_name" v-model="searchInput" v-on-clickaway="hideList" @keyup="onInputChange" @click="onInputChange">
 
-      <ul>
-        <li v-for="(searchAuthor, index) in searchAuthors" v-bind:key="index" @click="onSearchClick(searchAuthor)" v-if="haveData">{{ searchAuthor.name }}</li>
-      </ul>
+      <input type="text" class="form-control" name="author_name" placeholder="Search Author" v-model="searchInput" v-on-clickaway="hideList" @keyup="onInputChange" @click="onInputChange">
+
+      <div class="dropdown">
+        <div class="dropdown-menu" :class="{ show: haveData }">
+          <div class="dropdown-item text-capitalize" v-for="(searchAuthor, index) in searchAuthors" v-bind:key="index" @click="onSearchClick(searchAuthor)" v-if="haveData">
+            {{ searchAuthor.name }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</template>
+</template> 
 <script>
   import { mixin as clickaway } from 'vue-clickaway';
 
@@ -35,12 +39,16 @@
     },
     methods: {
       setDefault: function() {
-        if(this.defaultAuthors) {
-          this.authors = this.defaultAuthors;
+        if(!this.defaultAuthors) {
+          return;
         }
+
+        this.authors = this.defaultAuthors;
       },
       onDeleteAuthor: function(index) {
-        this.authors[index].deleted = true;
+        this.authorsId.splice(index, 1);
+        this.$set(this.authors[index], 'deleted', true);
+        this.emitParent();
       },
       onInputChange: function() {
         var data = {
@@ -68,6 +76,9 @@
           name: searchAuthor.name
         });
 
+        this.emitParent();
+      },
+      emitParent: function() {
         this.$emit('authorChange', this.authors);
       },
       hideList: function() {

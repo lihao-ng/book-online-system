@@ -34,7 +34,7 @@
       Sales
     </li>
   </a>
-  <a href="#">
+  <a href="{{ route('admin.authors.index') }}">
     <li class="{{ is_active('authors') }}">
       <i class="fa fa-address-book" aria-hidden="true"></i>
       Authors

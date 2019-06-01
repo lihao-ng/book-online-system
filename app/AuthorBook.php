@@ -2,22 +2,20 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class AuthorBook extends Model
-{
-    protected $fillable = [
-        'id', 'author_id', 'book_id'
-    ];
+class AuthorBook extends Pivot {
+  protected $table = 'author_books';
+  
+  protected $fillable = [
+    'author_id', 'book_id'
+  ];
 
-    public function books()
-    {
-        return $this->hasMany('App\Book');
-    }
+  public function book() {
+    return $this->belongsTo('App\Book');
+  }
 
-    public function authors()
-    {
-        return $this->hasMany('App\Author');
-    }
-
+  public function author() {
+    return $this->belongsTo('App\Author');
+  }
 }

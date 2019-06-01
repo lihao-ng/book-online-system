@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Book;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use App\Services\Admin\BookService;
-use App\Book;
 
 class BooksController extends Controller {
   protected $path = 'admin.books.';
@@ -17,7 +16,7 @@ class BooksController extends Controller {
   }
 
   public function index(Request $request) {
-    if ($request->isJson()) {
+    if ($request->wantsJson()) {
       return $this->bookService->all($request);
     }
 
@@ -46,5 +45,9 @@ class BooksController extends Controller {
 
   public function destroy(Book $book) {
         //
+  }
+
+  public function search(Request $request) {
+    return $this->bookService->search($request);
   }
 }

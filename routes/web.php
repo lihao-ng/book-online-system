@@ -26,7 +26,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::post('admins/search','Admin\AdminsController@search')->name('admins.search');
     Route::resource('admins', 'Admin\AdminsController');
 
+    Route::post('books/search','Admin\BooksController@search')->name('books.search');
     Route::resource('books', 'Admin\BooksController');
+
+    Route::post('authors/search','Admin\AuthorsController@search')->name('authors.search');
+    Route::resource('authors', 'Admin\AuthorsController');
   });  
 });
 

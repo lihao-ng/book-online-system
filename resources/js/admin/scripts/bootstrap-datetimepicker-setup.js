@@ -16,7 +16,7 @@
     // inline: true,
     // sideBySide: true,
     // keepOpen: true,
-    // format: 'YYYY-MM-DD hh:mm A',
+    format: 'YYYY-MM-DD hh:mm A',
     // debug:true,
     icons: icons
   });
@@ -28,6 +28,6 @@
 
   $('.datepicker').datetimepicker({
     icons: icons,
-    format: 'DD/MM/YYYY'
+    format: 'YYYY-MM-DD'
   });
 });
