@@ -4,28 +4,20 @@ namespace App\Services\Admin;
 
 use App\Author;
 use App\Book;
-use App\AuthorBook;
 use Illuminate\Http\Request;
-use App\Services\TransformerService;
 
-class AuthorBookService extends TransformerService {
+class AuthorBookService {
+  public function syncBookAuthors(Book $book, $authors) {
+    $ids = [];
 
-  public function syncAuthorBook(Book $book, $requestAuthors) {
-    $authors = [];
-
-    foreach ($requestAuthors as $requestAuthor) {
-      $authors[] = $requestAuthor['id'];  
+    foreach($authors as $author) {
+      if(array_key_exists('id', $author)) {
+        if(Author::find($author->id)) {
+          $ids[] = $author->id;
+        }
+      }
     }
 
-    $book->authors()->sync($authors);
-  }
-
-  public function transform($admin){
-    return [
-      'id' => $admin->id,
-      'name' => $admin->name,
-      'email' => $admin->email,
-      'join_date' => date_to_human($admin->created_at)
-    ];
+    $book->authors()->sync($ids);
   }
 }

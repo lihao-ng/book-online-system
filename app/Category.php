@@ -4,14 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
-{
-    protected $fillable = [
-        'id', 'name'
-    ];
+class Category extends Model {
+  protected $fillable = [
+    'name'
+  ];
 
-    public function bookCategories()
-    {
-        return $this->belongsToMany('App\BookCategory');
-    }
+  public function books() {
+     return $this->belongsToMany('App\Book', 'book_categories', 'category_id', 'book_id')->withTimestamps();
+  }
 }

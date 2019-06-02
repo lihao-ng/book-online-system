@@ -13,13 +13,13 @@ Books
 
 <div class="row pl-15">
   <div class="col-12 page-title">
-    <h3>Create Book</h3>
+    <h3>Edit Book</h3>
   </div>
 </div>
 
 @include('admin.layout.partials.notification')
 
 <div class="col-md-12 mt-5">
-  <book-component></book-component>
+  <book-component :default-book="{{ $book }}"></book-component>
 </div>
 @endsection

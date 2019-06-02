@@ -111,10 +111,9 @@
     },
     methods: {
       setDefault: function() {
-        if(this.author) {
+        if(this.defaultAuthor) {
           this.author = this.defaultAuthor;
           this.$set(this.author, 'books', this.defaultAuthor.books);
-          // this.defaultBooks = this.defaultAuthor.books;
         }
 
         var self = this;
@@ -168,10 +167,14 @@
         if(!this.author.image) {
           this.$set(this.author, 'image', '');
         }
-
+        
         var reader = new FileReader();
-        reader.onload = (e) => {
-          this.author.image = e.target.result;
+        reader.onload = (r) => {
+          this.author.image = {
+            name: e.target.files[0].name,
+            size: e.target.files[0].size,
+            base64: r.target.result 
+          }
         }
         reader.readAsDataURL(e.target.files[0]);
       }

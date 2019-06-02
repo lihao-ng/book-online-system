@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-12 col-md-9">
+    <div class="col-12 col-md-7 col-lg-8">
       <div class="card">
         <div class="card-body py-4 px-5">
           <div class="row">
@@ -48,7 +48,7 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group has-label">
-                <label>Publisher Date <span class="star">*</span></label>
+                <label>Publication Date <span class="star">*</span></label>
                 <input type="text" name="publication_date" class="form-control datepicker" required="true" v-model="book.publicationDate">
               </div>
             </div>
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-5 col-lg-4">
       <div class="card">
         <div class="card-body py-4">
           <div class="row">
@@ -93,26 +93,26 @@
             </div>
           </div>
 
-          <!-- <category-component :default-categories="book.categories"></category-component> -->
-
-          <div class="row">
-            <div class="col-12">
-              <button type="submit" class="btn btn-warning btn-block" @click="onSubmit">Create</button>
-            </div>
-          </div>
+          <book-categories-component :default-categories="book.categories" @categoryChange="onCategoryChange"></book-categories-component>
         </div>
       </div>
-    </div>
 
-    <div class="col-12">
       <div class="card mt-5">
-        <div class="card-body py-4 px-5">
+        <div class="card-body py-4">
           <div class="row">
-            <div class="col-sm-6 mb-3">
+            <div class="col-sm-12 mb-3">
               <h4>Authors</h4>
             </div>
           </div>
           <book-authors-component :default-authors="book.authors" @authorChange="onAuthorChange"></book-authors-component>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 mt-4">
+      <div class="row">
+        <div class="col-12 col-md-3 ml-auto">
+          <button type="submit" class="btn btn-warning btn-block" @click="onSubmit">Create</button>
         </div>
       </div>
     </div>
@@ -133,7 +133,9 @@
     methods: {
       setDefault: function() {
         if(this.defaultBook) {
-          this.book = this.defaulBook;
+          this.book = this.defaultBook;
+          this.book.categories = this.defaultBook.categories;
+          this.book.authors = this.defaultBook.authors;
         }
         var self = this;
         $('.datepicker').on('dp.change', function(e){ 
@@ -150,19 +152,31 @@
           publicationDate: this.book.publicationDate,
           language: this.book.language,
           price: this.book.price,
-          stock: this.book.stock
+          stock: this.book.stock,
+          categories: this.book.categories
         }
 
-        axios.post('/admin/books', data)
-        .then(({data}) => {
-          console.log("success");
-          // redirect
-        }, (error) => {
+        if(!this.defaultAuthor) {
+          var method = 'POST';
+          var url = '/admin/books'
+        }else {
+          var method = "PUT";
+          var url = `/admin/books/${this.defaultAuthor.id}`;
+        }
 
-        });
+        axios({
+          method: method,
+          url: url,
+          data: data
+        }).then(({data}) => {
+           window.location.href = data;
+        }, (error) => {});
       },
       onAuthorChange: function(authors) {
         this.book.authors = authors;
+      },
+      onCategoryChange: function(categories) {
+        this.book.categories = categories;
       }
     }
   }

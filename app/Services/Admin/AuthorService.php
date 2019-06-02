@@ -5,13 +5,13 @@ namespace App\Services\Admin;
 use App\Author;
 use Illuminate\Http\Request;
 use App\Services\TransformerService;
-use App\Services\Admin\BookService;
+// use App\Services\Admin\BookService;
 
 class AuthorService extends TransformerService {
-  protected $bookService;
+  // protected $bookService;
 
-  function __construct(BookService $bookService) {
-    $this->bookService = $bookService;
+  function __construct() {
+    // $this->bookService = $bookService;
   }
 
   public function all(Request $request){
@@ -53,7 +53,7 @@ class AuthorService extends TransformerService {
       'image' => null  // change to image file name
     ]);
 
-     $this->syncBooks($request->books, $author);
+    $this->syncBooks($request->books, $author);
 
     return route('admin.authors.index');
   }
@@ -80,7 +80,7 @@ class AuthorService extends TransformerService {
     $author->birth_place = $request->birthPlace;
     $author->image = null; // change here
     $author->save();
-    
+
     $this->syncBooks($request->books, $author);
 
     return route('admin.authors.index');
@@ -90,16 +90,31 @@ class AuthorService extends TransformerService {
     $authors = Author::where('name', 'like', "%{$request->search}%");
 
     if($request->except) {
-      $exceptQuery = $authors->whereNotIn('id', $request->except); 
+      $ids = $this->getAuthorsId(json_decode(json_encode($request->except)));
+      $exceptQuery = $authors->whereNotIn('id', $ids); 
     }
     
-    return $authors->limit(10)->get();
+    return $this->transformCollection($authors->limit(10)->get());
   }
 
-  public function syncBooks($books, $author) {
-    $ids = $this->bookService->getBooksId(json_decode(json_encode($books)));
-    $author->books()->sync($ids);
+  public function getAuthorsId($authors) {
+    $ids = [];
+
+    foreach($authors as $key => $author) {
+      if(array_key_exists('id', $author)) {
+        if(Author::find($author->id)) {
+          $ids[] = $author->id;
+        }
+      }
+    }
+
+    return $ids;
   }
+
+  // public function syncBooks($books, $author) {
+  //   $ids = $this->bookService->getBooksId(json_decode(json_encode($books)));
+  //   $author->books()->sync($ids);
+  // }
 
   public function transform($author){
     return [
@@ -109,8 +124,8 @@ class AuthorService extends TransformerService {
       'penName' => $author->pen_name,
       'birthday' => $author->birthday,
       'birthPlace' => $author->birth_place,
-      'image' => $author->image,
-      'books' => $this->bookService->transformCollection($author->books)
+      'image' => $author->image
+      // 'books' => $this->bookService->transformCollection($author->books)
     ];
   }
 }

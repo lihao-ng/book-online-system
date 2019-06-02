@@ -5,13 +5,16 @@ namespace App\Services\Admin;
 use App\Book;
 use Illuminate\Http\Request;
 use App\Services\TransformerService;
-use App\Services\Admin\BookService;
+use App\Services\Admin\AuthorBookService;
+use App\Services\Admin\BookCategoryService;
 
 class BookService extends TransformerService {
-  protected $authorBookService;
+  protected $bookAuthorService;
+  protected $bookCategoryService;
 
-  function __construct(AuthorBookService $authorBookService) {
+  function __construct(AuthorBookService $authorBookService, BookCategoryService $bookCategoryService) {
     $this->authorBookService = $authorBookService;
+    $this->bookCategoryService = $bookCategoryService;
   }
 
   public function all(Request $request){
@@ -39,8 +42,8 @@ class BookService extends TransformerService {
       'publicationDate' => 'required|date_format:Y-m-d',
       'language' => 'required|max:190',
       'price' => 'required|numeric',
-      'stock' => 'required|numeric'
-      // 'categories' => 'required'
+      'stock' => 'required|numeric',
+      'categories' => 'required'
       // 'image' => 'required'
     ]);
 
@@ -57,9 +60,43 @@ class BookService extends TransformerService {
       'stock' => $request->stock
     ]);
 
-    $this->authorBookService->syncAuthorBook($book, $request->authors);
+    $this->authorBookService->syncBookAuthors($book, json_decode(json_encode($request->authors)));
+    $this->bookCategoryService->syncBookCategories($book, json_decode(json_encode($request->categories)));
 
-    return redirect()->route('admin.admins.index');
+    return route('admin.admins.index');
+  }
+
+  public function update(Request $request, Book $book) {
+    $request->validate([
+      'isbn' => 'required|unique:books,' . $book->id,
+      'title' => 'required|max:190',
+      'authors.*.id' => 'required|distinct',
+      'description' => 'required',
+      'publisher' => 'required',
+      'publicationDate' => 'required|date_format:Y-m-d',
+      'language' => 'required|max:190',
+      'price' => 'required|numeric',
+      'stock' => 'required|numeric',
+      'categories' => 'required'
+      // 'image' => 'required'
+    ]);
+
+    $book->isbn = $request->isbn;
+    $book->title = $request->title;
+    $book->description = $request->description;
+    $book->publisher = $request->publisher;
+    $book->publication_date = $request->publicationDate;
+    $book->language = $request->language;
+    $book->price = $request->price;
+    $book->rating = 0;
+    $book->sold = 0;
+    $book->stock = $request->stock;
+    $book->save();
+
+    $this->authorBookService->syncBookAuthors($book, json_decode(json_encode($request->authors)));
+    $this->bookCategoryService->syncBookCategories($book, json_decode(json_encode($request->categories)));
+
+    return route('admin.admins.index');
   }
 
   public function search(Request $request) {
@@ -69,7 +106,7 @@ class BookService extends TransformerService {
       $exceptQuery = $books->whereNotIn('id', $request->except); 
     }
     
-    return $books->limit(10)->get();
+    return $this->transformCollection($books->limit(10)->get());
   }
 
   public function getBooksId($books) {
@@ -93,7 +130,7 @@ class BookService extends TransformerService {
       'title' => $book->title, // have to change to get collection of author
       'description' => $book->description,
       'publisher' => $book->publisher,
-      'publication_date' => date_to_human($book->publication_date),
+      'publicationDate' => date_to_human($book->publication_date),
       'language' => $book->language,
       'price' => $book->price,
       'rating' => $book->rating,

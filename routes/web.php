@@ -24,13 +24,16 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('dashboard','Admin\DashboardController@dashboard')->name('dashboard');
 
     Route::post('admins/search','Admin\AdminsController@search')->name('admins.search');
-    Route::resource('admins', 'Admin\AdminsController');
+    Route::resource('admins', 'Admin\AdminsController')->except(['show']);
 
     Route::post('books/search','Admin\BooksController@search')->name('books.search');
-    Route::resource('books', 'Admin\BooksController');
+    Route::resource('books', 'Admin\BooksController')->except(['show']);
 
     Route::post('authors/search','Admin\AuthorsController@search')->name('authors.search');
-    Route::resource('authors', 'Admin\AuthorsController');
+    Route::resource('authors', 'Admin\AuthorsController')->except(['show']);
+
+    Route::post('categories/search','Admin\CategoriesController@search')->name('categories.search');
+    Route::resource('categories', 'Admin\CategoriesController')->except(['show']);
   });  
 });
 

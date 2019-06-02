@@ -7,8 +7,10 @@
 </div>
 
 <div class="page-title">
-  <span class="page-text">Edit Author</span>
+  <h3>Create Category</h3>
 </div>
+
+@include('admin.layout.partials.notification')
 
 <div class="col-md-12 mt-5">
   <author-component :default-author="{{ $author }}"></author-component>

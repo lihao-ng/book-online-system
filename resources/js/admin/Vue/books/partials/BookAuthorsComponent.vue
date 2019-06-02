@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-12" >
       <ul class="multiple-list">
-        <li class="mb-2" v-for="(author, index) in authors" v-bind:key="index" @click="onDeleteAuthor(index)" v-if="!author.deleted">
-          {{ author.name }} <i class="fa fa-remove"></i>
+        <li class="mb-2" v-for="(author, index) in authors" v-bind:key="index" @click="onDeleteAuthor(index)">
+          {{ author.name }} | {{ author.penName }} <i class="fa fa-remove"></i>
         </li>
       </ul>
 
@@ -12,7 +12,7 @@
       <div class="dropdown">
         <div class="dropdown-menu" :class="{ show: haveData }">
           <div class="dropdown-item text-capitalize" v-for="(searchAuthor, index) in searchAuthors" v-bind:key="index" @click="onSearchClick(searchAuthor)" v-if="haveData">
-            {{ searchAuthor.name }}
+            {{ searchAuthor.name }} | {{searchAuthor.penName }}
           </div>
         </div>
       </div>
@@ -28,11 +28,15 @@
     data: function(){
       return {
         authors: [],
-        authorsId: [],
         searchAuthors: [],
         searchInput: '',
         haveData: false
       };
+    },
+    watch: {
+      defaultAuthors: function(newVal) {
+        this.setDefault();
+      }
     },
     mounted(){
       this.setDefault();
@@ -46,17 +50,16 @@
         this.authors = this.defaultAuthors;
       },
       onDeleteAuthor: function(index) {
-        this.authorsId.splice(index, 1);
-        this.$set(this.authors[index], 'deleted', true);
+        this.authors.splice(index, 1);
         this.emitParent();
       },
       onInputChange: function() {
         var data = {
           search: this.searchInput,
-          except: this.authorsId
+          except: this.authors
         }
 
-        axios.post('/admin/admins/search', data)
+        axios.post('/admin/authors/search', data)
         .then(({data}) => {
           if(data.length > 0) {
             this.searchAuthors = data;
@@ -64,18 +67,16 @@
           }else {
             this.hideList();
           }
-        }, (error) => {
-
-        });
+        }, (error) => {});
       },
       onSearchClick: function(searchAuthor) {
-        this.authorsId.push(searchAuthor.id);
-
         this.authors.push({
           id: searchAuthor.id,
-          name: searchAuthor.name
+          name: searchAuthor.name,
+          penName: searchAuthor.penName
         });
 
+        this.searchInput = '';
         this.emitParent();
       },
       emitParent: function() {

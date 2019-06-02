@@ -17,7 +17,7 @@ class Book extends Model {
     return $this->belongsToMany('App\Author', 'author_books', 'book_id', 'author_id')->withTimestamps();
   }
 
-  public function bookCategories() {
-    return $this->belongsToMany('App\CartItem');
+  public function categories() {
+    return $this->belongsToMany('App\Category', 'book_categories', 'book_id', 'category_id')->withTimestamps();
   }
 }

@@ -14114,6 +14114,33 @@ div.fixed-table-scroll-outer {
   color: red;
 }
 
+.return-back {
+  background-color: #FEDBD0;
+  border-radius: 17px;
+  text-align: center;
+  padding: 3px 0 3px 0;
+}
+
+.return-back i {
+  padding-top: 0.1rem;
+  font-size: 35px;
+  color: black;
+}
+
+.return-back a {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.pl-15 {
+  padding-left: 15px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
 .stranger-wrapper {
   background-image: url("/images/galaxy.jpg");
   display: block;
