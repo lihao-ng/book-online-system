@@ -26,7 +26,7 @@
             <div class="col-sm-12">
               <div class="form-group has-label">
                 <label>Description <span class="star">*</span></label>
-                <input type="textarea" name="description" class="form-control" required="true" v-model="author.description">
+                <textarea name="description" class="form-control" required="true" v-model="author.description"></textarea>
               </div>
             </div>
           </div>
@@ -98,7 +98,15 @@
     props: ['defaultAuthor'],
     data: function(){
       return {
-        author: {},
+        author: {
+          name: '',
+          description: '',
+          penName: '',
+          birthday: '',
+          birthPlace: '',
+          image: [],
+          books: ''
+        },
         defaultBooks: [],
         error: {
           show: false,
@@ -122,23 +130,23 @@
         })
       },
       onSubmit: function() {
-        // var data = new FormData();
-        // data.append('name', this.author.name);
-        // data.append('description', this.author.description);
-        // data.append('penName', this.author.penName);
-        // data.append('birthday', this.author.birthday);
-        // data.append('birthPlace', this.author.birthPlace);
-        // data.append('image', this.author.image);
-        // data.append('books', JSON.stringify(this.author.books));
-        var data = {
-          name: this.author.name,
-          description: this.author.description,
-          penName: this.author.penName,
-          birthday: this.author.birthday,
-          birthPlace: this.author.birthPlace,
-          image: this.author.image,
-          books: this.author.books
-        }
+        var data = new FormData();
+        data.append('name', this.author.name);
+        data.append('description', this.author.description);
+        data.append('penName', this.author.penName);
+        data.append('birthday', this.author.birthday);
+        data.append('birthPlace', this.author.birthPlace);
+        data.append('image', this.author.image);
+        data.append('books', JSON.stringify(this.author.books));
+        // var data = {
+        //   name: this.author.name,
+        //   description: this.author.description,
+        //   penName: this.author.penName,
+        //   birthday: this.author.birthday,
+        //   birthPlace: this.author.birthPlace,
+        //   image: this.author.image,
+        //   books: this.author.books
+        // }
 
         if(!this.defaultAuthor) {
           var method = 'POST';
@@ -163,20 +171,25 @@
       onBookChange: function(books) {
         this.author.books = books;
       },
-      onFileInput: function(e) {
-        if(!this.author.image) {
-          this.$set(this.author, 'image', '');
-        }
+      onFileInput: function(e) {  
+        // var reader = new FileReader();
         
-        var reader = new FileReader();
-        reader.onload = (r) => {
-          this.author.image = {
-            name: e.target.files[0].name,
-            size: e.target.files[0].size,
-            base64: r.target.result 
-          }
+        // reader.onload = (e) => {
+          // this.author.image = {
+          //   name: e.target.files[0].name,
+          //   size: e.target.files[0].size,
+          //   base64: r.target.result 
+          // }
+        //   this.author.image = e.target.result;
+        // }
+        // reader.readAsText(e.target.files[0]);
+        this.author.image = e.target.files[0];
+        // reader.readAsDataURL(e.target.files[0]);
+      },
+      initializeProperty: function(value, property) {
+        if(!value || value == undefined) {
+          this.$set(this.author, property, '');
         }
-        reader.readAsDataURL(e.target.files[0]);
       }
     }
   }

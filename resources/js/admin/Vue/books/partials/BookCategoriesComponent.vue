@@ -62,15 +62,22 @@
 
         axios.post('/admin/categories/search', data)
         .then(({data}) => {
+          this.haveData = true;
           if(data.length > 0) {
             this.searchCategories = data;
-            this.haveData = true;
           }else {
-            this.hideList();
+            this.searchCategories = [];
+            this.searchCategories.push({
+              name: "No Categories Found",
+              none: true
+            });
           }
         }, (error) => {});
       },
       onSearchClick: function(searchCategory) {
+        if(this.searchCategories[0].none) {
+          return;
+        }
         this.categories.push({
           id: searchCategory.id,
           name: searchCategory.name

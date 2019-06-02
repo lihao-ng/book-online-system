@@ -34,19 +34,19 @@ class BookService extends TransformerService {
 
   public function create(Request $request) {
     $request->validate([
-      'isbn' => 'required|unique:books',
-      'title' => 'required|max:190',
-      'authors.*.id' => 'required|distinct',
-      'description' => 'required',
-      'publisher' => 'required',
-      'publicationDate' => 'required|date_format:Y-m-d',
-      'language' => 'required|max:190',
-      'price' => 'required|numeric',
-      'stock' => 'required|numeric',
-      'categories' => 'required'
-      // 'image' => 'required'
+      // 'isbn' => 'required|unique:books',
+      // 'title' => 'required|max:190',
+      // 'authors.*.id' => 'required|distinct',
+      // 'description' => 'required',
+      // 'publisher' => 'required',
+      // 'publicationDate' => 'required|date_format:Y-m-d',
+      // 'language' => 'required|max:190',
+      // 'price' => 'required|numeric',
+      // 'stock' => 'required|numeric',
+      // 'categories' => 'required'
+      'image.size' => 'required|max:2000'
     ]);
-
+dd($request->image);
     $book = Book::create([
       'isbn' => $request->isbn,
       'title' => $request->title,
@@ -63,13 +63,14 @@ class BookService extends TransformerService {
     $this->authorBookService->syncBookAuthors($book, json_decode(json_encode($request->authors)));
     $this->bookCategoryService->syncBookCategories($book, json_decode(json_encode($request->categories)));
 
-    return route('admin.admins.index');
+    return route('admin.books.index');
   }
 
   public function update(Request $request, Book $book) {
     $request->validate([
-      'isbn' => 'required|unique:books,' . $book->id,
+      'isbn' => 'required|unique:books,isbn,' . $book->id,
       'title' => 'required|max:190',
+      'authors' => 'required',
       'authors.*.id' => 'required|distinct',
       'description' => 'required',
       'publisher' => 'required',
@@ -77,7 +78,8 @@ class BookService extends TransformerService {
       'language' => 'required|max:190',
       'price' => 'required|numeric',
       'stock' => 'required|numeric',
-      'categories' => 'required'
+      'categories' => 'required',
+      'categories.*.id' => 'required|distinct'
       // 'image' => 'required'
     ]);
 
@@ -96,14 +98,15 @@ class BookService extends TransformerService {
     $this->authorBookService->syncBookAuthors($book, json_decode(json_encode($request->authors)));
     $this->bookCategoryService->syncBookCategories($book, json_decode(json_encode($request->categories)));
 
-    return route('admin.admins.index');
+    return route('admin.books.index');
   }
 
   public function search(Request $request) {
     $books = Book::where('title', 'like', "%{$request->search}%");
 
     if($request->except) {
-      $exceptQuery = $books->whereNotIn('id', $request->except); 
+      $ids = $this->getBooksId(json_decode(json_encode($request->except)));
+      $exceptQuery = $books->whereNotIn('id', $ids); 
     }
     
     return $this->transformCollection($books->limit(10)->get());

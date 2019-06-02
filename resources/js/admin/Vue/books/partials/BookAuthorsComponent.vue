@@ -12,7 +12,7 @@
       <div class="dropdown">
         <div class="dropdown-menu" :class="{ show: haveData }">
           <div class="dropdown-item text-capitalize" v-for="(searchAuthor, index) in searchAuthors" v-bind:key="index" @click="onSearchClick(searchAuthor)" v-if="haveData">
-            {{ searchAuthor.name }} | {{searchAuthor.penName }}
+            {{ searchAuthor.name }} <span v-if="!searchAuthor.none">|</span> {{searchAuthor.penName }}
           </div>
         </div>
       </div>
@@ -46,7 +46,6 @@
         if(!this.defaultAuthors) {
           return;
         }
-
         this.authors = this.defaultAuthors;
       },
       onDeleteAuthor: function(index) {
@@ -61,15 +60,22 @@
 
         axios.post('/admin/authors/search', data)
         .then(({data}) => {
+          this.haveData = true;
           if(data.length > 0) {
             this.searchAuthors = data;
-            this.haveData = true;
           }else {
-            this.hideList();
+            this.searchAuthors = [];
+            this.searchAuthors.push({
+              name: 'No Authors Found',
+              none: true
+            });
           }
         }, (error) => {});
       },
       onSearchClick: function(searchAuthor) {
+        if(this.searchAuthors[0].none) {
+          return;
+        }
         this.authors.push({
           id: searchAuthor.id,
           name: searchAuthor.name,

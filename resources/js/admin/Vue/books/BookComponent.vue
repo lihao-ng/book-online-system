@@ -1,6 +1,10 @@
 <template>
   <div class="row">
     <div class="col-12 col-md-7 col-lg-8">
+      <div class="alert alert-danger" role="alert" v-if="error.show">
+        {{ error.message[0] }}
+      </div>
+
       <div class="card">
         <div class="card-body py-4 px-5">
           <div class="row">
@@ -31,7 +35,7 @@
             <div class="col-sm-12"> 
               <div class="form-group has-label">
                 <label>Description <span class="star">*</span></label>
-                <input type="textarea" name="description" class="form-control" required="true" v-model="book.description">
+                <textarea name="description" class="form-control" required="true" v-model="book.description"></textarea>
               </div>
             </div>
           </div>
@@ -124,7 +128,11 @@
     props: ['defaultBook'],
     data: function(){
       return {
-        book: {}
+        book: {},
+        error: {
+          show: false,
+          message: ''
+        }
       };
     },
     mounted(){
@@ -156,12 +164,12 @@
           categories: this.book.categories
         }
 
-        if(!this.defaultAuthor) {
+        if(!this.defaultBook) {
           var method = 'POST';
           var url = '/admin/books'
         }else {
           var method = "PUT";
-          var url = `/admin/books/${this.defaultAuthor.id}`;
+          var url = `/admin/books/${this.defaultBook.id}`;
         }
 
         axios({
@@ -169,8 +177,12 @@
           url: url,
           data: data
         }).then(({data}) => {
-           window.location.href = data;
-        }, (error) => {});
+          window.location.href = data;
+        }, (error) => {
+          this.error.show = true;
+          this.error.message = _.values(error.response.data.errors)[0];
+          $(window).scrollTop(0);
+        });
       },
       onAuthorChange: function(authors) {
         this.book.authors = authors;

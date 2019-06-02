@@ -28,7 +28,6 @@
     data: function(){
       return {
         books: [],
-        booksId: [],
         searchBooks: [],
         searchInput: '',
         haveData: false
@@ -47,41 +46,42 @@
         if(!this.defaultBooks) {
           return;
         }
-
         this.books = this.defaultBooks;
-        this.books.forEach((book) => {
-          this.booksId.push(book.id);
-        });
       },
       onDeleteBook: function(index) {
-        this.booksId.splice(index, 1);
         this.books.splice(index, 1);
         this.emitParent();
       },
       onInputChange: function() {
         var data = {
           search: this.searchInput,
-          except: this.booksId
+          except: this.books
         }
 
         axios.post('/admin/books/search', data)
         .then(({data}) => {
+          this.haveData = true;
           if(data.length > 0) {
             this.searchBooks = data;
-            this.haveData = true;
           }else {
-            this.hideList();
+            this.searchBooks = [];
+            this.searchBooks.push({
+              title: 'No Books Found',
+              none: true
+            });
           }
         }, (error) => {});
       },
       onSearchClick: function(searchBook) {
-        this.booksId.push(searchBook.id);
-
+        if(this.searchBooks[0].none) {
+          return;
+        }
         this.books.push({
           id: searchBook.id,
-          title: searchBook.title
+          title: searchBook.title,
+          isbn: searchBook.isbn
         });
-
+        this.searchInput = '';
         this.emitParent();
       },
       emitParent: function() {

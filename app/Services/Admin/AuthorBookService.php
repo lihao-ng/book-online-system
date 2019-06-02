@@ -20,4 +20,18 @@ class AuthorBookService {
 
     $book->authors()->sync($ids);
   }
+
+  public function syncAuthorBooks(Author $author, $books) {
+    $ids = [];
+
+    foreach($books as $book) {
+      if(array_key_exists('id', $book)) {
+        if(Book::find($book->id)) {
+          $ids[] = $book->id;
+        }
+      }
+    }
+
+    $author->books()->sync($ids);
+  }
 }

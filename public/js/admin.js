@@ -1959,7 +1959,15 @@ __webpack_require__.r(__webpack_exports__);
   props: ['defaultAuthor'],
   data: function data() {
     return {
-      author: {},
+      author: {
+        name: '',
+        description: '',
+        penName: '',
+        birthday: '',
+        birthPlace: '',
+        image: [],
+        books: ''
+      },
       defaultBooks: [],
       error: {
         show: false,
@@ -1985,23 +1993,22 @@ __webpack_require__.r(__webpack_exports__);
     onSubmit: function onSubmit() {
       var _this = this;
 
-      // var data = new FormData();
-      // data.append('name', this.author.name);
-      // data.append('description', this.author.description);
-      // data.append('penName', this.author.penName);
-      // data.append('birthday', this.author.birthday);
-      // data.append('birthPlace', this.author.birthPlace);
-      // data.append('image', this.author.image);
-      // data.append('books', JSON.stringify(this.author.books));
-      var data = {
-        name: this.author.name,
-        description: this.author.description,
-        penName: this.author.penName,
-        birthday: this.author.birthday,
-        birthPlace: this.author.birthPlace,
-        image: this.author.image,
-        books: this.author.books
-      };
+      var data = new FormData();
+      data.append('name', this.author.name);
+      data.append('description', this.author.description);
+      data.append('penName', this.author.penName);
+      data.append('birthday', this.author.birthday);
+      data.append('birthPlace', this.author.birthPlace);
+      data.append('image', this.author.image);
+      data.append('books', JSON.stringify(this.author.books)); // var data = {
+      //   name: this.author.name,
+      //   description: this.author.description,
+      //   penName: this.author.penName,
+      //   birthday: this.author.birthday,
+      //   birthPlace: this.author.birthPlace,
+      //   image: this.author.image,
+      //   books: this.author.books
+      // }
 
       if (!this.defaultAuthor) {
         var method = 'POST';
@@ -2028,23 +2035,22 @@ __webpack_require__.r(__webpack_exports__);
       this.author.books = books;
     },
     onFileInput: function onFileInput(e) {
-      var _this2 = this;
-
-      if (!this.author.image) {
-        this.$set(this.author, 'image', '');
+      // var reader = new FileReader();
+      // reader.onload = (e) => {
+      // this.author.image = {
+      //   name: e.target.files[0].name,
+      //   size: e.target.files[0].size,
+      //   base64: r.target.result 
+      // }
+      //   this.author.image = e.target.result;
+      // }
+      // reader.readAsText(e.target.files[0]);
+      this.author.image = e.target.files[0]; // reader.readAsDataURL(e.target.files[0]);
+    },
+    initializeProperty: function initializeProperty(value, property) {
+      if (!value || value == undefined) {
+        this.$set(this.author, property, '');
       }
-
-      var reader = new FileReader();
-
-      reader.onload = function (r) {
-        _this2.author.image = {
-          name: e.target.files[0].name,
-          size: e.target.files[0].size,
-          base64: r.target.result
-        };
-      };
-
-      reader.readAsDataURL(e.target.files[0]);
     }
   }
 });
@@ -2090,7 +2096,6 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       books: [],
-      booksId: [],
       searchBooks: [],
       searchInput: '',
       haveData: false
@@ -2106,46 +2111,50 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     setDefault: function setDefault() {
-      var _this = this;
-
       if (!this.defaultBooks) {
         return;
       }
 
       this.books = this.defaultBooks;
-      this.books.forEach(function (book) {
-        _this.booksId.push(book.id);
-      });
     },
     onDeleteBook: function onDeleteBook(index) {
-      this.booksId.splice(index, 1);
       this.books.splice(index, 1);
       this.emitParent();
     },
     onInputChange: function onInputChange() {
-      var _this2 = this;
+      var _this = this;
 
       var data = {
         search: this.searchInput,
-        except: this.booksId
+        except: this.books
       };
       axios.post('/admin/books/search', data).then(function (_ref) {
         var data = _ref.data;
+        _this.haveData = true;
 
         if (data.length > 0) {
-          _this2.searchBooks = data;
-          _this2.haveData = true;
+          _this.searchBooks = data;
         } else {
-          _this2.hideList();
+          _this.searchBooks = [];
+
+          _this.searchBooks.push({
+            title: 'No Books Found',
+            none: true
+          });
         }
       }, function (error) {});
     },
     onSearchClick: function onSearchClick(searchBook) {
-      this.booksId.push(searchBook.id);
+      if (this.searchBooks[0].none) {
+        return;
+      }
+
       this.books.push({
         id: searchBook.id,
-        title: searchBook.title
+        title: searchBook.title,
+        isbn: searchBook.isbn
       });
+      this.searchInput = '';
       this.emitParent();
     },
     emitParent: function emitParent() {
@@ -2289,11 +2298,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['defaultBook'],
   data: function data() {
     return {
-      book: {}
+      book: {},
+      error: {
+        show: false,
+        message: ''
+      }
     };
   },
   mounted: function mounted() {
@@ -2313,6 +2330,8 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     onSubmit: function onSubmit() {
+      var _this = this;
+
       var data = {
         isbn: this.book.isbn,
         title: this.book.title,
@@ -2326,12 +2345,12 @@ __webpack_require__.r(__webpack_exports__);
         categories: this.book.categories
       };
 
-      if (!this.defaultAuthor) {
+      if (!this.defaultBook) {
         var method = 'POST';
         var url = '/admin/books';
       } else {
         var method = "PUT";
-        var url = "/admin/books/".concat(this.defaultAuthor.id);
+        var url = "/admin/books/".concat(this.defaultBook.id);
       }
 
       axios({
@@ -2341,7 +2360,11 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (_ref) {
         var data = _ref.data;
         window.location.href = data;
-      }, function (error) {});
+      }, function (error) {
+        _this.error.show = true;
+        _this.error.message = _.values(error.response.data.errors)[0];
+        $(window).scrollTop(0);
+      });
     },
     onAuthorChange: function onAuthorChange(authors) {
       this.book.authors = authors;
@@ -2427,16 +2450,25 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post('/admin/authors/search', data).then(function (_ref) {
         var data = _ref.data;
+        _this.haveData = true;
 
         if (data.length > 0) {
           _this.searchAuthors = data;
-          _this.haveData = true;
         } else {
-          _this.hideList();
+          _this.searchAuthors = [];
+
+          _this.searchAuthors.push({
+            name: 'No Authors Found',
+            none: true
+          });
         }
       }, function (error) {});
     },
     onSearchClick: function onSearchClick(searchAuthor) {
+      if (this.searchAuthors[0].none) {
+        return;
+      }
+
       this.authors.push({
         id: searchAuthor.id,
         name: searchAuthor.name,
@@ -2530,16 +2562,25 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post('/admin/categories/search', data).then(function (_ref) {
         var data = _ref.data;
+        _this.haveData = true;
 
         if (data.length > 0) {
           _this.searchCategories = data;
-          _this.haveData = true;
         } else {
-          _this.hideList();
+          _this.searchCategories = [];
+
+          _this.searchCategories.push({
+            name: "No Categories Found",
+            none: true
+          });
         }
       }, function (error) {});
     },
     onSearchClick: function onSearchClick(searchCategory) {
+      if (this.searchCategories[0].none) {
+        return;
+      }
+
       this.categories.push({
         id: searchCategory.id,
         name: searchCategory.name
@@ -58402,7 +58443,7 @@ var render = function() {
               _c("div", { staticClass: "form-group has-label" }, [
                 _vm._m(2),
                 _vm._v(" "),
-                _c("input", {
+                _c("textarea", {
                   directives: [
                     {
                       name: "model",
@@ -58412,11 +58453,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: {
-                    type: "textarea",
-                    name: "description",
-                    required: "true"
-                  },
+                  attrs: { name: "description", required: "true" },
                   domProps: { value: _vm.author.description },
                   on: {
                     input: function($event) {
@@ -58752,6 +58789,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-12 col-md-7 col-lg-8" }, [
+      _vm.error.show
+        ? _c(
+            "div",
+            { staticClass: "alert alert-danger", attrs: { role: "alert" } },
+            [_vm._v("\n      " + _vm._s(_vm.error.message[0]) + "\n    ")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-body py-4 px-5" }, [
           _vm._m(0),
@@ -58831,7 +58876,7 @@ var render = function() {
               _c("div", { staticClass: "form-group has-label" }, [
                 _vm._m(3),
                 _vm._v(" "),
-                _c("input", {
+                _c("textarea", {
                   directives: [
                     {
                       name: "model",
@@ -58841,11 +58886,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: {
-                    type: "textarea",
-                    name: "description",
-                    required: "true"
-                  },
+                  attrs: { name: "description", required: "true" },
                   domProps: { value: _vm.book.description },
                   on: {
                     input: function($event) {
@@ -59277,13 +59318,9 @@ var render = function() {
                     }
                   },
                   [
-                    _vm._v(
-                      "\n          " +
-                        _vm._s(searchAuthor.name) +
-                        " | " +
-                        _vm._s(searchAuthor.penName) +
-                        "\n        "
-                    )
+                    _vm._v("\n          " + _vm._s(searchAuthor.name) + " "),
+                    !searchAuthor.none ? _c("span", [_vm._v("|")]) : _vm._e(),
+                    _vm._v(" " + _vm._s(searchAuthor.penName) + "\n        ")
                   ]
                 )
               : _vm._e()

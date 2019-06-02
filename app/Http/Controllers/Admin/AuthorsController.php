@@ -6,13 +6,16 @@ use App\Author;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\Admin\AuthorService;
+use App\Services\Admin\BookService;
 
 class AuthorsController extends Controller {
   protected $path = 'admin.authors.';
   protected $authorService;
+  protected $bookService;
 
-  public function __construct(AuthorService $authorService) {
+  public function __construct(AuthorService $authorService, BookService $bookService) {
     $this->authorService = $authorService;
+    $this->bookService = $bookService;
   }
 
   public function index(Request $request) {
@@ -32,8 +35,10 @@ class AuthorsController extends Controller {
   }
 
   public function edit(Author $author) {
-    $author = $this->authorService->transform($author);
-    return view($this->path . 'edit', ['author' => json_encode($author)]);
+    $result = $this->authorService->transform($author);
+    $result['books'] = $this->bookService->transformCollection($author->books);
+
+    return view($this->path . 'edit', ['author' => json_encode($result)]);
   }
 
   public function update(Request $request, Author $author) {

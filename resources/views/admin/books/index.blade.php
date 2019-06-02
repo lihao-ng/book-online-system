@@ -17,8 +17,8 @@
     <table id="bootstrap-table" class="table" data-url="{{ route('admin.books.index') }}" data-icons="icons">
       <thead>
         <th data-field="id" class="text-center" data-sortable="true">ID</th>
+        <th data-field="isbn" data-sortable="true">ISBN</th>
         <th data-field="title" data-sortable="true">Title</th>
-        <th data-field="author" data-sortable="true">Author</th>
         <th data-field="rating">Rating</th>
         <th data-field="sold">Sold</th>
         <th data-field="price">Price</th>
