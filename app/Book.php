@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model {
   protected $fillable = [
-    'isbn', 'title', 'description', 'publisher', 'publication_date', 'publication_city', 'language', 'price', 'rating', 'sold', 'stock'
+    'isbn', 'title', 'description', 'publisher', 'publication_date', 'publication_city', 'language', 'price', 'rating', 'sold', 'stock', 'image'
   ];
 
   public function cartItems() {

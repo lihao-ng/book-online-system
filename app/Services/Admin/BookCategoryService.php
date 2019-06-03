@@ -8,7 +8,11 @@ use Illuminate\Http\Request;
 use App\Services\TransformerService;
 
 class BookCategoryService {
-  public function syncBookCategories(Book $book, $categories) {
+  public function syncBookCategories(Book $book, $categories) { 
+    if($categories == null || $categories == "") {
+      return;
+    }
+
     $ids = [];
 
     foreach($categories as $category) {

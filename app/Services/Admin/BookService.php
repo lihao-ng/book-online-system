@@ -7,14 +7,16 @@ use Illuminate\Http\Request;
 use App\Services\TransformerService;
 use App\Services\Admin\AuthorBookService;
 use App\Services\Admin\BookCategoryService;
+use App\Services\Admin\ImageLibraryBookService;
 
 class BookService extends TransformerService {
   protected $bookAuthorService;
   protected $bookCategoryService;
 
-  function __construct(AuthorBookService $authorBookService, BookCategoryService $bookCategoryService) {
+  function __construct(AuthorBookService $authorBookService, BookCategoryService $bookCategoryService, ImageLibraryService $imageLibraryService) {
     $this->authorBookService = $authorBookService;
     $this->bookCategoryService = $bookCategoryService;
+    $this->imageLibraryService = $imageLibraryService;
   }
 
   public function all(Request $request){
@@ -33,20 +35,26 @@ class BookService extends TransformerService {
   }
 
   public function create(Request $request) {
+    $request = $this->decodeArrayObjects($request);
+
     $request->validate([
-      // 'isbn' => 'required|unique:books',
-      // 'title' => 'required|max:190',
-      // 'authors.*.id' => 'required|distinct',
-      // 'description' => 'required',
-      // 'publisher' => 'required',
-      // 'publicationDate' => 'required|date_format:Y-m-d',
-      // 'language' => 'required|max:190',
-      // 'price' => 'required|numeric',
-      // 'stock' => 'required|numeric',
-      // 'categories' => 'required'
-      'image.size' => 'required|max:2000'
+      'isbn' => 'required|unique:books',
+      'title' => 'required|max:190',
+      'description' => 'required',
+      'publisher' => 'required',
+      'publicationDate' => 'required|date_format:Y-m-d',
+      'language' => 'required|max:190',
+      'price' => 'required|numeric',
+      'stock' => 'required|numeric',
+      'image' => 'nullable|image|max:2000',
+      'categories' => 'required',
+      'categories.*.id' => 'required|distinct',
+      'authors' => 'required',
+      'authors.*.id' => 'required|distinct'
     ]);
-dd($request->image);
+
+    $fileName = $this->imageLibraryService->create($request);
+
     $book = Book::create([
       'isbn' => $request->isbn,
       'title' => $request->title,
@@ -57,21 +65,22 @@ dd($request->image);
       'price' => $request->price,
       'rating' => 0,
       'sold' => 0,
-      'stock' => $request->stock
+      'stock' => $request->stock,
+      'image' => $fileName
     ]);
 
-    $this->authorBookService->syncBookAuthors($book, json_decode(json_encode($request->authors)));
-    $this->bookCategoryService->syncBookCategories($book, json_decode(json_encode($request->categories)));
+    $this->authorBookService->syncBookAuthors($book, $request->authors);
+    $this->bookCategoryService->syncBookCategories($book, $request->categories);
 
     return route('admin.books.index');
   }
 
   public function update(Request $request, Book $book) {
+    $request = $this->decodeArrayObjects($request);
+
     $request->validate([
       'isbn' => 'required|unique:books,isbn,' . $book->id,
       'title' => 'required|max:190',
-      'authors' => 'required',
-      'authors.*.id' => 'required|distinct',
       'description' => 'required',
       'publisher' => 'required',
       'publicationDate' => 'required|date_format:Y-m-d',
@@ -79,9 +88,23 @@ dd($request->image);
       'price' => 'required|numeric',
       'stock' => 'required|numeric',
       'categories' => 'required',
-      'categories.*.id' => 'required|distinct'
-      // 'image' => 'required'
+      'categories.*.id' => 'required|distinct',
+      'authors' => 'required',
+      'authors.*.id' => 'required|distinct'
     ]);
+
+    $file = $request->file('image');
+    $ifValid = $this->imageLibraryService->validateImage($file);
+    
+    if(!$ifValid) {
+      return response()->json([
+        'errors' => [
+          'image' => ['Must be an image or 2000KB']
+        ]
+      ], 422);
+    }
+
+    $fileName = $this->imageLibraryService->update($request, $book->image);
 
     $book->isbn = $request->isbn;
     $book->title = $request->title;
@@ -93,10 +116,11 @@ dd($request->image);
     $book->rating = 0;
     $book->sold = 0;
     $book->stock = $request->stock;
+    $book->image = $fileName;
     $book->save();
 
-    $this->authorBookService->syncBookAuthors($book, json_decode(json_encode($request->authors)));
-    $this->bookCategoryService->syncBookCategories($book, json_decode(json_encode($request->categories)));
+    $this->authorBookService->syncBookAuthors($book, $request->authors);
+    $this->bookCategoryService->syncBookCategories($book, $request->categories);
 
     return route('admin.books.index');
   }
@@ -126,11 +150,18 @@ dd($request->image);
     return $ids;
   }
 
+  public function decodeArrayObjects(Request $request){
+    $request->authors = json_decode($request->authors);
+    $request->categories = json_decode($request->categories);
+
+    return $request;
+  }
+
   public function transform($book){
     return [
       'id' => $book->id,
       'isbn' => $book->isbn,
-      'title' => $book->title, // have to change to get collection of author
+      'title' => $book->title,
       'description' => $book->description,
       'publisher' => $book->publisher,
       'publicationDate' => date_to_human($book->publication_date),
@@ -139,7 +170,8 @@ dd($request->image);
       'rating' => $book->rating,
       'sold' => $book->sold,
       'stock' => $book->stock,
-      'image' => $book->image
+      'image' => $this->imageLibraryService->fullPath($book->image),
+      'hasOldImage' => $book->image ? $book->image : ''
     ];
   }
 }

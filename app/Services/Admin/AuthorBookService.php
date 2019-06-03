@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class AuthorBookService {
   public function syncBookAuthors(Book $book, $authors) {
+    if($authors == null || $authors == "") {
+      return;
+    }
+
     $ids = [];
 
     foreach($authors as $author) {
@@ -21,7 +25,11 @@ class AuthorBookService {
     $book->authors()->sync($ids);
   }
 
-  public function syncAuthorBooks(Author $author, $books) {
+  public function syncAuthorBooks(Author $author, $books) {  
+    if($books == null || $books == "") {
+      return;
+    }
+
     $ids = [];
 
     foreach($books as $book) {

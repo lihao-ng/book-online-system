@@ -58,6 +58,16 @@
             </div>
           </div>
 
+          <div class="row mb-2" v-if="author.image">
+            <div class="col-sm-12 text-center">
+              <div class="btn btn-danger mb-1 mr-3" @click="onClearImage">Clear</div>
+              <label class="font-weight-bold">Preview </label>
+              <div>
+                <img :src="author.preview" class="image-size">
+              </div>
+            </div>
+          </div>
+
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group has-label">
@@ -104,7 +114,9 @@
           penName: '',
           birthday: '',
           birthPlace: '',
-          image: [],
+          image: '',
+          preview: '',
+          hasOldImage: '',
           books: ''
         },
         defaultBooks: [],
@@ -121,6 +133,8 @@
       setDefault: function() {
         if(this.defaultAuthor) {
           this.author = this.defaultAuthor;
+          this.author.preview = this.defaultAuthor.image;
+          this.author.hasOldImage = this.defaultAuthor.hasOldImage;
           this.$set(this.author, 'books', this.defaultAuthor.books);
         }
 
@@ -138,22 +152,14 @@
         data.append('birthPlace', this.author.birthPlace);
         data.append('image', this.author.image);
         data.append('books', JSON.stringify(this.author.books));
-        // var data = {
-        //   name: this.author.name,
-        //   description: this.author.description,
-        //   penName: this.author.penName,
-        //   birthday: this.author.birthday,
-        //   birthPlace: this.author.birthPlace,
-        //   image: this.author.image,
-        //   books: this.author.books
-        // }
 
         if(!this.defaultAuthor) {
           var method = 'POST';
           var url = '/admin/authors'
         }else {
-          var method = "PUT";
+          var method = "POST";  // bug with form data - unable to use PUT or PATCH
           var url = `/admin/authors/${this.defaultAuthor.id}`;
+          data.append('hasOldImage', this.author.hasOldImage);
         }
 
         axios({
@@ -172,24 +178,18 @@
         this.author.books = books;
       },
       onFileInput: function(e) {  
-        // var reader = new FileReader();
-        
-        // reader.onload = (e) => {
-          // this.author.image = {
-          //   name: e.target.files[0].name,
-          //   size: e.target.files[0].size,
-          //   base64: r.target.result 
-          // }
-        //   this.author.image = e.target.result;
-        // }
-        // reader.readAsText(e.target.files[0]);
-        this.author.image = e.target.files[0];
-        // reader.readAsDataURL(e.target.files[0]);
-      },
-      initializeProperty: function(value, property) {
-        if(!value || value == undefined) {
-          this.$set(this.author, property, '');
+        if(!e.target.files[0]) {
+          this.author.image = '';
+          return;
         }
+        this.author.hasOldImage = '';
+        this.author.image = e.target.files[0];
+        this.author.preview = URL.createObjectURL(e.target.files[0]);
+      },
+      onClearImage: function() {
+        this.author.hasOldImage = '';
+        this.author.image = '';
+        this.author.preview = '';
       }
     }
   }

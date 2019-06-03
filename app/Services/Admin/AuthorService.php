@@ -7,12 +7,15 @@ use App\Author;
 use Illuminate\Http\Request;
 use App\Services\TransformerService;
 use App\Services\Admin\AuthorBookService;
+use App\Services\Admin\ImageLibraryBookService;
 
 class AuthorService extends TransformerService {
   protected $authorBookService;
+  protected $imageLibraryService;
 
-  function __construct(AuthorBookService $authorBookService) {
+  function __construct(AuthorBookService $authorBookService, ImageLibraryService $imageLibraryService) {
     $this->authorBookService = $authorBookService;
+    $this->imageLibraryService = $imageLibraryService;
   }
 
   public function all(Request $request){
@@ -31,27 +34,18 @@ class AuthorService extends TransformerService {
   }
 
   public function create(Request $request) {
-    // dd($request);
-    // $value = base64_decode($request->image['base64']);
-    // dd($value);
-    // dd($request->file('image'));
-    $file = $request->file('image');
-    // Storage::disk('local')->put($file, 'Contents');
-    // $path = $file->storeAs('photos', 'hihi.jpg');
-    Storage::disk('public')->putFileAs('public', $file, 'hihi.jpg');
-    dd('done');
     $request->validate([
-      // 'name' => 'required|max:190',
-      // 'description' => 'required',
-      // 'penName' => 'required|max:190|unique:authors,pen_name',
-      // 'birthday' => 'required|date_format:Y-m-d',
-      // 'birthPlace' => 'nullable|max:190',
-      // 'image' => 'nullable',
-      // 'books' => 'nullable',
-      // 'books.*.id' => 'required|distinct'
+      'name' => 'required|max:190',
+      'description' => 'required',
+      'penName' => 'required|max:190|unique:authors,pen_name',
+      'birthday' => 'required|date_format:Y-m-d',
+      'birthPlace' => 'nullable|max:190',
+      'image' => 'nullable|image|max:2000',
+      'books' => 'nullable',
+      'books.*.id' => 'required|distinct'
     ]);
-dd($request->image);
-    // store image here first and return the file name
+
+    $fileName = $this->imageLibraryService->create($request);
 
     $author = Author::create([
       'name' => $request->name,
@@ -59,12 +53,11 @@ dd($request->image);
       'pen_name' => $request->penName,
       'birthday' => $request->birthday,
       'birth_place' => $request->birthPlace,
-      'image' => null  // change to image file name
+      'image' => $fileName  
     ]);
 
-    if($request->books) {
-      $this->authorBookService->syncAuthorBooks($author, json_decode(json_encode($request->books)));
-    }
+    $this->authorBookService->syncAuthorBooks($author, $request->books);
+    
     return route('admin.authors.index');
   }
 
@@ -75,22 +68,22 @@ dd($request->image);
       'penName' => 'required|max:190|unique:authors,pen_name,'. $author->id,
       'birthday' => 'required|date_format:Y-m-d',
       'birthPlace' => 'nullable|max:190',
-      'image' => 'nullable',
+      // 'image' => 'nullable|image|max:2000',
       'books' => 'nullable',
       'books.*.id' => 'required|distinct'
     ]);
 
-    // new image
+    $fileName = $this->imageLibraryService->update($request, $author->image);
 
     $author->name = $request->name;
     $author->description = $request->description;
     $author->pen_name = $request->penName;
     $author->birthday = $request->birthday;
     $author->birth_place = $request->birthPlace;
-    $author->image = null; // change here
+    $author->image = $fileName;
     $author->save();
 
-    $this->authorBookService->syncAuthorBooks($author, json_decode(json_encode($request->books)));
+    $this->authorBookService->syncAuthorBooks($author, $request->books);
 
     return route('admin.authors.index');
   }
@@ -128,7 +121,8 @@ dd($request->image);
       'penName' => $author->pen_name,
       'birthday' => $author->birthday,
       'birthPlace' => $author->birth_place,
-      'image' => $author->image
+      'image' => $this->imageLibraryService->fullPath($author->image),
+      'hasOldImage' => $author->image ? $author->image : ''
     ];
   }
 }

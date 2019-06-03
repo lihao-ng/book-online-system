@@ -27,9 +27,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::resource('admins', 'Admin\AdminsController')->except(['show']);
 
     Route::post('books/search','Admin\BooksController@search')->name('books.search');
+    Route::post('books/{book}','Admin\BooksController@update')->name('books.post.update'); // bug with form data - unable to use PUT or PATCH
     Route::resource('books', 'Admin\BooksController')->except(['show']);
 
     Route::post('authors/search','Admin\AuthorsController@search')->name('authors.search');
+    Route::post('authors/{author}','Admin\AuthorsController@update')->name('authors.post.update'); // bug with form data - unable to use PUT or PATCH
     Route::resource('authors', 'Admin\AuthorsController')->except(['show']);
 
     Route::post('categories/search','Admin\CategoriesController@search')->name('categories.search');

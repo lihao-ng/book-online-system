@@ -84,6 +84,25 @@
               </div>
             </div>
           </div>
+
+          <div class="row mb-2" v-if="book.image">
+            <div class="col-sm-12 text-center">
+              <div class="btn btn-danger mb-1 mr-3" @click="onClearImage">Clear</div>
+              <label class="font-weight-bold">Preview </label>
+              <div>
+                <img :src="book.preview" class="image-size">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group has-label">
+                <label>Image </label>
+                <input type="file" name="image" class="form-control" @change="onFileInput">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -128,7 +147,21 @@
     props: ['defaultBook'],
     data: function(){
       return {
-        book: {},
+        book: {
+          isbn: '',
+          title: '',
+          description: '',
+          publisher: '',
+          publicationDate: '',
+          language: '',
+          price: '',
+          stock: '',
+          image: '',
+          preview: '',
+          hasOldImage: '',
+          authors: '',
+          books: ''
+        },
         error: {
           show: false,
           message: ''
@@ -142,6 +175,8 @@
       setDefault: function() {
         if(this.defaultBook) {
           this.book = this.defaultBook;
+          this.book.preview = this.book.image;
+          this.book.hasOldImage = this.book.hasOldImage;
           this.book.categories = this.defaultBook.categories;
           this.book.authors = this.defaultBook.authors;
         }
@@ -151,25 +186,39 @@
         })
       },
       onSubmit: function() {
-        var data = {
-          isbn: this.book.isbn,
-          title: this.book.title,
-          authors: this.book.authors,
-          description: this.book.description,
-          publisher: this.book.publisher,
-          publicationDate: this.book.publicationDate,
-          language: this.book.language,
-          price: this.book.price,
-          stock: this.book.stock,
-          categories: this.book.categories
-        }
+        var data = new FormData();
+        data.append('isbn', this.book.isbn);
+        data.append('title', this.book.title);
+        data.append('description', this.book.description);
+        data.append('publisher', this.book.publisher);
+        data.append('publicationDate', this.book.publicationDate);
+        data.append('language', this.book.language);
+        data.append('price', this.book.price);
+        data.append('stock', this.book.stock);
+        data.append('image', this.book.image);
+        data.append('authors', JSON.stringify(this.book.authors));
+        data.append('categories', JSON.stringify(this.book.categories));
+
+        // var data = {
+        //   isbn: this.book.isbn,
+        //   title: this.book.title,
+        //   authors: this.book.authors,
+        //   description: this.book.description,
+        //   publisher: this.book.publisher,
+        //   publicationDate: this.book.publicationDate,
+        //   language: this.book.language,
+        //   price: this.book.price,
+        //   stock: this.book.stock,
+        //   categories: this.book.categories
+        // }
 
         if(!this.defaultBook) {
           var method = 'POST';
           var url = '/admin/books'
         }else {
-          var method = "PUT";
+          var method = "POST";
           var url = `/admin/books/${this.defaultBook.id}`;
+          data.append('hasOldImage', this.book.hasOldImage);
         }
 
         axios({
@@ -189,6 +238,20 @@
       },
       onCategoryChange: function(categories) {
         this.book.categories = categories;
+      },
+      onFileInput: function(e) {  
+        if(!e.target.files[0]) {
+          this.book.image = '';
+          return;
+        }
+        this.book.hasOldImage = '';
+        this.book.image = e.target.files[0];
+        this.book.preview = URL.createObjectURL(e.target.files[0]);
+      },
+      onClearImage: function() {
+        this.book.hasOldImage = '';
+        this.book.image = '';
+        this.book.preview = '';
       }
     }
   }

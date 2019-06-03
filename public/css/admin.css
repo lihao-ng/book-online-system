@@ -14141,6 +14141,28 @@ div.fixed-table-scroll-outer {
   margin-left: 15px;
 }
 
+.image-size {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border: 1px solid #442C2E;
+  border-radius: 6px;
+}
+
+@media (min-width: 576px) {
+  .image-size {
+    width: 75%;
+    height: 75%;
+  }
+}
+
+@media (min-width: 992px) {
+  .image-size {
+    width: 50%;
+    height: 50%;
+  }
+}
+
 .stranger-wrapper {
   background-image: url("/images/galaxy.jpg");
   display: block;

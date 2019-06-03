@@ -1955,6 +1955,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['defaultAuthor'],
   data: function data() {
@@ -1965,7 +1975,9 @@ __webpack_require__.r(__webpack_exports__);
         penName: '',
         birthday: '',
         birthPlace: '',
-        image: [],
+        image: '',
+        preview: '',
+        hasOldImage: '',
         books: ''
       },
       defaultBooks: [],
@@ -1982,6 +1994,8 @@ __webpack_require__.r(__webpack_exports__);
     setDefault: function setDefault() {
       if (this.defaultAuthor) {
         this.author = this.defaultAuthor;
+        this.author.preview = this.defaultAuthor.image;
+        this.author.hasOldImage = this.defaultAuthor.hasOldImage;
         this.$set(this.author, 'books', this.defaultAuthor.books);
       }
 
@@ -2000,22 +2014,16 @@ __webpack_require__.r(__webpack_exports__);
       data.append('birthday', this.author.birthday);
       data.append('birthPlace', this.author.birthPlace);
       data.append('image', this.author.image);
-      data.append('books', JSON.stringify(this.author.books)); // var data = {
-      //   name: this.author.name,
-      //   description: this.author.description,
-      //   penName: this.author.penName,
-      //   birthday: this.author.birthday,
-      //   birthPlace: this.author.birthPlace,
-      //   image: this.author.image,
-      //   books: this.author.books
-      // }
+      data.append('books', JSON.stringify(this.author.books));
 
       if (!this.defaultAuthor) {
         var method = 'POST';
         var url = '/admin/authors';
       } else {
-        var method = "PUT";
+        var method = "POST"; // bug with form data - unable to use PUT or PATCH
+
         var url = "/admin/authors/".concat(this.defaultAuthor.id);
+        data.append('hasOldImage', this.author.hasOldImage);
       }
 
       axios({
@@ -2035,22 +2043,19 @@ __webpack_require__.r(__webpack_exports__);
       this.author.books = books;
     },
     onFileInput: function onFileInput(e) {
-      // var reader = new FileReader();
-      // reader.onload = (e) => {
-      // this.author.image = {
-      //   name: e.target.files[0].name,
-      //   size: e.target.files[0].size,
-      //   base64: r.target.result 
-      // }
-      //   this.author.image = e.target.result;
-      // }
-      // reader.readAsText(e.target.files[0]);
-      this.author.image = e.target.files[0]; // reader.readAsDataURL(e.target.files[0]);
-    },
-    initializeProperty: function initializeProperty(value, property) {
-      if (!value || value == undefined) {
-        this.$set(this.author, property, '');
+      if (!e.target.files[0]) {
+        this.author.image = '';
+        return;
       }
+
+      this.author.hasOldImage = '';
+      this.author.image = e.target.files[0];
+      this.author.preview = URL.createObjectURL(e.target.files[0]);
+    },
+    onClearImage: function onClearImage() {
+      this.author.hasOldImage = '';
+      this.author.image = '';
+      this.author.preview = '';
     }
   }
 });
@@ -2302,11 +2307,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['defaultBook'],
   data: function data() {
     return {
-      book: {},
+      book: {
+        isbn: '',
+        title: '',
+        description: '',
+        publisher: '',
+        publicationDate: '',
+        language: '',
+        price: '',
+        stock: '',
+        image: '',
+        preview: '',
+        hasOldImage: '',
+        authors: '',
+        books: ''
+      },
       error: {
         show: false,
         message: ''
@@ -2320,6 +2358,8 @@ __webpack_require__.r(__webpack_exports__);
     setDefault: function setDefault() {
       if (this.defaultBook) {
         this.book = this.defaultBook;
+        this.book.preview = this.book.image;
+        this.book.hasOldImage = this.book.hasOldImage;
         this.book.categories = this.defaultBook.categories;
         this.book.authors = this.defaultBook.authors;
       }
@@ -2332,25 +2372,37 @@ __webpack_require__.r(__webpack_exports__);
     onSubmit: function onSubmit() {
       var _this = this;
 
-      var data = {
-        isbn: this.book.isbn,
-        title: this.book.title,
-        authors: this.book.authors,
-        description: this.book.description,
-        publisher: this.book.publisher,
-        publicationDate: this.book.publicationDate,
-        language: this.book.language,
-        price: this.book.price,
-        stock: this.book.stock,
-        categories: this.book.categories
-      };
+      var data = new FormData();
+      data.append('isbn', this.book.isbn);
+      data.append('title', this.book.title);
+      data.append('description', this.book.description);
+      data.append('publisher', this.book.publisher);
+      data.append('publicationDate', this.book.publicationDate);
+      data.append('language', this.book.language);
+      data.append('price', this.book.price);
+      data.append('stock', this.book.stock);
+      data.append('image', this.book.image);
+      data.append('authors', JSON.stringify(this.book.authors));
+      data.append('categories', JSON.stringify(this.book.categories)); // var data = {
+      //   isbn: this.book.isbn,
+      //   title: this.book.title,
+      //   authors: this.book.authors,
+      //   description: this.book.description,
+      //   publisher: this.book.publisher,
+      //   publicationDate: this.book.publicationDate,
+      //   language: this.book.language,
+      //   price: this.book.price,
+      //   stock: this.book.stock,
+      //   categories: this.book.categories
+      // }
 
       if (!this.defaultBook) {
         var method = 'POST';
         var url = '/admin/books';
       } else {
-        var method = "PUT";
+        var method = "POST";
         var url = "/admin/books/".concat(this.defaultBook.id);
+        data.append('hasOldImage', this.book.hasOldImage);
       }
 
       axios({
@@ -2371,6 +2423,21 @@ __webpack_require__.r(__webpack_exports__);
     },
     onCategoryChange: function onCategoryChange(categories) {
       this.book.categories = categories;
+    },
+    onFileInput: function onFileInput(e) {
+      if (!e.target.files[0]) {
+        this.book.image = '';
+        return;
+      }
+
+      this.book.hasOldImage = '';
+      this.book.image = e.target.files[0];
+      this.book.preview = URL.createObjectURL(e.target.files[0]);
+    },
+    onClearImage: function onClearImage() {
+      this.book.hasOldImage = '';
+      this.book.image = '';
+      this.book.preview = '';
     }
   }
 });
@@ -58558,6 +58625,32 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
+          _vm.author.image
+            ? _c("div", { staticClass: "row mb-2" }, [
+                _c("div", { staticClass: "col-sm-12 text-center" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "btn btn-danger mb-1 mr-3",
+                      on: { click: _vm.onClearImage }
+                    },
+                    [_vm._v("Clear")]
+                  ),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "font-weight-bold" }, [
+                    _vm._v("Preview ")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("img", {
+                      staticClass: "image-size",
+                      attrs: { src: _vm.author.preview }
+                    })
+                  ])
+                ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-sm-12" }, [
               _c("div", { staticClass: "form-group has-label" }, [
@@ -59050,6 +59143,46 @@ var render = function() {
                       _vm.$set(_vm.book, "stock", $event.target.value)
                     }
                   }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm.book.image
+            ? _c("div", { staticClass: "row mb-2" }, [
+                _c("div", { staticClass: "col-sm-12 text-center" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "btn btn-danger mb-1 mr-3",
+                      on: { click: _vm.onClearImage }
+                    },
+                    [_vm._v("Clear")]
+                  ),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "font-weight-bold" }, [
+                    _vm._v("Preview ")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("img", {
+                      staticClass: "image-size",
+                      attrs: { src: _vm.book.preview }
+                    })
+                  ])
+                ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-12" }, [
+              _c("div", { staticClass: "form-group has-label" }, [
+                _c("label", [_vm._v("Image ")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "file", name: "image" },
+                  on: { change: _vm.onFileInput }
                 })
               ])
             ])
