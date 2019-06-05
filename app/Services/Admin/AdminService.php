@@ -2,6 +2,7 @@
 
 namespace App\Services\Admin;
 
+use Validator;
 use App\User as Admin;
 use Illuminate\Http\Request;
 use App\Services\TransformerService;
@@ -30,6 +31,8 @@ class AdminService extends TransformerService {
       "email" => 'required|email|unique:users'
     ]);
 
+    
+
     Admin::create([
       'name' => $request->name,
       'email' => $request->email,
@@ -37,16 +40,26 @@ class AdminService extends TransformerService {
       'role' => 1
     ]);
 
+
+
       return redirect()->route("admin.admins.index");
   }
   
   public function update(Request $request, Admin $admin){
-    $request->validate([
-      "name" => 'required|string|max:255',
-      "email" => 'required|email,'.$admin->id
-    ]);
+    $validator = Validator::make($request->all(), [
+			'name' => 'required|string|max:255',
+      'email' => 'required|email|unique:users,email,'.$admin->id
+		]);
 
+    if ($validator->fails()) {
+			return redirect()->back()->withErrors($validator)->withInput();
+    }
     
+    $admin->name = $request->name;
+    $admin->email = $request->email;
+		$admin->save();
+
+    return redirect()->route("admin.admins.index");
   }
 
   public function transform($admin){

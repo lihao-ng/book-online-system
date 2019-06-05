@@ -13904,3 +13904,35 @@ a.text-dark:focus {
   }
 }
 
+body {
+  padding: 40px;
+}
+
+.cartPage-main-container {
+  border: 1px solid green;
+}
+
+.confirm-purchase-button {
+  right: 9px;
+}
+
+.cart-image {
+  width: 160px;
+  margin-bottom: 8%;
+}
+
+.cartPage-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 3%;
+}
+
+.cartPage-title-container {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+.cartPage-detail-content {
+  font-size: 18px;
+}
+

@@ -11,4 +11,8 @@ class PagesController extends Controller {
   public function home(){
     return view($this->path . 'home');
   }
+
+  public function cartPage(){
+    return view($this->path . 'cartPage');
+  }
 }
