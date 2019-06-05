@@ -42,30 +42,10 @@
 
 <div class="container-fluid search-bar py-3">
 	<div class="row justify-content-center" align="center">	
-    <div class="col-sm-12 col-md-3 col-lg-2 p-2 ">
+    <div class="col-sm-11 col-md-7 p-2 ">
 	  <input type="text" class="search-bar-elements text-secondary pl-2" placeholder="Book Title" aria-label="Recipient's username" aria-describedby="basic-addon2">
-		</div>	
-		<div class="dropdown col-sm-12 col-md-3 col-lg-2 p-2">
-		  <button class="btn btn-secondary dropdown-toggle search-bar-elements text-secondary d-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		   	Book Category
-		  </button>
-		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		    <a class="dropdown-item" href="#">Action</a>
-		    <a class="dropdown-item" href="#">Another action</a>
-		    <a class="dropdown-item" href="#">Something else here</a>
-		  </div>
-		</div>
-		<div class="dropdown col-sm-12 col-md-3 col-lg-2 p-2">
-		  <button class="btn btn-secondary dropdown-toggle search-bar-elements text-secondary d-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		   	Book Author
-		  </button>
-		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		    <a class="dropdown-item" href="#">Action</a>
-		    <a class="dropdown-item" href="#">Another action</a>
-		    <a class="dropdown-item" href="#">Something else here</a>
-		  </div>
-		</div>
-		<div class="col-sm-12 col-md-3 col-lg-2 p-2">
+		</div>		
+		<div class="col-sm-11 col-md-2 p-2">
 			<button type="button" class="btn search-bar-find-button text-light d-block">
 			<i class="fa fa-search"></i>
 			FIND BOOK</button>
@@ -79,67 +59,67 @@
 	<div class="row title-display mt-3">
 	  <div class="col">Popular Books</div>
 	</div>
-	<div class="row popular-books-display pb-5 justify-content-center">		
-	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-3">
-	  	<div class="popular-books-container pb-5">
-		  	<img src="images/popular1.jpg" class="popular-books-image mt-2">
-		  	<p class="popular-books-name">Destroy me</p>
-		  	<i class="popular-books-author">Taherah Mafi</i>
-		  	<p class="popular-books-price">$2.00</p>
+	<div class="row books-display justify-content-center pb-5">		
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-3 books-row">
+	  	<div class="books-container">
+		  	<img src="images/popular1.jpg" class="books-image mt-2">
+		  	<p class="books-name">Destroy me</p>
+		  	<i class="books-author">Taherah Mafi</i>
+		  	<p class="books-price">$2.00</p>
 		  	<div class="books-buttons-div">
 			  	<button type="button" class="btn books-detail-button">
-			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
 			  	Detail</button>
 			  	<button type="button" class="btn books-buy-button">
-			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 			  	Buy</button>
 			</div>
 	  	</div> 
 	  </div>
-	 	<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3">	  
-	 		<div class="popular-books-container pb-5">
-		  	<img src="images/popular2.jpg" class="popular-books-image mt-2">
-		  	<p class="popular-books-name">Soul</p>
-		  	<i class="popular-books-author">Whoever</i>
-		  	<p class="popular-books-price">$23.00</p>
+	 	<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">	  
+	 		<div class="books-container">
+		  	<img src="images/popular2.jpg" class="books-image mt-2">
+		  	<p class="books-name">Soul</p>
+		  	<i class="books-author">Whoever</i>
+		  	<p class="books-price">$23.00</p>
 		  	<div class="books-buttons-div">
 			  	<button type="button" class="btn books-detail-button">
-			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
 			  	Detail</button>
 			  	<button type="button" class="btn books-buy-button">
-			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 			  	Buy</button>
 			</div>
 		  </div>
 	  </div>
-	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3">
-	  	<div class="popular-books-container pb-5"> 	
-		  	<img src="images/popular3.jpg" class="popular-books-image mt-2">
-		  	<p class="popular-books-name">Sita</p>
-		  	<i class="popular-books-author">Amish</i>
-		  	<p class="popular-books-price">$32.00</p>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">
+	  	<div class="books-container"> 	
+		  	<img src="images/popular3.jpg" class="books-image mt-2">
+		  	<p class="books-name">Sita</p>
+		  	<i class="books-author">Amish</i>
+		  	<p class="books-price">$32.00</p>
 		  	<div class="books-buttons-div">
 			  	<button type="button" class="btn books-detail-button">
-			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
 			  	Detail</button>
 			  	<button type="button" class="btn books-buy-button">
-			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 			  	Buy</button>
 			</div>
 		  </div>
 	  </div>
-	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-3">
-	  	<div class="popular-books-container pb-5">
-		  	<img src="images/popular4.jpg" class="popular-books-image mt-2	">
-		  	<p class="popular-books-name">Soaring</p>
-		  	<i class="popular-books-author">Kristen Ashley</i>
-		  	<p class="popular-books-price">$12.00</p>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-3 books-row">
+	  	<div class="books-container">
+		  	<img src="images/popular4.jpg" class="books-image mt-2	">
+		  	<p class="books-name">Soaring</p>
+		  	<i class="books-author">Kristen Ashley</i>
+		  	<p class="books-price">$12.00</p>
 		  	<div class="books-buttons-div">
 			  	<button type="button" class="btn books-detail-button">
-			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
 			  	Detail</button>
 			  	<button type="button" class="btn books-buy-button">
-			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 			  	Buy</button>
 			</div>
 		  </div>
@@ -238,67 +218,67 @@
 	<div class="row title-display mt-3">
 	  <div class="col">New Books</div>
 	</div>
-	<div class="row new-books-display pb-5 justify-content-center">		
-	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-3">
-	  	<div class="new-books-container pb-5">
-		  	<img src="images/newbook1.jpg" class="new-books-image mt-2">
-		  	<p class="new-books-name">Spectre of Springwell Forest</p>
-		  	<i class="new-books-author">Simon Dillon</i>
-		  	<p class="new-books-price">$2.00</p>
+	<div class="row books-display pb-5 justify-content-center">		
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-3 books-row">
+	  	<div class="books-container">
+		  	<img src="images/newbook1.jpg" class="books-image mt-2">
+		  	<p class="books-name">Spectre of Springwell Forest</p>
+		  	<i class="books-author">Simon Dillon</i>
+		  	<p class="books-price">$2.00</p>
 		  	<div class="books-buttons-div">
 			  	<button type="button" class="btn books-detail-button">
-			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
 			  	Detail</button>
 			  	<button type="button" class="btn books-buy-button">
-			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 			  	Buy</button>
 			</div> 
 	  	</div> 
 	  </div>
-	 	<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3">	  
-	 		<div class="new-books-container pb-5">
-		  	<img src="images/newbook2.jpg" class="new-books-image mt-2">
-		  	<p class="new-books-name">Young Elites</p>
-		  	<i class="new-books-author">Marie Lu</i>
-		  	<p class="new-books-price">$23.00</p>
+	 	<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">	  
+	 		<div class="books-container">
+		  	<img src="images/newbook2.jpg" class="books-image mt-2">
+		  	<p class="books-name">Young Elites</p>
+		  	<i class="books-author">Marie Lu</i>
+		  	<p class="books-price">$23.00</p>
 		  	<div class="books-buttons-div">
 			  	<button type="button" class="btn books-detail-button">
-			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
 			  	Detail</button>
 			  	<button type="button" class="btn books-buy-button">
-			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 			  	Buy</button>
 			</div>
 		  </div>
 	  </div>
-	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3">
-	  	<div class="new-books-container pb-5"> 	
-		  	<img src="images/newbook3.jpg" class="new-books-image mt-2">
-		  	<p class="new-books-name">Tempests and Slaughter</p>
-		  	<i class="new-books-author">Tamora Pierce</i>
-		  	<p class="new-books-price">$32.00</p>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">
+	  	<div class="books-container"> 	
+		  	<img src="images/newbook3.jpg" class="books-image mt-2">
+		  	<p class="books-name">Tempests and Slaughter</p>
+		  	<i class="books-author">Tamora Pierce</i>
+		  	<p class="books-price">$32.00</p>
 		  	<div class="books-buttons-div">
 			  	<button type="button" class="btn books-detail-button">
-			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
 			  	Detail</button>
 			  	<button type="button" class="btn books-buy-button">
-			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 			  	Buy</button>
 			</div>
 		  </div>
 	  </div>
-	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-3">
-	  	<div class="new-books-container pb-5">
-		  	<img src="images/newbook4.jpg" class="new-books-image mt-2	">
-		  	<p class="new-books-name">The King of Crows</p>
-		  	<i class="new-books-author">Libba Bray</i>
-		  	<p class="new-books-price">$12.00</p>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-3 books-row">
+	  	<div class="books-container">
+		  	<img src="images/newbook4.jpg" class="books-image mt-2	">
+		  	<p class="books-name">The King of Crows</p>
+		  	<i class="books-author">Libba Bray</i>
+		  	<p class="books-price">$12.00</p>
 		  	<div class="books-buttons-div">
 			  	<button type="button" class="btn books-detail-button">
-			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
 			  	Detail</button>
 			  	<button type="button" class="btn books-buy-button">
-			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 			  	Buy</button>
 			</div>
 		  </div>
