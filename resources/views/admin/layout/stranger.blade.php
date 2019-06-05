@@ -1,5 +1,12 @@
 @extends('admin.layout.partials.meta')
 
-@section('master-content')
-  Insert Login page here
+@section('content')
+<div class="stranger-wrapper">
+ 
+  <div class="main-panel">
+    <div class="container-fluid">
+      @yield('stranger-content')
+    </div>
+  </div>
+</div>
 @endsection

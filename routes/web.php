@@ -15,13 +15,15 @@
 
 Route::prefix('admin')->name('admin.')->group(function(){
   Route::middleware('guest')->group(function(){
-    // Route::get('login','Admin\AuthController@viewLogin')->name('login.show');
-    // Route::post('login','Admin\AuthController@login')->name('login');
+    Route::get('login','Admin\AuthController@viewLogin')->name('login.show');
+    Route::post('login','Admin\AuthController@login')->name('login');
   });
 
   // Route::middleware(['auth', 'admin.auth'])->group(function(){
-    // Put in authenticated admin routes here
-  // });  
+  Route::middleware('auth')->group(function(){
+    Route::get('dashboard','Admin\DashboardController@dashboard')->name('dashboard');
+    Route::resource('admins', 'Admin\AdminsController');
+  });  
 });
 
 // Client Routes

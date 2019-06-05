@@ -1,90 +1,323 @@
 @extends('client.layout.master')
 
-@section('styles')
-<style>
-  html, body {
-    background-color: #fff;
-    color: #636b6f;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    height: 100vh;
-    margin: 0;
-  }
+@section('content')
 
-  .full-height {
-    height: 100vh;
-  }
+<!------------Carousel------------------------------------------------------->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100 carousel-image" img src="images/carousel1.jpg" alt="First slide">      
+      <div class="carousel-caption d-none d-md-block">			    
+			    <p class="carousel-subtitle">Reading is the best gift of humanity</p>
+			    <h5 class="carousel-title">Keep Reading</h5>
+			    <button type="button" class="btn btn-dark text-light carousel-button">See more</button>
+			
+	 </div>	
+	</div>		
+    <div class="carousel-item">
+      <img class="d-block w-100 carousel-image" img src="images/carousel2.jpg" alt="Second slide">      
+      <div class="carousel-caption d-none d-md-block">			    
+			    <p class="carousel-subtitle">Reading is the best gift of humanity</p>
+			    <h5 class="carousel-title">Keep Reading</h5>
+			    <button type="button" class="btn btn-dark text-light carousel-button">See more</button>
+	  </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 carousel-image" img src="images/carousel3.jpg" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">			    
+			    <p class="carousel-subtitle">Reading is the best gift of humanity</p>
+			    <h5 class="carousel-title">Keep Reading</h5>
+			    <button type="button" class="btn btn-dark text-light carousel-button">See more</button>
+	  </div>
+    </div>
+  </div>  
+</div>
 
-  .flex-center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
+<!------------Jumbotron------------------------------------------------------->
 
-  .position-ref {
-    position: relative;
-  }
+<div class="container-fluid search-bar py-3">
+	<div class="row justify-content-center" align="center">	
+    <div class="col-sm-12 col-md-3 col-lg-2 p-2 ">
+	  <input type="text" class="search-bar-elements text-secondary pl-2" placeholder="Book Title" aria-label="Recipient's username" aria-describedby="basic-addon2">
+		</div>	
+		<div class="dropdown col-sm-12 col-md-3 col-lg-2 p-2">
+		  <button class="btn btn-secondary dropdown-toggle search-bar-elements text-secondary d-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		   	Book Category
+		  </button>
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		    <a class="dropdown-item" href="#">Action</a>
+		    <a class="dropdown-item" href="#">Another action</a>
+		    <a class="dropdown-item" href="#">Something else here</a>
+		  </div>
+		</div>
+		<div class="dropdown col-sm-12 col-md-3 col-lg-2 p-2">
+		  <button class="btn btn-secondary dropdown-toggle search-bar-elements text-secondary d-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		   	Book Author
+		  </button>
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		    <a class="dropdown-item" href="#">Action</a>
+		    <a class="dropdown-item" href="#">Another action</a>
+		    <a class="dropdown-item" href="#">Something else here</a>
+		  </div>
+		</div>
+		<div class="col-sm-12 col-md-3 col-lg-2 p-2">
+			<button type="button" class="btn search-bar-find-button text-light d-block">
+			<i class="fa fa-search"></i>
+			FIND BOOK</button>
+		</div>
+	</div>
+</div>
 
-  .top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
-  }
 
-  .content {
-    text-align: center;
-  }
+<!-----------------------popular books------------------------------------------->
+<div class="container-fluid">
+	<div class="row title-display mt-3">
+	  <div class="col">Popular Books</div>
+	</div>
+	<div class="row popular-books-display pb-5 justify-content-center">		
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-3">
+	  	<div class="popular-books-container pb-5">
+		  	<img src="images/popular1.jpg" class="popular-books-image mt-2">
+		  	<p class="popular-books-name">Destroy me</p>
+		  	<i class="popular-books-author">Taherah Mafi</i>
+		  	<p class="popular-books-price">$2.00</p>
+		  	<div class="books-buttons-div">
+			  	<button type="button" class="btn books-detail-button">
+			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	Detail</button>
+			  	<button type="button" class="btn books-buy-button">
+			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	Buy</button>
+			</div>
+	  	</div> 
+	  </div>
+	 	<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3">	  
+	 		<div class="popular-books-container pb-5">
+		  	<img src="images/popular2.jpg" class="popular-books-image mt-2">
+		  	<p class="popular-books-name">Soul</p>
+		  	<i class="popular-books-author">Whoever</i>
+		  	<p class="popular-books-price">$23.00</p>
+		  	<div class="books-buttons-div">
+			  	<button type="button" class="btn books-detail-button">
+			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	Detail</button>
+			  	<button type="button" class="btn books-buy-button">
+			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	Buy</button>
+			</div>
+		  </div>
+	  </div>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3">
+	  	<div class="popular-books-container pb-5"> 	
+		  	<img src="images/popular3.jpg" class="popular-books-image mt-2">
+		  	<p class="popular-books-name">Sita</p>
+		  	<i class="popular-books-author">Amish</i>
+		  	<p class="popular-books-price">$32.00</p>
+		  	<div class="books-buttons-div">
+			  	<button type="button" class="btn books-detail-button">
+			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	Detail</button>
+			  	<button type="button" class="btn books-buy-button">
+			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	Buy</button>
+			</div>
+		  </div>
+	  </div>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-3">
+	  	<div class="popular-books-container pb-5">
+		  	<img src="images/popular4.jpg" class="popular-books-image mt-2	">
+		  	<p class="popular-books-name">Soaring</p>
+		  	<i class="popular-books-author">Kristen Ashley</i>
+		  	<p class="popular-books-price">$12.00</p>
+		  	<div class="books-buttons-div">
+			  	<button type="button" class="btn books-detail-button">
+			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	Detail</button>
+			  	<button type="button" class="btn books-buy-button">
+			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	Buy</button>
+			</div>
+		  </div>
+	  </div>		
+	</div>
+</div>
+<!-----------------------featured book------------------------------------------->
+<div class="container-fluid">
+	<div class="row">
+	  <div class="offset-lg-1 col-12 col-md-12 col-lg-3 my-auto pb-5 py-5 featured-books-description-col">
+	  	<p class="featured-book-word">Featured Book</p>
+	  	<p class="featured-book-title">How to make thousands online</p>
+	  	<p class="featured-book-author">Anggi Krisna</p>
+	  	<p class="featured-book-description">From advanced selectors to generated content to web fonts, and from gradients, shadows, and rounded corners to elegant animations, CSS3 hold a universe of creative possibilities. No one can better guide you through these galaxies than Dan Cederholm.</p>
+	  	<button type="button" class="btn btn-dark text-light">Get this book</button>
+	  </div>
+	  <div class="col-12 col-md-6 col-lg-4 pb-5 py-5 my-auto" align="center">
+	  	<img src="images/featured1.jpg" class="featured-book-image">
+	  </div>
+	  <div class="col-12 col-md-6 col-lg-4 pb-5 py-5 my-auto" align="center">
+	  	<img src="images/featured2.jpg" class="featured-book-image">
+	  </div>
+	</div>
+</div>
 
-  .title {
-    font-size: 84px;
-  }
+<!-----------------------popular courses------------------------------------------->
+<div class="container-fluid">
+	<div class="row popular-course-title-display">
+	  <div class="col">Popular Courses</div>
+	</div>
+	<div class="row popular-courses-display justify-content-center">  
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-4">	 
+	  	<div class="popular-courses-container pb-5">
+		  	<img src="images/popular1.jpg" class="popular-courses-image mt-2">
+		  	<p class="popular-courses-name d-inline-block mt-4">Destroy me</p>		  	
+		  	<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
+		  </div>
+	  </div>
+	 	<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-4">
+	 		<div class="popular-courses-container pb-5">
+		  	<img src="images/popular2.jpg" class="popular-courses-image mt-2">
+		  	<p class="popular-courses-name d-inline-block mt-4">Soul</p>		  	
+		  	<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
+		  </div>
+	  </div>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-4">
+	  	<div class="popular-courses-container pb-5">
+		  	<img src="images/popular3.jpg" class="popular-courses-image mt-2">
+		  	<p class="popular-courses-name d-inline-block mt-4">Sita</p>		  	
+		  	<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
+		  </div>
+	  </div>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-4">
+	  	<div class="popular-courses-container pb-5">
+		  	<img src="images/popular4.jpg" class="popular-courses-image mt-2">
+		  	<p class="popular-courses-name d-inline-block mt-4">Soaring</p>		  	
+		  	<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
+		  </div>
+	  </div>		
+	</div>
+</div>
 
-  .links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
+<!-----------------------browse collection------------------------------------------->
+<div class="container-fluid">
+	<div class="row browse-collection-image-filter">
+		<img src="images/bookstore.jpg" class="browse-collection-image">
+		<!-----change this to background image-------->
+		<div class="browse-collection-word">Browse Through Our Complete Library</div>
+		<button type="button" class="btn btn-primary browse-collection-button">BROWSE COLLECTION</button>
+	</div>
+</div>
 
-  .m-b-md {
-    margin-bottom: 30px;
-  }
-</style>
+<!-----------------------informative section------------------------------------------->
+<div class="container-fluid">
+	<div class="row justify-content-center py-5" align="center">
+		<div class="col-lg-3">
+			<i class="fa fa-book informative-section-icons py-4" style="color: #27c8ea" aria-hidden="true"></i>
+			<p class="informative-section-titles">Tons of Books</p>
+			<p class="informative-section-text">From advanced selectors to generated content to web fonts, and from gradients, shadows, and rounded corners. to elegant animations.</p>
+		</div>
+		<div class="col-lg-3">
+			<i class="fa fa-pencil informative-section-icons py-4" style="color: #86e154" aria-hidden="true"></i>
+			<p class="informative-section-titles">Hundreds of Authors</p>
+			<p class="informative-section-text">To elegant animations. , CSS3 holds a universe of creative possibilities. No one can better guide you through.</p>
+		</div>
+		<div class="col-lg-3">
+			<i class="fa fa-bookmark informative-section-icons py-4" style="color: #f4424e" aria-hidden="true"></i>
+			<p class="informative-section-titles">Easily bookmarked</p>
+			<p class="informative-section-text">Shadows, and rounded corners. to elegant animations. , CSS3 holds a universe of creative possibilities. No one can better guide you through.</p>
+		</div>
+	</div>
+</div>
+
+<!-----------------------new books------------------------------------------->
+<div class="container-fluid">
+	<div class="row title-display mt-3">
+	  <div class="col">New Books</div>
+	</div>
+	<div class="row new-books-display pb-5 justify-content-center">		
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-3">
+	  	<div class="new-books-container pb-5">
+		  	<img src="images/newbook1.jpg" class="new-books-image mt-2">
+		  	<p class="new-books-name">Spectre of Springwell Forest</p>
+		  	<i class="new-books-author">Simon Dillon</i>
+		  	<p class="new-books-price">$2.00</p>
+		  	<div class="books-buttons-div">
+			  	<button type="button" class="btn books-detail-button">
+			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	Detail</button>
+			  	<button type="button" class="btn books-buy-button">
+			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	Buy</button>
+			</div> 
+	  	</div> 
+	  </div>
+	 	<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3">	  
+	 		<div class="new-books-container pb-5">
+		  	<img src="images/newbook2.jpg" class="new-books-image mt-2">
+		  	<p class="new-books-name">Young Elites</p>
+		  	<i class="new-books-author">Marie Lu</i>
+		  	<p class="new-books-price">$23.00</p>
+		  	<div class="books-buttons-div">
+			  	<button type="button" class="btn books-detail-button">
+			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	Detail</button>
+			  	<button type="button" class="btn books-buy-button">
+			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	Buy</button>
+			</div>
+		  </div>
+	  </div>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3">
+	  	<div class="new-books-container pb-5"> 	
+		  	<img src="images/newbook3.jpg" class="new-books-image mt-2">
+		  	<p class="new-books-name">Tempests and Slaughter</p>
+		  	<i class="new-books-author">Tamora Pierce</i>
+		  	<p class="new-books-price">$32.00</p>
+		  	<div class="books-buttons-div">
+			  	<button type="button" class="btn books-detail-button">
+			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	Detail</button>
+			  	<button type="button" class="btn books-buy-button">
+			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	Buy</button>
+			</div>
+		  </div>
+	  </div>
+	  <div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-3">
+	  	<div class="new-books-container pb-5">
+		  	<img src="images/newbook4.jpg" class="new-books-image mt-2	">
+		  	<p class="new-books-name">The King of Crows</p>
+		  	<i class="new-books-author">Libba Bray</i>
+		  	<p class="new-books-price">$12.00</p>
+		  	<div class="books-buttons-div">
+			  	<button type="button" class="btn books-detail-button">
+			  	<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			  	Detail</button>
+			  	<button type="button" class="btn books-buy-button">
+			  	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  	Buy</button>
+			</div>
+		  </div>
+	  </div>		
+	</div>
+</div>
+
+<!-----------------------footer------------------------------------------->
+
+<div class="container-fluid">
+	<div class="row home-footer text-center">
+		<div class="col-lg-12 my-auto">
+			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">Home</button>
+			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">Blog</button>
+			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">About Us</button>
+			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">TOS</button>
+			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">Contact</button>
+			<p class="text-light home-footer-text mt-5">Copyright © erncheng waixing lihao</p>
+		</div>		
+	</div>	
+</div>
 @endsection
-
-</head>
-<body>
-  <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-    <div class="top-right links">
-      @auth
-      <a href="{{ url('/home') }}">Home</a>
-      @else
-      <a href="{{ route('login') }}">Login</a>
-
-      @if (Route::has('register'))
-      <a href="{{ route('register') }}">Register</a>
-      @endif
-      @endauth
-    </div>
-    @endif
-
-    <div class="content">
-      <div class="title m-b-md">
-        Laravel
-      </div>
-
-      <div class="links">
-        <a href="https://laravel.com/docs">Docs</a>
-        <a href="https://laracasts.com">Laracasts</a>
-        <a href="https://laravel-news.com">News</a>
-        <a href="https://blog.laravel.com">Blog</a>
-        <a href="https://nova.laravel.com">Nova</a>
-        <a href="https://forge.laravel.com">Forge</a>
-        <a href="https://github.com/laravel/laravel">GitHub</a>
-      </div>
-    </div>
-  </div>
