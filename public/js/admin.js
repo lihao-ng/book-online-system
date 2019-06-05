@@ -59451,9 +59451,11 @@ var render = function() {
                     }
                   },
                   [
-                    _vm._v("\n          " + _vm._s(searchAuthor.name) + " "),
-                    !searchAuthor.none ? _c("span", [_vm._v("|")]) : _vm._e(),
-                    _vm._v(" " + _vm._s(searchAuthor.penName) + "\n        ")
+                    _c("p", { staticClass: "wrap-space" }, [
+                      _vm._v(_vm._s(searchAuthor.name) + " "),
+                      !searchAuthor.none ? _c("span", [_vm._v("|")]) : _vm._e(),
+                      _vm._v(" " + _vm._s(searchAuthor.penName))
+                    ])
                   ]
                 )
               : _vm._e()

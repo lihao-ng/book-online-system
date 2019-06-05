@@ -48,9 +48,9 @@ class BookService extends TransformerService {
       'stock' => 'required|numeric',
       'image' => 'nullable|image|max:2000',
       'categories' => 'required',
-      'categories.*.id' => 'required|distinct',
+      'categories.*' => 'required',
       'authors' => 'required',
-      'authors.*.id' => 'required|distinct'
+      'authors.*' => 'required'
     ]);
 
     $fileName = $this->imageLibraryService->create($request);
@@ -77,7 +77,7 @@ class BookService extends TransformerService {
 
   public function update(Request $request, Book $book) {
     $request = $this->decodeArrayObjects($request);
-
+    
     $request->validate([
       'isbn' => 'required|unique:books,isbn,' . $book->id,
       'title' => 'required|max:190',
@@ -88,9 +88,9 @@ class BookService extends TransformerService {
       'price' => 'required|numeric',
       'stock' => 'required|numeric',
       'categories' => 'required',
-      'categories.*.id' => 'required|distinct',
+      'categories.*' => 'required',
       'authors' => 'required',
-      'authors.*.id' => 'required|distinct'
+      'authors.*' => 'required'
     ]);
 
     $file = $request->file('image');
@@ -151,8 +151,10 @@ class BookService extends TransformerService {
   }
 
   public function decodeArrayObjects(Request $request){
-    $request->authors = json_decode($request->authors);
-    $request->categories = json_decode($request->categories);
+    $request->merge([
+      'authors' => json_decode($request->authors),
+      'categories' => json_decode($request->categories)
+    ]);
 
     return $request;
   }

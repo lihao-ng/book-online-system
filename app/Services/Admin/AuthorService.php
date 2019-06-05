@@ -34,6 +34,8 @@ class AuthorService extends TransformerService {
   }
 
   public function create(Request $request) {
+    $request = $this->decodeArrayObjects($request);
+
     $request->validate([
       'name' => 'required|max:190',
       'description' => 'required',
@@ -42,7 +44,7 @@ class AuthorService extends TransformerService {
       'birthPlace' => 'nullable|max:190',
       'image' => 'nullable|image|max:2000',
       'books' => 'nullable',
-      'books.*.id' => 'required|distinct'
+      'books.*' => 'required'
     ]);
 
     $fileName = $this->imageLibraryService->create($request);
@@ -62,15 +64,16 @@ class AuthorService extends TransformerService {
   }
 
   public function update(Request $request, Author $author) {
+    $request = $this->decodeArrayObjects($request);
+    
     $request->validate([
       'name' => 'required|max:190',
       'description' => 'required',
       'penName' => 'required|max:190|unique:authors,pen_name,'. $author->id,
       'birthday' => 'required|date_format:Y-m-d',
       'birthPlace' => 'nullable|max:190',
-      // 'image' => 'nullable|image|max:2000',
       'books' => 'nullable',
-      'books.*.id' => 'required|distinct'
+      'books.*' => 'required'
     ]);
 
     $fileName = $this->imageLibraryService->update($request, $author->image);
@@ -111,6 +114,14 @@ class AuthorService extends TransformerService {
     }
 
     return $ids;
+  }
+
+  public function decodeArrayObjects(Request $request){
+    $request->merge([
+      'books' => json_decode($request->books),
+    ]);
+
+    return $request;
   }
 
   public function transform($author){

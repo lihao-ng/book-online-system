@@ -12,7 +12,7 @@
       <div class="dropdown">
         <div class="dropdown-menu" :class="{ show: haveData }">
           <div class="dropdown-item text-capitalize" v-for="(searchAuthor, index) in searchAuthors" v-bind:key="index" @click="onSearchClick(searchAuthor)" v-if="haveData">
-            {{ searchAuthor.name }} <span v-if="!searchAuthor.none">|</span> {{searchAuthor.penName }}
+            <p class="wrap-space">{{ searchAuthor.name }} <span v-if="!searchAuthor.none">|</span> {{searchAuthor.penName }}</p>
           </div>
         </div>
       </div>

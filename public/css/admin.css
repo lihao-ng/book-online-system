@@ -14163,6 +14163,11 @@ div.fixed-table-scroll-outer {
   }
 }
 
+.wrap-space {
+  white-space: pre-line;
+  margin: 0;
+}
+
 .stranger-wrapper {
   background-image: url("/images/galaxy.jpg");
   display: block;
