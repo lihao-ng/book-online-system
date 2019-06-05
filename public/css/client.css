@@ -13715,12 +13715,8 @@ a.text-dark:focus {
   clip: auto;
 }
 
-.active {
-  background-color: #2f2b35;
-}
-
 body {
-  font-family: "Monserrat";
+  font-family: "Montserrat";
 }
 
 .carousel-image {

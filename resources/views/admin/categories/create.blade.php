@@ -7,8 +7,10 @@ Categories
 
 <div class="row btn-back mb-4 ml-15">
   <div class="col-12 col-sm-3 col-lg-2 return-back">
-   <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
-   <a href="{{ route('admin.categories.index') }}">Categories</a>
+    <a href="{{ route('admin.categories.index') }}" class="d-block">
+     <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
+     Categories
+   </a>
  </div>
 </div>
 
