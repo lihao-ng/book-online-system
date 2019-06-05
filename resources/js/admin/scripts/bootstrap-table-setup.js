@@ -23,27 +23,29 @@ $().ready(function(){
           confirmButtonClass: "btn btn-danger btn-fill",
           confirmButtonText: "Yes, delete it!",
           cancelButtonClass: "btn btn-primary btn-fill"
-        }).then(function() {
-          $table.bootstrapTable('remove', {
-            field: 'id',
-            values: [row.id]
-          });
+        }).then(function(result) {
+          if(result.value) {
+            $table.bootstrapTable('remove', {
+              field: 'id',
+              values: [row.id]
+            });
 
-          $.ajax({
-            headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            type: "delete",
-            url: url + '/' + row.id,
-            contentType: 'application/json',
-            dataType: 'json',
-            success: function(res) {
-              swal.fire("Deleted!", "The row has been deleted.", "success");
-            },
-            error: function(res) {
-              console.log("ERR" , res);
-            }
-          });
+            $.ajax({
+              headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              type: "delete",
+              url: url + '/' + row.id,
+              contentType: 'application/json',
+              dataType: 'json',
+              success: function(res) {
+                swal.fire("Deleted!", "The row has been deleted.", "success");
+              },
+              error: function(res) {
+                console.log("ERR" , res);
+              }
+            });
+          }
         });
       }
     };
@@ -61,7 +63,7 @@ $().ready(function(){
     });
   }
 
-   $(window).resize(function () {
+  $(window).resize(function () {
     $table.bootstrapTable('resetView')
   });
 });

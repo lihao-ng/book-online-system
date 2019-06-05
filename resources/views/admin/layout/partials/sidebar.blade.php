@@ -22,7 +22,7 @@
       Customers
     </li>
   </a>
-  <a href="#">
+  <a href="{{ route('admin.books.index') }}">
     <li class="{{ is_active('books') }}">
       <i class="fa fa-book" aria-hidden="true"></i>
       Books
@@ -34,10 +34,16 @@
       Sales
     </li>
   </a>
-  <a href="#">
+  <a href="{{ route('admin.authors.index') }}">
     <li class="{{ is_active('authors') }}">
       <i class="fa fa-address-book" aria-hidden="true"></i>
       Authors
+    </li>
+  </a>
+  <a href="{{ route('admin.categories.index') }}">
+    <li class="{{ is_active('categories') }}">
+      <i class="fa fa-address-book" aria-hidden="true"></i>
+      Categories
     </li>
   </a>
 </ul>

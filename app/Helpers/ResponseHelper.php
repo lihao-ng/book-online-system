@@ -26,7 +26,7 @@ if (!function_exists('success')) {
 
 if (!function_exists('validation_error')) {
   function validation_error($message = "", $status_code = 422){
-    return respond(['message' => $message], $status_code);
+    return respond(['errors' => $message], $status_code);
   }
 }
 

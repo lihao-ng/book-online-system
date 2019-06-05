@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function customer() {
-        return $this->hasMany('App\Customer');
+        return $this->hasOne('App\Customer');
     }
 }
