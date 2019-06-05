@@ -13744,7 +13744,6 @@ body {
 .carousel-title {
   text-align: left;
   font-size: 90px;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
 .carousel-button {
@@ -13764,7 +13763,7 @@ body {
 .search-bar-elements {
   border: none;
   height: 35px;
-  width: 100%;
+  width: 95%;
   text-align: left;
   background-color: #edf3f4;
   margin-top: 10px;
@@ -13772,7 +13771,7 @@ body {
 
 .search-bar-find-button {
   border: none;
-  width: 100%;
+  width: 95%;
   height: 35px;
   background-color: black;
   margin-top: 10px;
@@ -13784,50 +13783,51 @@ body {
   padding-bottom: 2%;
   background-color: #edf3f4;
   font-size: 35px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   text-align: center;
 }
 
-.popular-books-container {
+.books-row {
+  height: 100%;
+}
+
+.books-container {
   width: 110%;
-  height: 95%;
+  padding-bottom: 10%;
   margin: auto;
   background-color: white;
   text-align: center;
   border-radius: 10px;
 }
 
-.popular-books-display {
+.books-display {
   background-color: #edf3f4;
   height: 100%;
 }
 
-.popular-books-image {
+.books-image {
   max-width: 93%;
   border: 8px solid white;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.popular-books-name {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 20px;
+.books-name {
+  font-size: 15px;
   padding-top: 10%;
   margin-bottom: 0;
 }
 
-.popular-books-author {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
+.books-author {
+  font-size: 12px;
   color: #b7bfcc;
 }
 
-.popular-books-price {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+.books-price {
   font-size: 20px;
 }
 
 .books-detail-button {
-  color: #43464c;
+  color: 595858;
+  font-size: 13px;
   width: 45%;
   height: 30px;
   padding: 0;
@@ -13838,7 +13838,8 @@ body {
 }
 
 .books-buy-button {
-  color: #43464c;
+  color: 595858;
+  font-size: 13px;
   width: 45%;
   height: 30px;
   padding: 0;
@@ -13852,24 +13853,25 @@ body {
   font-size: 0;
 }
 
+.books-buttons-icon {
+  color: #999999;
+  font-size: 15px;
+}
+
 .featured-book-word {
-  font-family: "Courier New", Courier, monospace;
   font-size: 20px;
 }
 
 .featured-book-title {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 24px;
 }
 
 .featured-book-author {
-  font-family: "Courier New", Courier, monospace;
   font-size: 14px;
   color: #b7bfcc;
 }
 
 .featured-book-description {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 16px;
   color: #72777f;
   padding-top: 3%;
@@ -13885,7 +13887,6 @@ body {
   padding-bottom: 2%;
   background-color: #33373d;
   font-size: 35px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   text-align: center;
 }
 
@@ -13908,7 +13909,6 @@ body {
 }
 
 .popular-courses-name {
-  font-family: "Courier New", Courier, monospace;
   font-size: 20px;
 }
 
@@ -13940,7 +13940,6 @@ body {
   top: 50%;
   font-size: 38px;
   color: white;
-  font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   width: 680px;
   height: 56px;
   margin-top: -28px;
@@ -13962,51 +13961,12 @@ body {
 }
 
 .informative-section-titles {
-  font-family: "Montserrat", sans-serif;
   font-size: 18px;
 }
 
 .informative-section-text {
-  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #888e99;
-}
-
-.new-books-container {
-  width: 110%;
-  height: 95%;
-  margin: auto;
-  background-color: white;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.new-books-display {
-  background-color: #edf3f4;
-  height: 100%;
-}
-
-.new-books-image {
-  max-width: 93%;
-  border: 8px solid white;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.new-books-name {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
-  padding-top: 10%;
-}
-
-.new-books-author {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
-  color: #b7bfcc;
-}
-
-.new-books-price {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 20px;
 }
 
 .home-footer {
@@ -14030,13 +13990,9 @@ body {
     padding-top: 0px;
   }
 
-  .popular-books-container {
+  .books-container {
     width: 73%;
-    height: 95%;
-    margin: auto;
-    background-color: white;
-    text-align: center;
-    border-radius: 10px;
+    padding-bottom: 5%;
   }
 
   .popular-courses-container {
@@ -14049,15 +14005,6 @@ body {
     border-bottom-right-radius: 10px;
   }
 
-  .new-books-container {
-    width: 73%;
-    height: 95%;
-    margin: auto;
-    background-color: white;
-    text-align: center;
-    border-radius: 10px;
-  }
-
   .carousel-subtitle {
     text-align: center;
     font-style: italic;
@@ -14068,7 +14015,6 @@ body {
   .carousel-title {
     text-align: center;
     font-size: 70px;
-    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   }
 
   .carousel-button {
@@ -14083,22 +14029,15 @@ body {
 }
 
 @media (max-width: 768px) {
-  .browse-collection-word {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    font-size: 38px;
-    color: white;
-    font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
-    width: 680px;
-    height: 56px;
-    margin-top: -28px;
-    margin-left: -340px;
-    white-space: normal;
+  .search-bar-elements {
+    width: 100%;
   }
 
-  .popular-books-name {
-    font-family: "Courier New", Courier, monospace;
+  .books-container {
+    padding-bottom: 0;
+  }
+
+  .books-name {
     font-size: 20px;
     padding-top: 5%;
   }
