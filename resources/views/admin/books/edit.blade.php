@@ -6,8 +6,10 @@ Books
 @endsection
 <div class="row btn-back mb-4 ml-15">
   <div class="col-12 col-sm-3 col-lg-2 return-back">
-   <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
-   <a href="{{ route('admin.books.index') }}">Books</a>
+    <a href="{{ route('admin.books.index') }}" class="d-block">
+     <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
+     Books
+   </a>
  </div>
 </div>
 

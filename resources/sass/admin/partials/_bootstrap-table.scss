@@ -69,6 +69,8 @@
         }
 
         li.active {
+          background-color: transparent;
+          
           a {
             border-radius: 16px;
             background-color: $secondary-color;

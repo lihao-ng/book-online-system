@@ -8,6 +8,7 @@
 
     <title>{{ config('app.name') }}</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
   </head>
   <body>

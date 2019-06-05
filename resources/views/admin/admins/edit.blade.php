@@ -1,9 +1,15 @@
 @extends('admin.layout.master')
 
 @section('master-content')
+@section('title')
+Admins
+@endsection
+
 <div class="row btn-back mb-4 ml-1">
-  <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
-  <a href="{{ route('admin.admins.index') }}">Admins</a>
+  <a href="{{ route('admin.admins.index') }}" class="d-block">
+    <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
+    Admins
+  </a>
 </div>
 
 <div class="page-title">
@@ -36,8 +42,8 @@
         </div>
       </div>
       <div class="text-right">
-						<button type="submit" class="btn btn-warning btn-fill btn-wd">Save</button>
-			</div>
+        <button type="submit" class="btn btn-warning btn-fill btn-wd">Save</button>
+      </div>
     </div>
   </div>
   {!! Form::close() !!}
