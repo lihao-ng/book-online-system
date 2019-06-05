@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name') }}</title>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link href="{{ mix('css/client.css') }}" rel="stylesheet">
 
     @yield('styles')
