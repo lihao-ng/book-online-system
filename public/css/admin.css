@@ -13739,10 +13739,6 @@ a.text-dark:focus {
   clip: auto;
 }
 
-.active {
-  background-color: #2f2b35;
-}
-
 body {
   font-family: "Montserrat";
 }
@@ -14107,7 +14103,11 @@ div.fixed-table-scroll-outer {
 }
 
 #main-content {
-  background-color: rgba(203, 203, 210, 0.15);
+  background-color: #edf3f4;
+}
+
+.active {
+  background-color: #515570;
 }
 
 .h-vh-100 {
@@ -14128,11 +14128,11 @@ div.fixed-table-scroll-outer {
 .return-back i {
   padding-top: 0.1rem;
   font-size: 35px;
-  color: black;
+  color: white;
 }
 
 .return-back a {
-  color: black;
+  color: white;
   font-size: 20px;
   text-decoration: none;
 }
@@ -14149,7 +14149,7 @@ div.fixed-table-scroll-outer {
   width: 100%;
   height: 100%;
   padding: 5px;
-  border: 1px solid #515570;
+  border: 1px solid #2f2b35;
   border-radius: 6px;
 }
 
@@ -14183,8 +14183,8 @@ div.fixed-table-scroll-outer {
 #sidebar {
   height: 100vh;
   width: 100%;
-  background-color: #edf3f4;
-  border-right: 1px solid #A9A9A9;
+  background-color: #2f2b35;
+  border-right: 1px solid #515570;
   padding: 0 7px 0 7px;
 }
 
@@ -14194,7 +14194,7 @@ div.fixed-table-scroll-outer {
 }
 
 #sidebar ul.sidebar-nav a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 20px;
 }
@@ -14211,17 +14211,17 @@ div.fixed-table-scroll-outer {
 }
 
 #sidebar ul.sidebar-nav a li:hover {
-  background-color: #2f2b35;
+  background-color: #515570;
 }
 
 #sidebar ul.sidebar-nav a li:active {
-  background-color: #2f2b35;
+  background-color: #515570;
 }
 
 #sidebar ul.sidebar-nav .sidebar-brand {
   padding: 15px 0 8px 0;
   margin: 0;
-  border-bottom: 1px solid #A9A9A9;
+  border-bottom: 1px solid #515570;
   border-radius: 0;
   text-align: center;
 }
@@ -14342,6 +14342,10 @@ div.fixed-table-scroll-outer {
 .bootstrap-table .float-right.pagination ul li a {
   border: 0;
   color: black;
+}
+
+.bootstrap-table .float-right.pagination ul li.active {
+  background-color: transparent;
 }
 
 .bootstrap-table .float-right.pagination ul li.active a {

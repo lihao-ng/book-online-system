@@ -1,7 +1,7 @@
 <ul class="sidebar-nav">
   <a href="#">
     <li class="sidebar-brand">
-      <h2>BOS</h2>
+      <h2>BOOKIE</h2>
     </li>
   </a>
   <a href="{{ route('admin.dashboard') }}">
@@ -42,7 +42,7 @@
   </a>
   <a href="{{ route('admin.categories.index') }}">
     <li class="{{ is_active('categories') }}">
-      <i class="fa fa-address-book" aria-hidden="true"></i>
+      <i class="fa fa-bars" aria-hidden="true"></i>
       Categories
     </li>
   </a>
