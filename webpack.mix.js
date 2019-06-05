@@ -16,3 +16,5 @@ mix.js('resources/js/client/app.js', 'public/js/client.js')
 
   .sass('resources/sass/client/app.scss', 'public/css/client.css')
   .sass('resources/sass/admin/app.scss', 'public/css/admin.css');
+
+mix.copy('resources/fonts/*', 'public/fonts/');

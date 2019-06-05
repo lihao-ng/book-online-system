@@ -25,6 +25,16 @@ class AdminService extends TransformerService {
     return respond(['rows' => $this->transformCollection($admins), 'total' => $listCount]);
   }
 
+  public function search(Request $request) {
+    $admins = Admin::where('role', 0)->where('name', 'like', "%{$request->search}%");
+
+    if($request->except) {
+      $exceptQuery = $admins->whereNotIn('id', $request->except); 
+    }
+    
+    return $admins->limit(10)->get();
+  }
+  
   public function create(Request $request) {
     $request->validate([
       "name" => 'required|string|max:255',
@@ -60,6 +70,7 @@ class AdminService extends TransformerService {
 		$admin->save();
 
     return redirect()->route("admin.admins.index");
+
   }
 
   public function transform($admin){

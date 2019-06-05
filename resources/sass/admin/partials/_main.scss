@@ -1,3 +1,61 @@
 #main-content {
   background-color: $light-grey;
 }
+
+.h-vh-100 {
+  height: 100vh;
+}
+
+.star {
+  color: red;
+}
+
+.return-back {
+  background-color: $primary-color;
+  border-radius: 17px;
+  text-align: center;
+  padding: 3px 0 3px 0;
+
+  i {
+    padding-top: 0.1rem;
+    font-size: 35px;
+    color: $black;
+  }
+
+  a {
+    color: $black;
+    font-size: 20px;
+    text-decoration: none;
+  }
+}
+
+.pl-15 {
+  padding-left: 15px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.image-size {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border: 1px solid $secondary-color;
+  border-radius: 6px;
+
+  @media(min-width: 576px) {
+    width: 75%;
+    height: 75%;
+  }
+
+  @media(min-width: 992px) {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+.wrap-space {
+  white-space: pre-line;
+  margin: 0;
+}
