@@ -17,15 +17,20 @@ Route::prefix('admin')->name('admin.')->group(function(){
   Route::middleware('guest')->group(function(){
     Route::get('login','Admin\AuthController@viewLogin')->name('login.show');
     Route::post('login','Admin\AuthController@login')->name('login');
+
+    Route::get('register','Admin\AuthController@viewRegister')->name('register.show');
+    Route::post('register','Admin\AuthController@register')->name('register');
   });
 
   // Route::middleware(['auth', 'admin.auth'])->group(function(){
   Route::middleware('auth')->group(function(){
     Route::get('dashboard','Admin\DashboardController@dashboard')->name('dashboard');
-
+    
     Route::post('admins/search','Admin\AdminsController@search')->name('admins.search');
     Route::resource('admins', 'Admin\AdminsController')->except(['show']);
-
+  
+    Route::resource('customers', 'Admin\CustomersController');
+    
     Route::post('books/search','Admin\BooksController@search')->name('books.search');
     Route::post('books/{book}','Admin\BooksController@update')->name('books.post.update'); // bug with form data - unable to use PUT or PATCH
     Route::resource('books', 'Admin\BooksController')->except(['show']);

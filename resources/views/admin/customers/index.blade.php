@@ -2,19 +2,19 @@
 
 @section('master-content')
 @section('title')
-  Admins
+  Customers
 @endsection
 
 <div class="card bootstrap-table">
-  <div class="card-body table-full-width"> 
+  <div class="card-body table-full-width">
     <div class="toolbar d-flex">
-      <a href="{{ route('admin.admins.create') }}" class="ml-2">
+      <a href="{{ route('admin.customers.create') }}" class="ml-2">
         <button class="btn btn-secondary" name="create">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
       </a>
     </div>
-    <table id="bootstrap-table" class="table" data-url="{{ route('admin.admins.index') }}" data-icons="icons">
+    <table id="bootstrap-table" class="table" data-url="{{ route('admin.customers.index') }}" data-icons="icons">
       <thead>
         <th data-field="id" class="text-center" data-sortable="true">ID</th>
         <th data-field="name" data-sortable="true">Name</th>
@@ -31,10 +31,6 @@
 <script type="text/javascript">
   function operateFormatter(value, row, index) {
     return [
-    '<a rel="tooltip" title="Edit" class="btn btn-link btn-warning btn-icon table-action edit" href="javascript:void(0)">',
-    '<i class="fa fa-edit"></i>',
-    '</a>',
-
     '<a rel="tooltip" title="Remove" class="btn btn-link btn-danger table-action remove" href="javascript:void(0)">',
     '<i class="fa fa-remove"></i>',
     '</a>'

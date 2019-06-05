@@ -29,22 +29,20 @@ class AdminsController extends Controller {
   }
 
   public function store(Request $request) {
-        //
-  }
-
-  public function show(Admin $admin) {
-        //
+    return $this->adminService->create($request);
   }
 
   public function edit(Admin $admin) {
-        //
+    return view($this->path . 'edit', ['admin' => $admin]);
   }
 
   public function update(Request $request, Admin $admin) {
-        //
+    return $this->adminService->update($request, $admin);
   }
 
   public function destroy(Admin $admin) {
+    $admin->delete();
+
     return success();
   }
 
