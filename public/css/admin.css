@@ -14109,8 +14109,10 @@ div.fixed-table-scroll-outer {
 .btn-tertiary {
   background-color: #2f2b35;
   color: white;
-  display: block;
-  width: 100%;
+}
+
+.btn-tertiary:hover {
+  color: white;
 }
 
 .active {

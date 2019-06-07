@@ -5,8 +5,10 @@
 .btn-tertiary {
   background-color: $tertiary-color; 
   color: $white;
-  display: block;
-  width: 100%;
+
+  &:hover {
+    color: $white;
+  }
 }
 
 .active {
