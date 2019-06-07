@@ -38,14 +38,34 @@
   </div>  
 </div>
 
-<!------------Jumbotron------------------------------------------------------->
+<!------------Search bar------------------------------------------------------->
 
 <div class="container-fluid search-bar py-3">
 	<div class="row justify-content-center" align="center">	
-    <div class="col-sm-11 col-md-7 p-2 ">
+    <div class="col-sm-12 col-md-3 col-lg-2 m-2 ">
 	  <input type="text" class="search-bar-elements text-secondary pl-2" placeholder="Book Title" aria-label="Recipient's username" aria-describedby="basic-addon2">
-		</div>		
-		<div class="col-sm-11 col-md-2 p-2">
+		</div>	
+		<div class="dropdown col-sm-12 col-md-3 col-lg-2 m-2">
+		  <button class="btn btn-secondary dropdown-toggle search-bar-elements text-secondary d-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		   	Book Category
+		  </button>
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		    <a class="dropdown-item" href="#">Action</a>
+		    <a class="dropdown-item" href="#">Another action</a>
+		    <a class="dropdown-item" href="#">Something else here</a>
+		  </div>
+		</div>
+		<div class="dropdown col-sm-12 col-md-3 col-lg-2 m-2">
+		  <button class="btn btn-secondary dropdown-toggle search-bar-elements text-secondary d-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		   	Book Author
+		  </button>
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		    <a class="dropdown-item" href="#">Action</a>
+		    <a class="dropdown-item" href="#">Another action</a>
+		    <a class="dropdown-item" href="#">Something else here</a>
+		  </div>
+		</div>
+		<div class="col-sm-12 col-md-3 col-lg-2 m-2">
 			<button type="button" class="btn search-bar-find-button text-light d-block">
 			<i class="fa fa-search"></i>
 			FIND BOOK</button>
@@ -126,6 +146,7 @@
 	  </div>		
 	</div>
 </div>
+
 <!-----------------------featured book------------------------------------------->
 <div class="container-fluid">
 	<div class="row">
