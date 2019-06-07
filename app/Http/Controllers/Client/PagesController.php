@@ -15,4 +15,8 @@ class PagesController extends Controller {
    public function catalogues(){
     return view($this->path . 'catalogues');
   }
+
+  public function productPage(){
+  	return view($this->path . 'productPage');
+  }
 }

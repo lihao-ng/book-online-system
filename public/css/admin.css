@@ -13743,6 +13743,13 @@ body {
   font-family: "Montserrat";
 }
 
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
 /**
  * @author zhixin wen <wenzhixin2010@gmail.com>
  * version: 1.14.2
