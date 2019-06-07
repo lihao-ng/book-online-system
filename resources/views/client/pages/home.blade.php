@@ -12,16 +12,15 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100 carousel-image" img src="images/carousel1.jpg" alt="First slide">      
-      <div class="carousel-caption d-none d-md-block">			    
+      <div class="carousel-caption d-none d-block">
 			    <p class="carousel-subtitle">Reading is the best gift of humanity</p>
 			    <h5 class="carousel-title">Keep Reading</h5>
 			    <button type="button" class="btn btn-dark text-light carousel-button">See more</button>
-			
 	 </div>	
 	</div>		
     <div class="carousel-item">
       <img class="d-block w-100 carousel-image" img src="images/carousel2.jpg" alt="Second slide">      
-      <div class="carousel-caption d-none d-md-block">			    
+      <div class="carousel-caption d-none d-block">			    
 			    <p class="carousel-subtitle">Reading is the best gift of humanity</p>
 			    <h5 class="carousel-title">Keep Reading</h5>
 			    <button type="button" class="btn btn-dark text-light carousel-button">See more</button>
@@ -29,7 +28,7 @@
     </div>
     <div class="carousel-item">
       <img class="d-block w-100 carousel-image" img src="images/carousel3.jpg" alt="Third slide">
-      <div class="carousel-caption d-none d-md-block">			    
+      <div class="carousel-caption d-none d-block">			    
 			    <p class="carousel-subtitle">Reading is the best gift of humanity</p>
 			    <h5 class="carousel-title">Keep Reading</h5>
 			    <button type="button" class="btn btn-dark text-light carousel-button">See more</button>
@@ -89,7 +88,8 @@
 		  	<div class="books-buttons-div">
 			  	<button type="button" class="btn books-detail-button">
 			  	<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
-			  	Detail</button>
+			  	<a href="{{ route('productPage') }}">Detail</a>
+			  	</button>
 			  	<button type="button" class="btn books-buy-button">
 			  	<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 			  	Buy</button>
@@ -307,18 +307,4 @@
 	</div>
 </div>
 
-<!-----------------------footer------------------------------------------->
-
-<div class="container-fluid">
-	<div class="row home-footer text-center">
-		<div class="col-lg-12 my-auto">
-			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">Home</button>
-			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">Blog</button>
-			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">About Us</button>
-			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">TOS</button>
-			<button type="button" class="btn btn-dark text-light d-inline-block home-footer-button mx-3">Contact</button>
-			<p class="text-light home-footer-text mt-5">Copyright © erncheng waixing lihao</p>
-		</div>		
-	</div>	
-</div>
 @endsection

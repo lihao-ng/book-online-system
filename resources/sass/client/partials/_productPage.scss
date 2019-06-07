@@ -1,0 +1,302 @@
+.product-outer-container {
+	background-color: white;
+	height: 100%;
+	padding-top: 6%;	
+}
+
+.product-image {
+	width: 80%; 	
+}
+
+.product-description-container {
+	margin-left: -5%;
+}
+
+.product-title {
+	font-size: 36px;
+	font-weight: 300;
+	line-height: 40px;
+}
+
+.product-customer-review-word {
+	margin-left: 5px;
+	color: #222222
+}
+
+.product-description {
+	font-size: 14px;
+	color: #757575;
+	font-weight: normal;
+	margin-top: 15px;
+}
+
+.product-details-container {
+	width: 60%;	
+	border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    margin: 0;    
+}
+
+.product-price {
+	background: #edf3f4;
+	padding: 10px 20px;
+	margin-left: -15px;
+    margin-right: -15px;
+    color: #222222;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.product-stock-available {
+    color: #2f2b35;
+    text-align: left;
+    font-size: 12.5px;
+}
+
+.product-quantity {
+	width: 60px;
+    height: 41px;   
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.product-add-to-cart-button {
+	width: 183px;
+	height: 40px;
+	font-size: 16px;
+    line-height: 16px;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    background: #2f2b35;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.product-categories-and-tags {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: #757575;
+	font-size: 14px;
+	line-height: 0.4;
+	margin-top: 20px;
+}
+
+.product-categories-and-tags-link {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: #222222;	
+}
+
+.product-page-section-titles {
+	font-size: 26px;
+}
+
+td, th {
+  border: 1px solid #e5e5e5;
+  text-align: left;
+  padding: 8px;  
+  border-left: none;
+  border-right: none;
+}
+
+th {
+	width: 150px;
+	color: #757575;
+}
+
+td {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-style: italic;
+	font-size: 14px;
+	color: #757575;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+
+.product-details-table {
+	width: 100%;
+}
+
+.product-author-img {
+	border-radius: 50%;
+	float: right;
+	width: 120px;
+	height: 120px;
+	margin-top: -12%;
+}
+
+.product-author-bio {
+	color: #757575;
+	font-size: 14px;
+	line-height: 1.786em;
+}
+
+.product-description-title {
+	font-size: 26px;
+	font-weight: 300;
+	line-height: 40px;
+}
+
+.product-review-title {
+	font-size: 26px;
+	font-weight: 300;
+	line-height: 40px;
+	color: #cacaca;
+	margin-left: 20px;
+}
+
+.product-review-title:hover {
+	color: black;
+}
+
+.description-review-title-container {
+	margin-bottom: 2%;
+	border-top: 1px dashed #e5e5e5;
+	border-bottom: 1px dashed #e5e5e5;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.recommended-books-title-display {
+	padding-top: 3%;	
+	background-color: $tertiary-color;
+	font-size: 35px;
+	text-align: center;
+}
+
+.recommended-product-title {
+	color: #ffffff;
+    font-size: 26px;
+    text-align:	left;
+    
+}
+
+.recommended-books-row {
+	height: 100%;
+	margin-left: -4%;
+}
+
+.recommended-books-container {
+	width: 110%;
+	padding-bottom: 10%;
+	margin: auto;	
+	background-color: white;
+	text-align: center;
+	border-radius: 10px;
+}	
+
+.recommended-books-display {
+	background-color: $tertiary-color;
+	height: 100%;	
+}
+
+.recommended-books-image {	
+	max-width: 93%;
+	border: 8px solid white;
+	box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);	
+}
+
+.recommended-books-name {
+	font-size: 15px;
+	padding-top: 10%;
+	margin-bottom: 0;
+}
+
+.recommended-books-author {
+	font-size: 12px;
+	color: #b7bfcc;
+}
+
+.recommended-books-price {
+	font-size: 20px;
+}
+
+.recommended-books-detail-button {
+	color: 595858;
+	font-size: 13px;
+	width: 45%;
+	height: 30px;
+	padding: 0;
+	background-color: transparent;
+	border: 1px solid #becee8;
+	border-bottom-left-radius: 30px;
+  	border-top-left-radius: 30px;
+	
+}
+
+.recommended-books-buy-button {
+	color: 595858;
+	font-size: 13px;
+	width: 45%;
+	height: 30px;
+	padding: 0;
+	background-color: transparent;
+	border: 1px solid #becee8;
+	border-bottom-right-radius: 30px;
+  	border-top-right-radius: 30px;
+	 
+}
+
+.recommended-books-buttons-div {
+	font-size: 0; //remove gaps between 2 buttons
+}
+
+.recommended-books-buttons-icon {
+	color: #999999;
+	font-size: 15px;
+}
+
+.related-books-display {
+	background-color: $primary-color;
+	height: 100%;	
+}
+
+.related-books-title-display {
+	padding-top: 3%;	
+	background-color: $primary-color;
+	font-size: 35px;
+	text-align: center;
+}
+
+.related-product-title {
+	color: black;
+    font-size: 26px;
+    text-align:	left;
+    
+}
+
+@media (max-width: 1200px) {
+	.product-details-container {
+		width: 100%;			
+	}
+}
+
+@media (max-width: 991px) {
+	.recommended-books-container {
+		width: 73%;
+		padding-bottom: 5%;
+		margin-bottom: 5%;
+	}
+}
+
+@media (max-width: 767px) {
+	.product-image {
+		width: 60%; 	
+	}
+	.product-details-container {
+		margin: auto;
+		float: center;			
+	}
+
+	.product-description-container {
+		margin-left: 0;
+		margin-top: 50px;
+	}
+}
