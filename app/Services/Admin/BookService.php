@@ -12,6 +12,7 @@ use App\Services\Admin\ImageLibraryBookService;
 class BookService extends TransformerService {
   protected $bookAuthorService;
   protected $bookCategoryService;
+  protected $imageLibraryService;
 
   function __construct(AuthorBookService $authorBookService, BookCategoryService $bookCategoryService, ImageLibraryService $imageLibraryService) {
     $this->authorBookService = $authorBookService;

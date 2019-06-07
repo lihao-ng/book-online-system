@@ -54,3 +54,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
 Route::get('/','Client\PagesController@home')->name('home');
 Route::get('catalogues','Client\PagesController@catalogues')->name('catalogues');
 Route::get('productPage','Client\PagesController@productPage')->name('productPage');
+
+// client search routes
+
+Route::post('books-search','Client\BooksController@search')->name('books.search');
+Route::post('book','Client\BooksController@book')->name('book');
