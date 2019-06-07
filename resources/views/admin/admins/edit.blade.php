@@ -5,16 +5,22 @@
 Admins
 @endsection
 
-<div class="row btn-back mb-4 ml-1">
-  <a href="{{ route('admin.admins.index') }}" class="d-block">
-    <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
-    Admins
-  </a>
+<div class="row btn-back mb-4 ml-15">
+  <div class="col-12 col-sm-3 col-lg-2 return-back">
+   <a href="{{ route('admin.admins.index') }}" class="d-block">
+     <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
+     Admins
+   </a>
+ </div>
 </div>
 
-<div class="page-title">
-  <span class="page-text">Edit Admin</span>
+<div class="row pl-15">
+  <div class="col-12 page-title">
+    <h3>Edit Author</h3>
+  </div>
 </div>
+
+@include('admin.layout.partials.notification')
 
 <div class="col-md-12 mt-5">
   {!! Form::model($admin, ['route' => ['admin.admins.update', $admin], 'method' => 'put', 'id' => 'FormValidation']) !!}
@@ -41,8 +47,8 @@ Admins
           </div>
         </div>
       </div>
-      <div class="text-right">
-        <button type="submit" class="btn btn-warning btn-fill btn-wd">Save</button>
+      <div class="text-right p-0">
+        <button type="submit" class="btn btn-tertiary btn-fill btn-wd py-2 px-5 text-righ">Save</button>
       </div>
     </div>
   </div>

@@ -95,8 +95,8 @@
 
     <div class="col-12 mt-3">
       <div class="row">
-        <div class="col-12 col-md-4 ml-auto">
-          <button type="submit" class="btn btn-warning btn-block" @click="onSubmit">Create</button>
+        <div class="col-12 col-md-4 ml-auto text-right">
+          <button type="submit" class="btn btn-tertiary btn-fill btn-wd py-2 px-5" @click="onSubmit">Create</button>
         </div>
       </div>
     </div>

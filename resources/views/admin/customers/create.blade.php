@@ -44,8 +44,8 @@ Customers
           </div>
         </div>
       </div>
-      <div class="text-right">
-        <button type="submit" class="btn btn-warning btn-fill btn-wd">Create</button>
+      <div class="text-right p-0">
+        <button type="submit" class="btn btn-tertiary btn-fill btn-wd py-2 px-5 text-right">Create</button>
       </div>
     </div>
   </div>
