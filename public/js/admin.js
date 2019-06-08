@@ -73376,7 +73376,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "dropdown" }, [
+      _c("div", { staticClass: "vue-dropdown" }, [
         _c(
           "div",
           { staticClass: "dropdown-menu", class: { show: _vm.haveData } },
@@ -73982,7 +73982,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "dropdown" }, [
+      _c("div", { staticClass: "vue-dropdown" }, [
         _c(
           "div",
           { staticClass: "dropdown-menu", class: { show: _vm.haveData } },
@@ -74097,7 +74097,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "dropdown" }, [
+      _c("div", { staticClass: "vue-dropdown" }, [
         _c(
           "div",
           { staticClass: "dropdown-menu", class: { show: _vm.haveData } },
@@ -89744,7 +89744,7 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ernch\Desktop\University\BCS\Semester 6\SE\book-online-system\resources\js\admin\app.js */"./resources/js/admin/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\book-online-system\resources\js\admin\app.js */"./resources/js/admin/app.js");
 
 
 /***/ })

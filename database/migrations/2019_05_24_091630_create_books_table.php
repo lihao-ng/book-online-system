@@ -21,8 +21,8 @@ class CreateBooksTable extends Migration
             $table->string('publisher');
             $table->date('publication_date');
             $table->string('language');
-            $table->integer('price');
-            $table->integer('rating');
+            $table->double('price');
+            $table->double('rating');
             $table->integer('sold');
             $table->integer('stock');
             $table->string('image')->nullable();

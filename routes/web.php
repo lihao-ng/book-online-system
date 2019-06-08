@@ -52,5 +52,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
 // });
 
 Route::get('/','Client\PagesController@home')->name('home');
-Route::get('catalogues','Client\PagesController@catalogues')->name('catalogues');
-Route::get('productPage','Client\PagesController@productPage')->name('productPage');
+
+Route::post('books/search','Client\BooksController@search')->name('books.search');
+Route::resource('books','Client\BooksController')->only(['index', 'show']);
+
+Route::post('authors/search','Client\AuthorsController@search')->name('authors.search');
+
+Route::post('categories/search','Client\CategoriesController@search')->name('categories.search');

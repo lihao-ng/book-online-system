@@ -27,7 +27,7 @@ class AuthController extends Controller {
       'avatar' => null,
       'role' => 1
     ]);
-    ;
+    
     Auth::login($user);
 
     return redirect()->route('admin.dashboard') ;
