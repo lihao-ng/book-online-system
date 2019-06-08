@@ -22,15 +22,4 @@ class PagesController extends Controller {
 
     return view($this->path . 'home', ['ratingBooks' => $ratingBooks, 'soldBooks' => $soldBooks, 'latestBooks' => $latestBooks]);
   }
-
-  public function catalogues(){
-    $ratingBooks = $this->bookService->transformCollection(Book::orderBy('rating', 'DESC')->limit(5)->get());
-    $bestsellerBooks = $this->bookService->transformCollection(Book::orderBy('sold', 'DESC')->limit(5)->get());
-
-    return view($this->path . 'catalogues', ['ratingBooks' => $ratingBooks, 'bestsellerBooks' => $bestsellerBooks]);
-  }
-
-  public function productPage(){
-  	return view($this->path . 'productPage');
-  }
 }

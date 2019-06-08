@@ -9,7 +9,7 @@
 
       <input type="text" class="form-control" name="category" placeholder="Search Category" v-model="searchInput" v-on-clickaway="hideList" @keyup="onInputChange" @click="onInputChange">
 
-      <div class="dropdown">
+      <div class="vue-dropdown">
         <div class="dropdown-menu" :class="{ show: haveData }">
           <div class="dropdown-item text-capitalize" v-for="(searchCategory, index) in searchCategories" v-bind:key="index" @click="onSearchClick(searchCategory)" v-if="haveData">
             {{ searchCategory.name }}

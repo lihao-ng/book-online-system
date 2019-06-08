@@ -61,30 +61,14 @@
           this.error.show = false;
         }
 
-        var data = {
-          id: this.book.id
-        }
-
-        axios.post('/book', data)
-        .then(({data}) => {
-          if(data.length > 0) {
-            this.books = data;
-            this.openList();
-          }else {
-            this.books = [];
-            this.books.push({
-              title: 'No Books Found',
-              none: true
-            })
-          }
-        }, (error) => {}); 
+        window.location.href = `/books/${this.book.id}`;
       },
       onInputChange: function() {
         var data = {
           title: this.book.title
         }
 
-        axios.post('/books-search', data)
+        axios.post('/books/search', data)
         .then(({data}) => {
           if(data.length > 0) {
             this.books = data;

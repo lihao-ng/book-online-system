@@ -12,12 +12,14 @@
 
     @yield('styles')
   </head>
-  
-  <body>
-    <div id="client-app">
-      @yield('master-content')
-    </div>
 
+  <body>
+    <div>
+      <div id="client-app">
+        @yield('master-content')
+      </div>
+    </div>
+    
     <script src="{{ mix('js/client.js') }}"></script>
     @yield('scripts')
   </body>

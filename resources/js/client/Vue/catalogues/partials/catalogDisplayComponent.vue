@@ -6,12 +6,16 @@
       <!-- <i class="catalogue-books-author">Taherah Mafi</i> -->
       <p class="catalogue-books-price">RM {{ book.price }}</p>
       <div class="catalogue-books-buttons-div">
-        <button type="button" class="btn catalogue-books-detail-button">
-          <i class="fa fa-paper-plane catalogue-books-buttons-icon" aria-hidden="true"></i>
-        Detail</button>
+        <a :href="'/books/' + book.id">
+          <button type="button" class="btn catalogue-books-detail-button">
+            <i class="fa fa-paper-plane catalogue-books-buttons-icon" aria-hidden="true"></i>
+            Detail
+          </button>
+        </a>
         <button type="button" class="btn catalogue-books-buy-button">
           <i class="fa fa-shopping-cart catalogue-books-buttons-icon" aria-hidden="true"></i>
-        Buy</button>
+          Buy
+        </button>
       </div>
     </div> 
   </div>

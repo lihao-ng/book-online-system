@@ -73376,7 +73376,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "dropdown" }, [
+      _c("div", { staticClass: "vue-dropdown" }, [
         _c(
           "div",
           { staticClass: "dropdown-menu", class: { show: _vm.haveData } },
@@ -73982,7 +73982,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "dropdown" }, [
+      _c("div", { staticClass: "vue-dropdown" }, [
         _c(
           "div",
           { staticClass: "dropdown-menu", class: { show: _vm.haveData } },
@@ -74097,7 +74097,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "dropdown" }, [
+      _c("div", { staticClass: "vue-dropdown" }, [
         _c(
           "div",
           { staticClass: "dropdown-menu", class: { show: _vm.haveData } },

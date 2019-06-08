@@ -46,6 +46,7 @@
 	<div class="row title-display mt-3">
 		<div class="col">Popular Books</div>
 	</div>
+	@if(!empty($ratingBooks))
 	<div class="row books-display justify-content-center pb-5">		
 		@foreach($ratingBooks as $ratingBook)
 		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">
@@ -55,10 +56,12 @@
 				<!-- <i class="books-author">Taherah Mafi</i> -->
 				<p class="books-price">RM {{ $ratingBook['price'] }}</p>
 				<div class="books-buttons-div">
-					<button type="button" class="btn books-detail-button">
-						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
-						<a href="{{ route('productPage') }}">Detail</a>
-					</button>
+					<a href="{{ route('books.show', $ratingBook['id']) }}">
+						<button type="button" class="btn books-detail-button">
+							<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
+							Detail
+						</button>
+					</a>
 					<button type="button" class="btn books-buy-button">
 						<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
 					Buy</button>
@@ -67,6 +70,7 @@
 		</div>
 		@endforeach		
 	</div>
+	@endif
 </div>
 
 <!-----------------------featured book------------------------------------------->
@@ -93,17 +97,21 @@
 	<div class="row popular-course-title-display">
 		<div class="col">Popular Courses</div>
 	</div>
+	@if(!empty($soldBooks))
 	<div class="row popular-courses-display justify-content-center">  
-		@foreach($ratingBooks as $ratingBook)
+		@foreach($soldBooks as $soldBook)
 		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-4">	 
 			<div class="popular-courses-container pb-5">
-				<img src="{{ $ratingBook['image'] }}" class="popular-courses-image mt-2">
-				<p class="popular-courses-name d-inline-block mt-4">{{ $ratingBook['title'] }}</p>		  	
-				<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
+				<img src="{{ $soldBook['image'] }}" class="popular-courses-image mt-2">
+				<p class="popular-courses-name d-inline-block mt-4">{{ $soldBook['title'] }}</p>		 
+				<a href="#"> 	
+					<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
+				</a>
 			</div>
 		</div>	
 		@endforeach
 	</div>
+	@endif
 </div>
 
 <!-----------------------browse collection------------------------------------------->
@@ -142,6 +150,7 @@
 	<div class="row title-display mt-3">
 		<div class="col">New Books</div>
 	</div>
+	@if(!empty($latestBooks))
 	<div class="row books-display pb-5 justify-content-center">		
 		@foreach($latestBooks as $latestBook)
 		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">
@@ -162,6 +171,7 @@
 		</div>
 		@endforeach
 	</div>
+	@endif
 </div>
 
 @endsection

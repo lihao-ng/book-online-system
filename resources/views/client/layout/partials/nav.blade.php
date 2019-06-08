@@ -12,7 +12,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="{{ route('catalogues') }}">Bookstore</a>
+                <a class="nav-link text-light" href="{{ route('books.index') }}">Bookstore</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" href="{{ url('/register') }}">Blog</a>

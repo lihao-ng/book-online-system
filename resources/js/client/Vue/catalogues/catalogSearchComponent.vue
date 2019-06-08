@@ -62,7 +62,7 @@
           <!-- Top-rated -->
           <div class="row">
             <div class="col">
-              <div class="container catalogue-side-books-container">
+              <div class="container catalogue-side-books-container mt-0">
                 <p class="right-section-title">TOP RATED PRODUCTS</p>
                 <top-rated-component :default-top-rated-book="topRatedBook" v-for="(topRatedBook, index) in topRatedBooks" :key="index"></top-rated-component>
               </div>
@@ -133,17 +133,17 @@
       onInputChange: function(type) {
         switch(type) {
           case 'title':
-          var url = '/books-search';
+          var url = '/books/earch';
           var data = { title: this.filter.title };
           break;
 
           case 'category':
-          var url = '/categories-search';
+          var url = '/categories/search';
           var data = { title: this.filter.title };
           break;
 
           case 'author':
-          var url = '/authors-search';
+          var url = '/authors/search';
           var data = { title: this.filter.title };
           break;
         }
@@ -225,7 +225,7 @@
           author: this.filter.author,
         }
 
-        axios.post('books-search', data)
+        axios.post('books/search', data)
         .then(({data}) => {
           this.searchResults = data;          
         }, (error) => {}); 

@@ -9,7 +9,7 @@
 
       <input type="text" class="form-control" name="author_name" placeholder="Search Author" v-model="searchInput" v-on-clickaway="hideList" @keyup="onInputChange" @click="onInputChange">
 
-      <div class="dropdown">
+      <div class="vue-dropdown">
         <div class="dropdown-menu" :class="{ show: haveData }">
           <div class="dropdown-item text-capitalize" v-for="(searchAuthor, index) in searchAuthors" v-bind:key="index" @click="onSearchClick(searchAuthor)" v-if="haveData">
             <p class="wrap-space">{{ searchAuthor.name }} <span v-if="!searchAuthor.none">|</span> {{searchAuthor.penName }}</p>

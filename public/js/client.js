@@ -1856,21 +1856,21 @@ __webpack_require__.r(__webpack_exports__);
 
       switch (type) {
         case 'title':
-          var url = '/books-search';
+          var url = '/books/earch';
           var data = {
             title: this.filter.title
           };
           break;
 
         case 'category':
-          var url = '/categories-search';
+          var url = '/categories/search';
           var data = {
             title: this.filter.title
           };
           break;
 
         case 'author':
-          var url = '/authors-search';
+          var url = '/authors/search';
           var data = {
             title: this.filter.title
           };
@@ -1965,7 +1965,7 @@ __webpack_require__.r(__webpack_exports__);
         category: this.filter.category,
         author: this.filter.author
       };
-      axios.post('books-search', data).then(function (_ref2) {
+      axios.post('books/search', data).then(function (_ref2) {
         var data = _ref2.data;
         _this2.searchResults = data;
       }, function (error) {});
@@ -2061,6 +2061,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -2211,8 +2215,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onSubmit: function onSubmit() {
-      var _this = this;
-
       if (!this.book.id) {
         this.error.show = true;
         return;
@@ -2220,10 +2222,15 @@ __webpack_require__.r(__webpack_exports__);
         this.error.show = false;
       }
 
+      window.location.href = "/books/".concat(this.book.id);
+    },
+    onInputChange: function onInputChange() {
+      var _this = this;
+
       var data = {
-        id: this.book.id
+        title: this.book.title
       };
-      axios.post('/book', data).then(function (_ref) {
+      axios.post('/books/search', data).then(function (_ref) {
         var data = _ref.data;
 
         if (data.length > 0) {
@@ -2234,29 +2241,6 @@ __webpack_require__.r(__webpack_exports__);
           _this.books = [];
 
           _this.books.push({
-            title: 'No Books Found',
-            none: true
-          });
-        }
-      }, function (error) {});
-    },
-    onInputChange: function onInputChange() {
-      var _this2 = this;
-
-      var data = {
-        title: this.book.title
-      };
-      axios.post('/books-search', data).then(function (_ref2) {
-        var data = _ref2.data;
-
-        if (data.length > 0) {
-          _this2.books = data;
-
-          _this2.openList();
-        } else {
-          _this2.books = [];
-
-          _this2.books.push({
             title: 'No Books Found',
             none: true
           });
@@ -37937,7 +37921,9 @@ var render = function() {
               _c("div", { staticClass: "col" }, [
                 _c(
                   "div",
-                  { staticClass: "container catalogue-side-books-container" },
+                  {
+                    staticClass: "container catalogue-side-books-container mt-0"
+                  },
                   [
                     _c("p", { staticClass: "right-section-title" }, [
                       _vm._v("TOP RATED PRODUCTS")
@@ -38097,7 +38083,11 @@ var render = function() {
           _vm._v("RM " + _vm._s(_vm.book.price))
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _c("div", { staticClass: "catalogue-books-buttons-div" }, [
+          _c("a", { attrs: { href: "/books/" + _vm.book.id } }, [_vm._m(0)]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
       ])
     ]
   )
@@ -38107,37 +38097,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "catalogue-books-buttons-div" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn catalogue-books-detail-button",
-          attrs: { type: "button" }
-        },
-        [
-          _c("i", {
-            staticClass: "fa fa-paper-plane catalogue-books-buttons-icon",
-            attrs: { "aria-hidden": "true" }
-          }),
-          _vm._v("\n      Detail")
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn catalogue-books-buy-button",
-          attrs: { type: "button" }
-        },
-        [
-          _c("i", {
-            staticClass: "fa fa-shopping-cart catalogue-books-buttons-icon",
-            attrs: { "aria-hidden": "true" }
-          }),
-          _vm._v("\n      Buy")
-        ]
-      )
-    ])
+    return _c(
+      "button",
+      {
+        staticClass: "btn catalogue-books-detail-button",
+        attrs: { type: "button" }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-paper-plane catalogue-books-buttons-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v("\n          Detail\n        ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn catalogue-books-buy-button",
+        attrs: { type: "button" }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-shopping-cart catalogue-books-buttons-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v("\n        Buy\n      ")
+      ]
+    )
   }
 ]
 render._withStripped = true
