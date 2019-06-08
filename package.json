@@ -30,6 +30,7 @@
         "moment": "^2.24.0",
         "nouislider": "^13.1.5",
         "sweetalert2": "^8.11.7",
-        "vue-clickaway": "^2.2.2"
+        "vue-clickaway": "^2.2.2",
+        "vue-paginate": "^3.6.0"
     }
 }

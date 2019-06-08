@@ -1,11 +1,11 @@
 {
     "/js/admin.js": "/js/admin.js",
     "/js/client.js": "/js/client.js",
+    "/css/client.css": "/css/client.css",
     "/css/admin.css": "/css/admin.css",
     "/fonts/nucleo-icons.eot": "/fonts/nucleo-icons.eot",
     "/fonts/nucleo-icons.svg": "/fonts/nucleo-icons.svg",
     "/fonts/nucleo-icons.ttf": "/fonts/nucleo-icons.ttf",
     "/fonts/nucleo-icons.woff": "/fonts/nucleo-icons.woff",
-    "/fonts/nucleo-icons.woff2": "/fonts/nucleo-icons.woff2",
-    "/css/client.css": "/css/client.css"
+    "/fonts/nucleo-icons.woff2": "/fonts/nucleo-icons.woff2"
 }

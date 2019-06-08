@@ -79,7 +79,7 @@
           }
         }, (error) => {}); 
       },
-      onInputChange: function(type) {
+      onInputChange: function() {
         var data = {
           title: this.book.title
         }

@@ -8,16 +8,22 @@ use App\Services\TransformerService;
 use App\Services\Client\ImageLibraryBookService;
 
 class BookService extends TransformerService {
+  protected $imageLibraryService;
+  
   function __construct(ImageLibraryService $imageLibraryService) {
     $this->imageLibraryService = $imageLibraryService;
   }
 
   public function search(Request $request){
-    $books = Book::where('title', 'like', "%{$request->title}%")->whereHas('authors', function($author) use ($request) {
-      $author->where('name', 'like', "%{$request->author}%");
-    })->whereHas('categories', function($category) use ($request) {
-      $category->where('name', 'like', "%{$request->category}%");
-    })->limit(20)->get();
+    if($request->title == "" && $request->category == "" && $request->author == "") {
+      $books = Book::all();
+    }else {
+      $books = Book::where('title', 'like', "%{$request->title}%")->whereHas('authors', function($author) use ($request) {
+        $author->where('name', 'like', "%{$request->author}%");
+      })->whereHas('categories', function($category) use ($request) {
+        $category->where('name', 'like', "%{$request->category}%");
+      })->limit(60)->get();
+    }
 
     return $this->transformCollection($books);
   }

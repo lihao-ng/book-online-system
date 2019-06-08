@@ -59,3 +59,7 @@ Route::get('productPage','Client\PagesController@productPage')->name('productPag
 
 Route::post('books-search','Client\BooksController@search')->name('books.search');
 Route::post('book','Client\BooksController@book')->name('book');
+
+Route::post('authors-search','Client\AuthorsController@search')->name('authors.search');
+
+Route::post('categories-search','Client\CategoriesController@search')->name('categories.search');

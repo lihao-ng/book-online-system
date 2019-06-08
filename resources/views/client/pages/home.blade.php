@@ -47,12 +47,13 @@
 		<div class="col">Popular Books</div>
 	</div>
 	<div class="row books-display justify-content-center pb-5">		
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-3 books-row">
+		@foreach($ratingBooks as $ratingBook)
+		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">
 			<div class="books-container">
-				<img src="images/popular1.jpg" class="books-image mt-2">
-				<p class="books-name">Destroy me</p>
-				<i class="books-author">Taherah Mafi</i>
-				<p class="books-price">$2.00</p>
+				<img src="{{ $ratingBook['image'] }}" class="books-image mt-2">
+				<p class="books-name">{{ $ratingBook['title'] }}</p>
+				<!-- <i class="books-author">Taherah Mafi</i> -->
+				<p class="books-price">RM {{ $ratingBook['price'] }}</p>
 				<div class="books-buttons-div">
 					<button type="button" class="btn books-detail-button">
 						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
@@ -64,54 +65,7 @@
 				</div>
 			</div> 
 		</div>
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">	  
-			<div class="books-container">
-				<img src="images/popular2.jpg" class="books-image mt-2">
-				<p class="books-name">Soul</p>
-				<i class="books-author">Whoever</i>
-				<p class="books-price">$23.00</p>
-				<div class="books-buttons-div">
-					<button type="button" class="btn books-detail-button">
-						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
-					Detail</button>
-					<button type="button" class="btn books-buy-button">
-						<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
-					Buy</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">
-			<div class="books-container"> 	
-				<img src="images/popular3.jpg" class="books-image mt-2">
-				<p class="books-name">Sita</p>
-				<i class="books-author">Amish</i>
-				<p class="books-price">$32.00</p>
-				<div class="books-buttons-div">
-					<button type="button" class="btn books-detail-button">
-						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
-					Detail</button>
-					<button type="button" class="btn books-buy-button">
-						<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
-					Buy</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-3 books-row">
-			<div class="books-container">
-				<img src="images/popular4.jpg" class="books-image mt-2	">
-				<p class="books-name">Soaring</p>
-				<i class="books-author">Kristen Ashley</i>
-				<p class="books-price">$12.00</p>
-				<div class="books-buttons-div">
-					<button type="button" class="btn books-detail-button">
-						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
-					Detail</button>
-					<button type="button" class="btn books-buy-button">
-						<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
-					Buy</button>
-				</div>
-			</div>
-		</div>		
+		@endforeach		
 	</div>
 </div>
 
@@ -140,34 +94,15 @@
 		<div class="col">Popular Courses</div>
 	</div>
 	<div class="row popular-courses-display justify-content-center">  
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-4">	 
+		@foreach($ratingBooks as $ratingBook)
+		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-4">	 
 			<div class="popular-courses-container pb-5">
-				<img src="images/popular1.jpg" class="popular-courses-image mt-2">
-				<p class="popular-courses-name d-inline-block mt-4">Destroy me</p>		  	
+				<img src="{{ $ratingBook['image'] }}" class="popular-courses-image mt-2">
+				<p class="popular-courses-name d-inline-block mt-4">{{ $ratingBook['title'] }}</p>		  	
 				<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
 			</div>
-		</div>
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-4">
-			<div class="popular-courses-container pb-5">
-				<img src="images/popular2.jpg" class="popular-courses-image mt-2">
-				<p class="popular-courses-name d-inline-block mt-4">Soul</p>		  	
-				<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
-			</div>
-		</div>
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-4">
-			<div class="popular-courses-container pb-5">
-				<img src="images/popular3.jpg" class="popular-courses-image mt-2">
-				<p class="popular-courses-name d-inline-block mt-4">Sita</p>		  	
-				<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
-			</div>
-		</div>
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-4">
-			<div class="popular-courses-container pb-5">
-				<img src="images/popular4.jpg" class="popular-courses-image mt-2">
-				<p class="popular-courses-name d-inline-block mt-4">Soaring</p>		  	
-				<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
-			</div>
-		</div>		
+		</div>	
+		@endforeach
 	</div>
 </div>
 
@@ -208,12 +143,13 @@
 		<div class="col">New Books</div>
 	</div>
 	<div class="row books-display pb-5 justify-content-center">		
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mr-lg-3 books-row">
+		@foreach($latestBooks as $latestBook)
+		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">
 			<div class="books-container">
-				<img src="images/newbook1.jpg" class="books-image mt-2">
-				<p class="books-name">Spectre of Springwell Forest</p>
-				<i class="books-author">Simon Dillon</i>
-				<p class="books-price">$2.00</p>
+				<img src="{{ $ratingBook['image'] }}" class="books-image mt-2">
+				<p class="books-name">{{ $ratingBook['title'] }}</p>
+				<!-- <i class="books-author">Simon Dillon</i> -->
+				<p class="books-price">RM {{ $ratingBook['price'] }}</p>
 				<div class="books-buttons-div">
 					<button type="button" class="btn books-detail-button">
 						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
@@ -224,54 +160,7 @@
 				</div> 
 			</div> 
 		</div>
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">	  
-			<div class="books-container">
-				<img src="images/newbook2.jpg" class="books-image mt-2">
-				<p class="books-name">Young Elites</p>
-				<i class="books-author">Marie Lu</i>
-				<p class="books-price">$23.00</p>
-				<div class="books-buttons-div">
-					<button type="button" class="btn books-detail-button">
-						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
-					Detail</button>
-					<button type="button" class="btn books-buy-button">
-						<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
-					Buy</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-3 books-row">
-			<div class="books-container"> 	
-				<img src="images/newbook3.jpg" class="books-image mt-2">
-				<p class="books-name">Tempests and Slaughter</p>
-				<i class="books-author">Tamora Pierce</i>
-				<p class="books-price">$32.00</p>
-				<div class="books-buttons-div">
-					<button type="button" class="btn books-detail-button">
-						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
-					Detail</button>
-					<button type="button" class="btn books-buy-button">
-						<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
-					Buy</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 ml-lg-3 books-row">
-			<div class="books-container">
-				<img src="images/newbook4.jpg" class="books-image mt-2	">
-				<p class="books-name">The King of Crows</p>
-				<i class="books-author">Libba Bray</i>
-				<p class="books-price">$12.00</p>
-				<div class="books-buttons-div">
-					<button type="button" class="btn books-detail-button">
-						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
-					Detail</button>
-					<button type="button" class="btn books-buy-button">
-						<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
-					Buy</button>
-				</div>
-			</div>
-		</div>		
+		@endforeach
 	</div>
 </div>
 

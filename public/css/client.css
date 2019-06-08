@@ -13726,24 +13726,28 @@ a:active {
   text-decoration: none;
 }
 
-.dropdown {
+.vue-dropdown {
   position: relative;
 }
 
-.dropdown .dropdown-menu {
+.vue-dropdown .dropdown-menu {
   box-shadow: 3px 3px 3px rgba(203, 203, 210, 0.15);
   width: 100%;
 }
 
-.dropdown .dropdown-menu .dropdown-item {
+.vue-dropdown .dropdown-menu .dropdown-item {
   cursor: pointer;
   padding: 8px 16px;
   color: black;
 }
 
-.dropdown .dropdown-menu .dropdown-item:first-child {
+.vue-dropdown .dropdown-menu .dropdown-item:first-child {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.vue-dropdown .w-110 {
+  width: 110%;
 }
 
 .multiple-list {
