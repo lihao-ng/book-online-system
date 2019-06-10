@@ -2,6 +2,7 @@
 
 namespace App\Services\Admin;
 
+use Validator;
 use App\User as Admin;
 use Illuminate\Http\Request;
 use App\Services\TransformerService;
@@ -38,6 +39,8 @@ class AdminService extends TransformerService {
       "name" => 'required|string|max:255',
       "email" => 'required|email|unique:users'
     ]);
+
+    
 
     Admin::create([
       'name' => $request->name,

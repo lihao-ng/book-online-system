@@ -51539,6 +51539,9 @@ var files = __webpack_require__("./resources/js/client sync recursive \\.vue$/")
 files.keys().map(function (key) {
   return Vue.component(key.split('/').pop().split('.')[0], files(key)["default"]);
 });
+
+__webpack_require__(/*! ./scripts/_cartPage.js */ "./resources/js/client/scripts/_cartPage.js");
+
 var app = new Vue({
   el: '#client-app'
 }); // require('./vendors/noUiSlider.js');
@@ -51551,6 +51554,31 @@ var app = new Vue({
 //         'max': 100
 //     }
 // });
+
+/***/ }),
+
+/***/ "./resources/js/client/scripts/_cartPage.js":
+/*!**************************************************!*\
+  !*** ./resources/js/client/scripts/_cartPage.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  console.log("entered js");
+  $('#collectionType').on('change', function () {
+    console.log("inside function");
+    opt = $(this).val();
+
+    if (opt == "selfCollection") {
+      console.log("selfCollection");
+      $('#selfCollectionSelected').show();
+    } else if (opt == "delivery") {
+      console.log("delivery");
+      $('#selfCollectionSelected').hide();
+    }
+  });
+});
 
 /***/ }),
 

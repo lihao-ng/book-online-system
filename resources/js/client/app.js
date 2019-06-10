@@ -6,6 +6,7 @@ window.VuePaginate = require('vue-paginate');
 const files = require.context('./', true, /\.vue$/i);
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
+require('./scripts/_cartPage.js');
 
 const app = new Vue({
     el: '#client-app'
