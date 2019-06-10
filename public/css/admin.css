@@ -14239,6 +14239,11 @@ div.fixed-table-scroll-outer {
   margin: 0;
 }
 
+.img-thumbnail-profile {
+  height: 180px;
+  width: 180px;
+}
+
 .stranger-wrapper {
   background-image: url("/images/dashboard.jpg");
   background-size: cover;
