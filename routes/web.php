@@ -52,3 +52,5 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 Route::get('/','Client\PagesController@home')->name('home');
 Route::get('/cartPage','Client\PagesController@cartPage')->name('cartPage');
+Route::get('/contactUs','Client\PagesController@contactUs')->name('contactUs');
+

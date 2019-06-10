@@ -49203,8 +49203,35 @@ __webpack_require__(/*! ../bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
+__webpack_require__(/*! ./scripts/_cartPage.js */ "./resources/js/client/scripts/_cartPage.js");
+
 var app = new Vue({
   el: '#client-app'
+});
+
+/***/ }),
+
+/***/ "./resources/js/client/scripts/_cartPage.js":
+/*!**************************************************!*\
+  !*** ./resources/js/client/scripts/_cartPage.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  console.log("entered js");
+  $('#collectionType').on('change', function () {
+    console.log("inside function");
+    opt = $(this).val();
+
+    if (opt == "selfCollection") {
+      console.log("selfCollection");
+      $('#selfCollectionSelected').show();
+    } else if (opt == "delivery") {
+      console.log("delivery");
+      $('#selfCollectionSelected').hide();
+    }
+  });
 });
 
 /***/ }),

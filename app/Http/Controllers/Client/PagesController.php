@@ -15,4 +15,8 @@ class PagesController extends Controller {
   public function cartPage(){
     return view($this->path . 'cartPage');
   }
+
+  public function contactUs(){
+    return view($this->path . 'contactUs');
+  }
 }
