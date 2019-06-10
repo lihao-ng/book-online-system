@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Auth;
-use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller {
   public function viewRegister(){
@@ -19,9 +20,14 @@ class AuthController extends Controller {
       "password" => "required|confirmed"
     ]);
 
-    $user = User::create($request->all());
-    $user->role = 1;
-    $user->save();
+    $user = User::create([
+      'name' => $request->name,
+      'email' => $request->email,
+      'password' => Hash::make($request->password),
+      'avatar' => null,
+      'role' => 1
+    ]);
+    
     Auth::login($user);
 
     return redirect()->route('admin.dashboard') ;
@@ -37,7 +43,7 @@ class AuthController extends Controller {
       "password" => "required"
     ]);
 
-    if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 0])) {
+    if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 1])) {
       return redirect()->route('admin.dashboard');
     }else{
       return redirect()->back()->withErrors(['message' => 'Email or password is incorrect']);

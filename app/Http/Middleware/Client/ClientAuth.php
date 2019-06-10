@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\Client;
 
 use Closure;
 
@@ -13,7 +13,7 @@ class ClientAuth {
    * @return mixed
    */
   public function handle($request, Closure $next, $guard = null){
-    if(current_user()->isClient()) {
+    if(current_user()->isCustomer()) {
       return $next($request);
     }
     

@@ -13739,12 +13739,66 @@ a.text-dark:focus {
   clip: auto;
 }
 
-.active {
-  background-color: #2f2b35;
+body {
+  font-family: "Montserrat";
 }
 
-body {
-  font-family: "Monserrat";
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
+.vue-dropdown {
+  position: relative;
+}
+
+.vue-dropdown .dropdown-menu {
+  box-shadow: 3px 3px 3px rgba(203, 203, 210, 0.15);
+  width: 100%;
+}
+
+.vue-dropdown .dropdown-menu .dropdown-item {
+  cursor: pointer;
+  padding: 8px 16px;
+  color: black;
+}
+
+.vue-dropdown .dropdown-menu .dropdown-item:first-child {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.vue-dropdown .w-110 {
+  width: 110%;
+}
+
+.multiple-list {
+  list-style: none;
+  padding: 0;
+}
+
+.multiple-list li {
+  padding: 5px 0 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.multiple-list li .fa-remove {
+  float: right;
+  padding: 4px 10px 0 0;
+  color: #dc3545;
+  font-size: 16px;
+}
+
+.multiple-list li:hover {
+  background-color: rgba(203, 203, 210, 0.15);
+}
+
+.show {
+  display: block;
 }
 
 /**
@@ -14107,7 +14161,20 @@ div.fixed-table-scroll-outer {
 }
 
 #main-content {
-  background-color: rgba(203, 203, 210, 0.15);
+  background-color: #edf3f4;
+}
+
+.btn-tertiary {
+  background-color: #2f2b35;
+  color: white;
+}
+
+.btn-tertiary:hover {
+  color: white;
+}
+
+.active {
+  background-color: #515570;
 }
 
 .h-vh-100 {
@@ -14119,7 +14186,7 @@ div.fixed-table-scroll-outer {
 }
 
 .return-back {
-  background-color: #edf3f4;
+  background-color: #2f2b35;
   border-radius: 17px;
   text-align: center;
   padding: 3px 0 3px 0;
@@ -14128,11 +14195,11 @@ div.fixed-table-scroll-outer {
 .return-back i {
   padding-top: 0.1rem;
   font-size: 35px;
-  color: black;
+  color: white;
 }
 
 .return-back a {
-  color: black;
+  color: white;
   font-size: 20px;
   text-decoration: none;
 }
@@ -14149,7 +14216,7 @@ div.fixed-table-scroll-outer {
   width: 100%;
   height: 100%;
   padding: 5px;
-  border: 1px solid #515570;
+  border: 1px solid #2f2b35;
   border-radius: 6px;
 }
 
@@ -14173,18 +14240,43 @@ div.fixed-table-scroll-outer {
 }
 
 .stranger-wrapper {
-  background-image: url("/images/galaxy.jpg");
+  background-image: url("/images/dashboard.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   display: block;
   position: absolute;
   height: 100%;
   width: 100%;
 }
 
+.card-transparent {
+  opacity: 0.9;
+}
+
+.stranger-title-section {
+  color: #2f2b35;
+}
+
+.stranger-login-section a {
+  text-decoration: none;
+  color: #2f2b35;
+  padding: 10px 0 10px 0;
+  border-radius: 5px;
+}
+
+.stranger-login-section a:hover {
+  background: rgba(203, 203, 210, 0.15);
+}
+
+.stranger-login-section a.active {
+  color: white;
+}
+
 #sidebar {
   height: 100vh;
   width: 100%;
-  background-color: #edf3f4;
-  border-right: 1px solid #A9A9A9;
+  background-color: #2f2b35;
+  border-right: 1px solid #515570;
   padding: 0 7px 0 7px;
 }
 
@@ -14194,7 +14286,7 @@ div.fixed-table-scroll-outer {
 }
 
 #sidebar ul.sidebar-nav a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 20px;
 }
@@ -14211,17 +14303,17 @@ div.fixed-table-scroll-outer {
 }
 
 #sidebar ul.sidebar-nav a li:hover {
-  background-color: #2f2b35;
+  background-color: #515570;
 }
 
 #sidebar ul.sidebar-nav a li:active {
-  background-color: #2f2b35;
+  background-color: #515570;
 }
 
 #sidebar ul.sidebar-nav .sidebar-brand {
   padding: 15px 0 8px 0;
   margin: 0;
-  border-bottom: 1px solid #A9A9A9;
+  border-bottom: 1px solid #515570;
   border-radius: 0;
   text-align: center;
 }
@@ -14233,53 +14325,6 @@ div.fixed-table-scroll-outer {
 
 .topnav {
   background-color: white;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown .dropdown-menu {
-  box-shadow: 3px 3px 3px rgba(203, 203, 210, 0.15);
-  width: 100%;
-}
-
-.dropdown .dropdown-menu .dropdown-item {
-  cursor: pointer;
-  padding: 8px 16px;
-  color: black;
-}
-
-.dropdown .dropdown-menu .dropdown-item:first-child {
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
-}
-
-.multiple-list {
-  list-style: none;
-  padding: 0;
-}
-
-.multiple-list li {
-  padding: 5px 0 5px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-.multiple-list li .fa-remove {
-  float: right;
-  padding: 4px 10px 0 0;
-  color: #dc3545;
-  font-size: 16px;
-}
-
-.multiple-list li:hover {
-  background-color: rgba(203, 203, 210, 0.15);
-}
-
-.show {
-  display: block;
 }
 
 .bootstrap-table {
@@ -14342,6 +14387,10 @@ div.fixed-table-scroll-outer {
 .bootstrap-table .float-right.pagination ul li a {
   border: 0;
   color: black;
+}
+
+.bootstrap-table .float-right.pagination ul li.active {
+  background-color: transparent;
 }
 
 .bootstrap-table .float-right.pagination ul li.active a {

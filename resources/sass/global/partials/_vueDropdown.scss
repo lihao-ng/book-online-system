@@ -1,7 +1,7 @@
-.dropdown {
+.vue-dropdown {
   position: relative; 
 
-  .dropdown-menu {
+  .dropdown-menu { 
     box-shadow: 3px 3px 3px $light-grey;
     width: 100%;
 
@@ -15,6 +15,10 @@
         border-top-right-radius: calc(0.25rem - 1px);
       }
     }
+  }
+
+  .w-110 {
+    width: 110%;
   }
 }
 

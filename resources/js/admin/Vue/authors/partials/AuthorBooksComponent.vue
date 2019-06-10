@@ -9,7 +9,7 @@
 
       <input type="text" class="form-control" name="book_name" placeholder="Search Book" v-model="searchInput" v-on-clickaway="hideList" @keyup="onInputChange" @click="onInputChange">
 
-      <div class="dropdown">
+      <div class="vue-dropdown">
         <div class="dropdown-menu" :class="{ show: haveData }">
           <div class="dropdown-item text-capitalize" v-for="(searchBook, index) in searchBooks" v-bind:key="index" @click="onSearchClick(searchBook)" v-if="haveData">
             {{ searchBook.title }}

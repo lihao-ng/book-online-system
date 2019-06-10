@@ -18,19 +18,20 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('login','Admin\AuthController@viewLogin')->name('login.show');
     Route::post('login','Admin\AuthController@login')->name('login');
 
-    Route::get('register','Admin\AuthController@viewRegister')->name('register.show');
-    Route::post('register','Admin\AuthController@register')->name('register');
+    Route::middleware('admin.count')->group(function(){
+      Route::get('register','Admin\AuthController@viewRegister')->name('register.show');
+      Route::post('register','Admin\AuthController@register')->name('register');
+    });
   });
 
-  // Route::middleware(['auth', 'admin.auth'])->group(function(){
-  Route::middleware('auth')->group(function(){
+  Route::middleware(['auth', 'admin.auth'])->group(function(){
     Route::get('dashboard','Admin\DashboardController@dashboard')->name('dashboard');
-    
+
     Route::post('admins/search','Admin\AdminsController@search')->name('admins.search');
     Route::resource('admins', 'Admin\AdminsController')->except(['show']);
-  
+
     Route::resource('customers', 'Admin\CustomersController');
-    
+
     Route::post('books/search','Admin\BooksController@search')->name('books.search');
     Route::post('books/{book}','Admin\BooksController@update')->name('books.post.update'); // bug with form data - unable to use PUT or PATCH
     Route::resource('books', 'Admin\BooksController')->except(['show']);
@@ -54,3 +55,10 @@ Route::get('/','Client\PagesController@home')->name('home');
 Route::get('/cartPage','Client\PagesController@cartPage')->name('cartPage');
 Route::get('/contactUs','Client\PagesController@contactUs')->name('contactUs');
 
+
+Route::post('books/search','Client\BooksController@search')->name('books.search');
+Route::resource('books','Client\BooksController')->only(['index', 'show']);
+
+Route::post('authors/search','Client\AuthorsController@search')->name('authors.search');
+
+Route::post('categories/search','Client\CategoriesController@search')->name('categories.search');

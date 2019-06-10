@@ -16,8 +16,7 @@ class AdminService extends TransformerService {
     $offset = $request->offset ? $request->offset : 0;
     $query = $request->search ? $request->search : '';
 
-    // $admins = Admin::where('id', '!=', current_user()->id)->where('role', 1)->where('name', 'like', "%{$query}%")->orderBy($sort, $order);
-    $admins = Admin::where('role', 1)->where('name', 'like', "%{$query}%")->orderBy($sort, $order);
+    $admins = Admin::where('id', '!=', current_user()->id)->where('role', 1)->where('name', 'like', "%{$query}%")->orderBy($sort, $order);
     $listCount = $admins->count();
 
     $admins = $admins->limit($limit)->offset($offset)->get();
@@ -50,27 +49,20 @@ class AdminService extends TransformerService {
       'role' => 1
     ]);
 
-
-
-      return redirect()->route("admin.admins.index");
+    return redirect()->route("admin.admins.index");
   }
   
   public function update(Request $request, Admin $admin){
-    $validator = Validator::make($request->all(), [
-			'name' => 'required|string|max:255',
-      'email' => 'required|email|unique:users,email,'.$admin->id
-		]);
+    $request->validate([
+      "name" => 'required|string|max:255',
+      "email" => 'required|email|unique:users,email,' . $admin->id
+    ]);
 
-    if ($validator->fails()) {
-			return redirect()->back()->withErrors($validator)->withInput();
-    }
-    
     $admin->name = $request->name;
     $admin->email = $request->email;
-		$admin->save();
+    $admin->save();
 
     return redirect()->route("admin.admins.index");
-
   }
 
   public function transform($admin){

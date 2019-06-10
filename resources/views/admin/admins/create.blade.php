@@ -2,13 +2,15 @@
 
 @section('master-content')
 @section('title')
-  Admins
+Admins
 @endsection
 
 <div class="row btn-back mb-4 ml-15">
   <div class="col-12 col-sm-3 col-lg-2 return-back">
-   <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
-   <a href="{{ route('admin.admins.index') }}">Authors</a>
+   <a href="{{ route('admin.admins.index') }}" class="d-block">
+     <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
+     Admins
+   </a>
  </div>
 </div>
 
@@ -45,9 +47,9 @@
           </div>
         </div>
       </div>
-      <div class="text-right">
-						<button type="submit" class="btn btn-warning btn-fill btn-wd">Create</button>
-			</div>
+      <div class="text-right p-0">
+        <button type="submit" class="btn btn-tertiary btn-fill btn-wd py-2 px-5 text-righ">Create</button>
+      </div>
     </div>
   </div>
   {!! Form::close() !!}

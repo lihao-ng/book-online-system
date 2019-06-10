@@ -1,9 +1,7 @@
 .home-nav-bar {
-	position:absolute;
-	width:100%;
-	z-index:10;
-	max-width:100%;
-	
+	background-color: $tertiary-color;
+	height: 130px;
+	top: 0;
 }
 
 .nav-middle-buttons {
@@ -59,12 +57,11 @@
 	margin-left: 0
 	}
 
-	.home-nav-bar {
-		position: absolute;
-		width: 100%;
-		z-index:1 0;
-		max-width: 86%;
-		margin-left: 7%
+	// .home-nav-bar {
+	// 	position: absolute;
+	// 	width: 100%;		
+	// 	max-width: 86%;
+	// 	margin-left: 7%
 	
-	}
+	// }
 }

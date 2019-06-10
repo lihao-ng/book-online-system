@@ -1,13 +1,22 @@
 @extends('admin.layout.master')
 
 @section('master-content')
-<div class="row btn-back mb-4 ml-1">
-  <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
-  <a href="{{ route('admin.customers.index') }}">Customer</a>
+@section('title')
+Customers
+@endsection
+<div class="row btn-back mb-4 ml-15">
+  <div class="col-12 col-sm-3 col-lg-2 return-back">
+    <a href="{{ route('admin.books.index') }}" class="d-block">
+     <i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>
+     Customers
+   </a>
+ </div>
 </div>
 
-<div class="page-title">
-  <span class="page-text">Create Customer</span>
+<div class="row pl-15">
+  <div class="col-12 page-title">
+    <h3>Create Customer</h3>
+  </div>
 </div>
 
 <div class="col-md-12 mt-5">
@@ -35,9 +44,9 @@
           </div>
         </div>
       </div>
-      <div class="text-right">
-						<button type="submit" class="btn btn-warning btn-fill btn-wd">Create</button>
-			</div>
+      <div class="text-right p-0">
+        <button type="submit" class="btn btn-tertiary btn-fill btn-wd py-2 px-5 text-right">Create</button>
+      </div>
     </div>
   </div>
   {!! Form::close() !!}
