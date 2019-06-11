@@ -7,7 +7,7 @@
                 </div> 
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars nav-bar-burger" aria-hidden="true"></i>
+                     <i class="fa fa-bars nav-bar-burger" aria-hidden="true"></i>
                  </button>
                
                 <div id="navbarNavDropdown" class="navbar-collapse collapse nav-bar-elements">        
@@ -46,3 +46,5 @@
                 </div>
             </div>
        </div>
+    </div>
+</div>
