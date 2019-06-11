@@ -30,4 +30,8 @@ class PagesController extends Controller {
   public function contactUs(){
     return view($this->path . 'contactUs');
   }
+
+  public function customerLogin(){
+    return view($this->path . 'customerLogin');
+  }
 }

@@ -54,7 +54,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 Route::get('/','Client\PagesController@home')->name('home');
 Route::get('/cartPage','Client\PagesController@cartPage')->name('cartPage');
 Route::get('/contactUs','Client\PagesController@contactUs')->name('contactUs');
-
+Route::get('/customerLogin','Client\PagesController@customerLogin')->name('customerLogin');
 
 Route::post('books/search','Client\BooksController@search')->name('books.search');
 Route::resource('books','Client\BooksController')->only(['index', 'show']);

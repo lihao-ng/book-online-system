@@ -15,7 +15,7 @@
 .cartPage-mycart-title {
    font-size: 35px;
    padding-top: 2%;
-   color: $secondary-color;
+   color: $tertiary-color;
 }
 
 .cartPage-title-detail-container {
@@ -33,7 +33,7 @@
    margin-top: 2%;
    font-size: 20px;
    text-transform: uppercase;	
-   color: $secondary-color;
+   color: $tertiary-color;
 }
 
 .cartPage-detail-content-container {
@@ -42,7 +42,7 @@
 
 .cartPage-detail-title {
    font-weight: bold;
-   color: $secondary-color;
+   color: $tertiary-color;
 }
 
 .cartPage-garbage-numOfOrderBar-container {
@@ -64,7 +64,7 @@
 
 .cartPage-section-title-container {
    font-size: 16px;
-   color: $secondary-color;
+   color: $tertiary-color;
 }
 
 .cartPage-promoCode-container {
@@ -84,7 +84,7 @@
    width: 100%;
    text-align: center;
    text-transform: uppercase;
-   background-color: $secondary-color;
+   background-color: $tertiary-color;
    border-color: transparent;
    color:white;
 }
@@ -112,8 +112,12 @@
 }
 
 .cartPage-table-head {
-   background-color: $secondary-color;
-   color:white;
+   tr {
+      th {
+         background-color: $tertiary-color;
+         color:white;
+      }
+   }
 }
 
 .cartPage-popUp-title {
@@ -126,17 +130,17 @@
 
 .cartPage-totalPrice-container {
    font-size: 22px;
-   color: $secondary-color;
+   color: $tertiary-color;
 }
 
 .cartPage-modal-button {
    &:hover{
       background-color: transparent;
-      color:$secondary-color;
+      color:$tertiary-color;
    }
    padding:13px 33%;
-   background-color: $secondary-color;
-   border: 1px solid $secondary-color;
+   background-color: $tertiary-color;
+   border: 1px solid $tertiary-color;
    color: white;
 }
 
