@@ -28,23 +28,21 @@
                             <a class="nav-link text-light" href="{{ url('/register') }}">VC Add-ons</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="{{ url('/register') }}">My Account</a>
+                            <a class="nav-link text-light" href="{{ url('/customerLogin') }}">My Account</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="{{ url('/register') }}">Contact</a>
                         </li>
-                    </ul>
+                    </ul>       
                 </div>
-
+                <div class="col-1">
+                    <div class="pull-right ml-auto">
+                        <a href="{{ url('/cartPage') }}">
+                            <button class="nav-bar-cart-button">
+                                <i class="fa fa-shopping-basket nav-bar-cart-icon" aria-hidden="true"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-1">
-            <div class="pull-right ml-auto">
-                    <button class="nav-bar-cart-button">
-                        <i class="fa fa-shopping-basket nav-bar-cart-icon" aria-hidden="true"></i>
-                    </button>
-            </div>
-        </div>
-
-    </div>
-</div>
+       </div>
