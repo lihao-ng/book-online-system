@@ -51611,9 +51611,9 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\book-online-system\resources\js\client\app.js */"./resources/js/client/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\book-online-system\resources\sass\client\app.scss */"./resources/sass/client/app.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\book-online-system\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
+__webpack_require__(/*! C:\Users\ernch\Desktop\University\BCS\Semester 6\SE\book-online-system\resources\js\client\app.js */"./resources/js/client/app.js");
+__webpack_require__(/*! C:\Users\ernch\Desktop\University\BCS\Semester 6\SE\book-online-system\resources\sass\client\app.scss */"./resources/sass/client/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\ernch\Desktop\University\BCS\Semester 6\SE\book-online-system\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
 
 
 /***/ })

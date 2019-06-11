@@ -89744,7 +89744,7 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\book-online-system\resources\js\admin\app.js */"./resources/js/admin/app.js");
+module.exports = __webpack_require__(/*! C:\Users\ernch\Desktop\University\BCS\Semester 6\SE\book-online-system\resources\js\admin\app.js */"./resources/js/admin/app.js");
 
 
 /***/ })

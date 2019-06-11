@@ -14143,7 +14143,6 @@ a:active {
 
 .home-nav-bar {
   background-color: #2f2b35;
-  height: 130px;
   top: 0;
 }
 
@@ -14721,7 +14720,7 @@ ul.book-categories-list {
 }
 
 .product-description-container {
-  margin-left: -5%;
+  margin-left: -2%;
 }
 
 .product-title {
