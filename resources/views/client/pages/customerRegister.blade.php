@@ -71,13 +71,7 @@
 	                        <div class="col-12">
 	                            <input class="form-control" type="text" required="required" name="email">
 	                        </div>
-	                    </div>
-	                    
-                        <div class="row justify-content-center">                        	
-	                        <div class="col-12">
-	                            <input class="form-control" type="text" required="required" name="email">
-	                        </div>
-	                    </div>
+	                    </div>	                 
 
                         <div class="container p-4 mb-2">
                             <div class="row justify-content-center">
