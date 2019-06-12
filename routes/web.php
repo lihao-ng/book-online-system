@@ -27,6 +27,12 @@ Route::prefix('admin')->name('admin.')->group(function(){
   Route::middleware(['auth', 'admin.auth'])->group(function(){
     Route::get('dashboard','Admin\DashboardController@dashboard')->name('dashboard');
 
+    Route::get('logout','Admin\AuthController@logout')->name('logout');
+
+    Route::get('settings','Admin\DashboardController@viewProfile')->name('profile.show');
+    Route::post('settings','Admin\DashboardController@updateProfile')->name('profile.update');
+    Route::put('settings/password', "Admin\DashboardController@updatePassword")->name("password.change");
+
     Route::post('admins/search','Admin\AdminsController@search')->name('admins.search');
     Route::resource('admins', 'Admin\AdminsController')->except(['show']);
 

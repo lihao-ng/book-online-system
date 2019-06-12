@@ -51,7 +51,7 @@
               <input type="text" name="password_confirmation" class="form-control" placeholder="Retype Password">
             </div>
 
-            <button type="submit" class="btn btn-tertiary btn-lg mb-3">Register</button>
+            <button type="submit" class="btn btn-tertiary btn-lg mb-3 w-100">Register</button>
           </div>
         </div>
       </div>

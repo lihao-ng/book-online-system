@@ -13,6 +13,7 @@ require('./vendors/bootstrap-datetimepicker');
 require('./scripts/bootstrap-table-setup');
 require('./scripts/bootstrap-datetimepicker-setup');
 require('./scripts/chart-setup');
+require('./scripts/live-file');
 
 const app = new Vue({   
     el: '#admin-app'
