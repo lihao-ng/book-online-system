@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Services\Client\BookService;
 
 class BooksController extends Controller {
-  protected $path = 'client.pages.books.';
+  protected $path = 'client.books.';
   protected $bookService;
 
   public function __construct(BookService $bookService) {
@@ -46,5 +46,9 @@ class BooksController extends Controller {
 
   public function search(Request $request) {
     return $this->bookService->search($request);
+  }
+
+  public function addCart(Request $request, Book $book) {
+    return $this->bookService->addCart($request, $book);
   }
 }

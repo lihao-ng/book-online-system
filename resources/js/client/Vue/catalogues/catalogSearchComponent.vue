@@ -133,18 +133,18 @@
       onInputChange: function(type) {
         switch(type) {
           case 'title':
-          var url = '/books/earch';
+          var url = '/books/search';
           var data = { title: this.filter.title };
           break;
 
           case 'category':
           var url = '/categories/search';
-          var data = { title: this.filter.title };
+          var data = { category: this.filter.category };
           break;
 
           case 'author':
           var url = '/authors/search';
-          var data = { title: this.filter.title };
+          var data = { author: this.filter.author };
           break;
         }
 

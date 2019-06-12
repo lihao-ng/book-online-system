@@ -23,15 +23,7 @@ class PagesController extends Controller {
     return view($this->path . 'home', ['ratingBooks' => $ratingBooks, 'soldBooks' => $soldBooks, 'latestBooks' => $latestBooks]);
   }
 
-  public function cartPage(){
-    return view($this->path . 'cartPage');
-  }
-
   public function contactUs(){
-    return view($this->path . 'contactUs');
-  }
-
-  public function customerLogin(){
-    return view($this->path . 'customerLogin');
+    return view($this->path . 'contact');
   }
 }

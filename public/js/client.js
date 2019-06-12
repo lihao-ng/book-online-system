@@ -1856,7 +1856,7 @@ __webpack_require__.r(__webpack_exports__);
 
       switch (type) {
         case 'title':
-          var url = '/books/earch';
+          var url = '/books/search';
           var data = {
             title: this.filter.title
           };
@@ -1865,14 +1865,14 @@ __webpack_require__.r(__webpack_exports__);
         case 'category':
           var url = '/categories/search';
           var data = {
-            title: this.filter.title
+            category: this.filter.category
           };
           break;
 
         case 'author':
           var url = '/authors/search';
           var data = {
-            title: this.filter.title
+            author: this.filter.author
           };
           break;
       }
@@ -51611,9 +51611,9 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\ernch\Desktop\University\BCS\Semester 6\SE\book-online-system\resources\js\client\app.js */"./resources/js/client/app.js");
-__webpack_require__(/*! C:\Users\ernch\Desktop\University\BCS\Semester 6\SE\book-online-system\resources\sass\client\app.scss */"./resources/sass/client/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\ernch\Desktop\University\BCS\Semester 6\SE\book-online-system\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\book-online-system\resources\js\client\app.js */"./resources/js/client/app.js");
+__webpack_require__(/*! C:\xampp\htdocs\book-online-system\resources\sass\client\app.scss */"./resources/sass/client/app.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\book-online-system\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
 
 
 /***/ })
