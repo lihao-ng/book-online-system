@@ -72,12 +72,7 @@
 	                            <input class="form-control" type="text" required="required" name="email">
 	                        </div>
 	                    </div>
-
-	                    <div class="row justify-content-center pt-4 pb-2">
-                            <div class="col-12 align-self-center register-column">
-                                <label class="register-labels">First name:</label>
-                        	</div>
-                        </div>
+	                    
                         <div class="row justify-content-center">                        	
 	                        <div class="col-12">
 	                            <input class="form-control" type="text" required="required" name="email">
