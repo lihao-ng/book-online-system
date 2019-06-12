@@ -34,4 +34,8 @@ class PagesController extends Controller {
   public function customerLogin(){
     return view($this->path . 'customerLogin');
   }
+
+  public function customerRegister(){
+    return view($this->path . 'customerRegister');
+  }
 }

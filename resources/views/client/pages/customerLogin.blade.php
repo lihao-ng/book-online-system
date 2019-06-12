@@ -46,7 +46,7 @@
                     <div class="row mb-3">
                         <div class="col-12 text-center">
                             <div class="customerLogin-SignUp-container">
-                                 Doesn't have an account? <a class="customerLogin-SignUp" href="#">Sign Up now!</a>
+                                 Doesn't have an account? <a class="customerLogin-SignUp" href="{{ route('customerRegister') }}">Sign Up now!</a>
                             </div>
                         </div>
                     </div>
