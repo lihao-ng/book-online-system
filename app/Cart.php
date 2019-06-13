@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class Cart extends Pivot
 {
-    protected $table = 'author_categories';
+    protected $table = 'carts';
 
     protected $fillable = [
         'book_id', 'customer_id'
@@ -16,7 +16,7 @@ class Cart extends Pivot
         return $this->belongsTo('App\Book');
     }
 
-    public function categories() {
-        return $this->belongsTo('App\Category');
+    public function customers() {
+        return $this->belongsTo('App\Customer');
     }
 }

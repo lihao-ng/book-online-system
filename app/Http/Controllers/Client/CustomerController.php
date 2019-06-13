@@ -8,7 +8,5 @@ use App\Http\Controllers\Controller;
 class CustomerController extends Controller {
   protected $path = 'client.customers.';
 
-  public function showCart(){
-    return view($this->path . 'cart');
-  }
+  
 }

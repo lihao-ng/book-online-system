@@ -18,7 +18,7 @@ class CreateRatingsTable extends Migration
             $table->integer('book_id');
             $table->integer('customer_id');
             $table->integer('star');
-            $table->integer('comment');
+            $table->text('comment');
             $table->timestamps();
         });
     }

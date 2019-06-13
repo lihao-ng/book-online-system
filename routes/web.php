@@ -54,17 +54,17 @@ Route::prefix('admin')->name('admin.')->group(function(){
 // Client Routes
 
 Route::middleware(['auth', 'client.auth'])->group(function(){
-  Route::post('books/{book}/add-to-cart','Client\BooksController@addCart')->name('books.cart');
-  Route::get('cart','Client\CustomerController@showCart')->name('show.cart');
+  Route::get('books/{book}/add-to-cart','Client\BooksController@addCart')->name('books.add.cart');
+  Route::get('cart','Client\CartsController@showCart')->name('show.cart');
+  Route::post('cart','Client\CartsController@checkout')->name('checkout');
 });
-
-Route::get('/','Client\PagesController@home')->name('home');
 
 Route::middleware('guest')->group(function(){
   Route::get('login','Client\AuthController@showLogin')->name('customer.login.show');
   Route::post('login','Client\AuthController@login')->name('customer.login');
 });
 
+Route::get('/','Client\PagesController@home')->name('home');
 Route::get('contact-us','Client\PagesController@contactUs')->name('contact');
 
 Route::post('books/search','Client\BooksController@search')->name('books.search');

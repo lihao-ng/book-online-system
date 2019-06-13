@@ -23,7 +23,8 @@ class BooksController extends Controller {
   }
 
   public function show(Request $request, Book $book) {
-    $randomBooks = $this->bookService->transformCollection(Book::where('id', '!=', $book->id)->get()->random(4));
+    $randomBooks = Book::where('id', '!=', $book->id)->get();
+    $randomBooks = $randomBooks == null ? $this->bookService->transformCollection($randomBooks->random(4)) : [];
     $relatedBooks = $this->getRelatedBooks($book);
     $book = $this->bookService->transform($book);
 

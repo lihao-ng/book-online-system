@@ -12,10 +12,12 @@
             Detail
           </button>
         </a>
-        <button type="button" class="btn catalogue-books-buy-button">
-          <i class="fa fa-shopping-cart catalogue-books-buttons-icon" aria-hidden="true"></i>
-          Buy
-        </button>
+        <a :href="'books/' + book.id + '/add-to-cart'">
+          <button type="button" class="btn catalogue-books-buy-button">
+            <i class="fa fa-shopping-cart catalogue-books-buttons-icon" aria-hidden="true"></i>
+            Buy
+          </button>
+        </a>
       </div>
     </div> 
   </div>

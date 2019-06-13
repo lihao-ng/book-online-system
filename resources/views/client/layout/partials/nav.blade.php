@@ -21,11 +21,15 @@
           <li class="nav-item">
             <a class="nav-link text-light" href="{{ route('books.index') }}">Bookstore</a>
           </li>
-          @if(current_user()->isCustomer())
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#">My Account</a>
-          </li>
-          @else
+          @if(current_user())
+            @if(current_user()->isCustomer())
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">My Account</a>
+            </li>
+            @endif
+          @endif
+          
+          @if(!current_user())
           <li class="nav-item">
             <a class="nav-link text-light" href="{{ route('customer.login.show') }}">Login</a>
           </li>
@@ -36,16 +40,18 @@
         </ul>       
       </div>
 
-      @if(current_user()->isCustomer())
-      <div class="col-1">
-        <div class="pull-right ml-auto">
-          <a href="{{ route('show.cart') }}">
-            <button class="nav-bar-cart-button">
-              <i class="fa fa-shopping-basket nav-bar-cart-icon" aria-hidden="true"></i>
-            </button>
-          </a>
+      @if(current_user())
+        @if(current_user()->isCustomer())
+        <div class="col-1">
+          <div class="pull-right ml-auto">
+            <a href="{{ route('show.cart') }}">
+              <button class="nav-bar-cart-button">
+                <i class="fa fa-shopping-basket nav-bar-cart-icon" aria-hidden="true"></i>
+              </button>
+            </a>
+          </div>
         </div>
-      </div>
+        @endif
       @endif
     </div>
   </div>

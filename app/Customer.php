@@ -18,7 +18,11 @@ class Customer extends Model
         return $this->hasOne('App\Address');
     }
 
-    public function cart() {
-        return $this->hasOne('App\Cart');
+    public function books() {
+        return $this->belongsToMany('App\Book', 'carts', 'customer_id', 'book_id')->withTimestamps();
+    }
+
+    public function bookRatings() {
+        return $this->hasMany('App\Rating');
     }
 }

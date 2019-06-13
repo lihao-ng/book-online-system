@@ -9,15 +9,19 @@ class Book extends Model {
     'isbn', 'title', 'description', 'publisher', 'publication_date', 'publication_city', 'language', 'price', 'rating', 'sold', 'stock', 'image'
   ];
 
-  public function cartItems() {
-    return $this->belongsToMany('App\CartItem');
-  }
-
   public function authors() {
     return $this->belongsToMany('App\Author', 'author_books', 'book_id', 'author_id')->withTimestamps();
   }
 
   public function categories() {
     return $this->belongsToMany('App\Category', 'book_categories', 'book_id', 'category_id')->withTimestamps();
+  }
+
+  public function customers() {
+    return $this->belongsToMany('App\Customer', 'carts', 'book_id', 'customer_id')->withTimestamps();
+  }
+
+  public function ratings() {
+    return $this->hasMany('App\Rating');
   }
 }

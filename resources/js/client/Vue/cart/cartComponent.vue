@@ -1,120 +1,13 @@
-@extends('client.layout.master')
-
-@section('content')
-
-<div class="container-fluid cartPage-main-container">
-  <div class="container-fluid">
-    <div class="cartPage-mycart-title font-weight-bold text-center mb-4">
-      My Cart
-    </div>
-  </div>
-
+<template>
   <div class="row justify-content-center cartPage-font">
     <!--cart-->
+
     <div class="cartPage-cart-section row">
-      <div>
-        <!--first cart -->
-        <div class=" col-12 pb-3 mb-4 bg-white cartPage-shadow">
-          <div class="row">
-            <div class="col-12 col-lg-3">
-              <div class="text-center">
-                <img src="images/popular2.jpg" class="img-thumbnail cart-image">
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-9">
-              <div class="row cartPage-title-container justify-content-between mr-0 ml-0">
-                <div class="cartPage-title-detail-container col-6">
-                  <div class="cartPage-title">Details:</div>
-                </div>
-                <div class="cartPage-title-price-container col-6 col-sm-5">
-                  <div class="cartPage-title">Price: RM40.00</div>
-                </div>
-              </div>
-
-              <div class="row cartPage-detail-content-container">
-                <div class="col-12">
-                  <div class="row">
-                    <div class="col-12">
-                      <span class="cartPage-detail-title">Book Name:</span>
-                      Soul<br>
-                      <span class="cartPage-detail-title">Author:</span>
-                      Sony<br>
-                      <span class="cartPage-detail-title">Language:</span>
-                      English<br>
-                      <span class="cartPage-detail-title">Rating:</span>
-                      5/5<br>
-                      <span class="cartPage-detail-title">Description:</span> 
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
-                      <br>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="row mt-2">
-                <div class="col-12 cartPage-garbage-numOfOrderBar-container">
-                  <input class="cartPage-numOfOrderBar mr-4" type="number" value="1" min="1">
-                  <button class="cartPage-garbage-button"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--second cart-->
-        <div class="col-12 pb-3 mb-4 bg-white cartPage-shadow">
-          <div class="row">
-            <div class="col-12 col-lg-3">
-              <div class="text-center">
-                <img src="images/popular1.jpg" class="img-thumbnail cart-image">
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-9">
-              <div class="row cartPage-title-container justify-content-between mr-0 ml-0">
-                <div class="cartPage-title-detail-container col-6">
-                  <div class="cartPage-title">Details:</div>
-                </div>
-                <div class="cartPage-title-price-container col-6 col-sm-5">
-                  <div class="cartPage-title">Price: RM48.00</div>
-                </div>
-              </div>
-
-              <div class="row cartPage-detail-content-container">
-                <div class="col-12">
-                  <div class="row">
-                    <div class="col-12">
-                      <span class="cartPage-detail-title">Book Name:</span>
-                      Destroy Me<br>
-                      <span class="cartPage-detail-title">Author:</span>
-                      Tahereh Mafi<br>
-                      <span class="cartPage-detail-title">Language:</span>
-                      English<br>
-                      <span class="cartPage-detail-title">Rating:</span>
-                      5/5<br>
-                      <span class="cartPage-detail-title">Description:</span> 
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
-                      <br>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="row mt-3">
-                <div class="col-12 cartPage-garbage-numOfOrderBar-container">
-                  <input class="cartPage-numOfOrderBar mr-4" type="number" value="1" min="1">
-                  <button class="cartPage-garbage-button"><i class=" fa fa-trash" aria-hidden="true"></i></button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
+      <paginate name="itemPagination" :list="items" :per="3" v-if="items.length">
+        <display-cart-items-component v-for="(item, index) in paginated('itemPagination')" :default-item="item" :key="item.id"></display-cart-items-component>
+      </paginate>
+      <paginate-links for="itemPagination" :limit="5" :show-step-links="true" :step-links="{ next: 'Next', prev: 'Previous' }" v-if="items.length"></paginate-links>
     </div>
-    
     <!--checkout -->
     <div class="cartPage-checkout-section col-10 col-lg-3 offset-lg-1 mb-4">
       <!-- first page of checkout-->      
@@ -473,7 +366,38 @@
       </div>
     </div>
   </div>
-</div>
-</div>
+</template>
 
-@endsection
+<script>
+  export default{
+    props: ['defaultItems'],
+    data: function(){
+      return {
+        items: [],
+        paginate: ['itemPagination'],
+        error: {
+          show: false,
+          message: ''
+        }
+      };
+    },
+    mounted: function() {
+      this.setDefault();
+    },
+    methods: {
+      setDefault: function() {
+        this.items = this.defaultItems;
+      },
+      onSubmit: function() {
+        // if(!this.book.id) {
+        //   this.error.show = true;
+        //   return;
+        // }else {
+        //   this.error.show = false;
+        // }
+
+        // window.location.href = `/books/${this.book.id}`;
+      }
+    }
+  }
+</script>

@@ -62,9 +62,12 @@
 							Detail
 						</button>
 					</a>
-					<button type="button" class="btn books-buy-button">
-						<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
-					Buy</button>
+					<a href="{{ route('books.add.cart', $ratingBook['id']) }}">
+						<button type="button" class="btn books-buy-button">
+							<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
+							Buy
+						</button>
+					</a>
 				</div>
 			</div> 
 		</div>
@@ -104,7 +107,7 @@
 			<div class="popular-courses-container pb-5">
 				<img src="{{ $soldBook['image'] }}" class="popular-courses-image mt-2">
 				<p class="popular-courses-name d-inline-block mt-4">{{ $soldBook['title'] }}</p>		 
-				<a href="#"> 	
+				<a href="{{ route('books.add.cart', $ratingBook['id']) }}">	
 					<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
 				</a>
 			</div>
@@ -160,12 +163,18 @@
 				<!-- <i class="books-author">Simon Dillon</i> -->
 				<p class="books-price">RM {{ $ratingBook['price'] }}</p>
 				<div class="books-buttons-div">
-					<button type="button" class="btn books-detail-button">
-						<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
-					Detail</button>
-					<button type="button" class="btn books-buy-button">
-						<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
-					Buy</button>
+					<a href="{{ route('books.show', $ratingBook['id']) }}">
+						<button type="button" class="btn books-detail-button">
+							<i class="fa fa-paper-plane books-buttons-icon" aria-hidden="true"></i>
+							Detail
+						</button>
+					</a>
+					<a href="{{ route('books.add.cart', $ratingBook['id']) }}">
+						<button type="button" class="btn books-buy-button">
+							<i class="fa fa-shopping-cart books-buttons-icon" aria-hidden="true"></i>
+							Buy
+						</button>
+					</a>
 				</div> 
 			</div> 
 		</div>

@@ -1710,6 +1710,510 @@ module.exports = function isBuffer (obj) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/cart/cartComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/client/Vue/cart/cartComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['defaultItems'],
+  data: function data() {
+    return {
+      items: [],
+      paginate: ['itemPagination'],
+      error: {
+        show: false,
+        message: ''
+      }
+    };
+  },
+  mounted: function mounted() {
+    this.setDefault();
+  },
+  methods: {
+    setDefault: function setDefault() {
+      this.items = this.defaultItems;
+    },
+    onSubmit: function onSubmit() {// if(!this.book.id) {
+      //   this.error.show = true;
+      //   return;
+      // }else {
+      //   this.error.show = false;
+      // }
+      // window.location.href = `/books/${this.book.id}`;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['defaultItem'],
+  data: function data() {
+    return {
+      item: {},
+      author: {}
+    };
+  },
+  mounted: function mounted() {
+    this.setDefault();
+  },
+  methods: {
+    setDefault: function setDefault() {
+      this.item = this.defaultItem;
+
+      if (this.defaultItem.authors[0]) {
+        this.author = this.defaultItem.authors[0];
+      }
+    },
+    onSubmit: function onSubmit() {// if(!this.book.id) {
+      //   this.error.show = true;
+      //   return;
+      // }else {
+      //   this.error.show = false;
+      // }
+      // window.location.href = `/books/${this.book.id}`;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/catalogues/catalogSearchComponent.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/client/Vue/catalogues/catalogSearchComponent.vue?vue&type=script&lang=js& ***!
@@ -2061,6 +2565,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -37614,6 +38120,1379 @@ exports.mixin = mixin;
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/cart/cartComponent.vue?vue&type=template&id=35a6040d&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/client/Vue/cart/cartComponent.vue?vue&type=template&id=35a6040d& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "row justify-content-center cartPage-font" },
+    [
+      _c(
+        "div",
+        { staticClass: "cartPage-cart-section row" },
+        [
+          _vm.items.length
+            ? _c(
+                "paginate",
+                { attrs: { name: "itemPagination", list: _vm.items, per: 3 } },
+                _vm._l(_vm.paginated("itemPagination"), function(item, index) {
+                  return _c("display-cart-items-component", {
+                    key: item.id,
+                    attrs: { "default-item": item }
+                  })
+                }),
+                1
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.items.length
+            ? _c("paginate-links", {
+                attrs: {
+                  for: "itemPagination",
+                  limit: 5,
+                  "show-step-links": true,
+                  "step-links": { next: "Next", prev: "Previous" }
+                }
+              })
+            : _vm._e()
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _vm._m(0)
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "cartPage-checkout-section col-10 col-lg-3 offset-lg-1 mb-4"
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "p-3 bg-white text-uppercase cartPage-section-title-container cartPage-shadow collapse show",
+            attrs: { id: "CheckoutCollapse" }
+          },
+          [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _vm._v("\n          Apply Promo Code:\n        ")
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row cartPage-promoCode-container justify-content-center "
+              },
+              [
+                _c("div", { staticClass: "col-6 pl-3 pr-1" }, [
+                  _c("input", {
+                    staticClass: "cartPage-promoCode-inputfield",
+                    attrs: { type: "text", placeholder: "BOOKISGOOD" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-6 pl-1 pr-3" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "cartPage-promoCode-button",
+                      attrs: { type: "button" }
+                    },
+                    [_vm._v("Apply")]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row mt-4 mb-4" }, [
+              _c("div", { staticClass: "col-6" }, [
+                _vm._v("\n          Total incl. gst\n        ")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-6 text-right font-weight-bold" }, [
+                _vm._v("\n          RM88\n        ")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row cartPage-promoCode-container" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: " cartPage-promoCode-button",
+                    attrs: {
+                      type: "button",
+                      "data-toggle": "collapse",
+                      href: "#CheckoutCollapse"
+                    }
+                  },
+                  [_vm._v("Checkout")]
+                )
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "p-3 bg-white cartPage-promoCode-title-container cartPage-shadow collapse",
+            attrs: { id: "CheckoutCollapse" }
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "w-100 pb-3 ml-0 mr-0 text-center text-uppercase cartPage-backButton-container"
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "cartPage-backButton",
+                    attrs: {
+                      "data-toggle": "collapse",
+                      href: "#CheckoutCollapse"
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-angle-left" })]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "cartPage-section-title-container font-weight-bold"
+                  },
+                  [_vm._v("Billing Address")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("form", [
+              _c("div", { staticClass: "pt-3" }, [
+                _c("div", { staticClass: "row justify-content-between" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "cartPage-section-title-container text-uppercase font-weight-bold"
+                      },
+                      [_vm._v("Address:")]
+                    ),
+                    _vm._v(
+                      "\n              TTDI Plaza, C-2-8 & C-2-9, Jalan Wan Kadir 3, Taman Tun Dr Ismail, 60000 Kuala Lumpur, Wilayah Perseketuan Kuala Lumpur\n            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "cartPage-pointer-cursor col-4 text-right align-self-center",
+                      attrs: { "data-toggle": "modal", href: "#editAddress" }
+                    },
+                    [_vm._v("\n              Edit\n            ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "modal fade", attrs: { id: "editAddress" } },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "modal-dialog modal-dialog-centered modal-xl"
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "modal-content text-uppercase" },
+                            [
+                              _c("div", { staticClass: "container p-4" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "row justify-content-between cartPage-popUp-title"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "col-5 font-weight-bold" },
+                                      [_vm._v("shipping & billing detail")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "cartPage-pointer-cursor col-5 text-right font-weight-bold",
+                                        attrs: {
+                                          "data-toggle": "modal",
+                                          "data-target": "#createAddress",
+                                          "data-dismiss": "modal"
+                                        }
+                                      },
+                                      [_vm._v("add new address")]
+                                    )
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("form", [
+                                _c("div", { staticClass: "table-responsive" }, [
+                                  _c(
+                                    "table",
+                                    { staticClass: "table text-center" },
+                                    [
+                                      _c(
+                                        "thead",
+                                        { staticClass: "cartPage-table-head" },
+                                        [
+                                          _c("tr", [
+                                            _c(
+                                              "th",
+                                              {
+                                                staticStyle: { width: "15%" },
+                                                attrs: { scope: "col" }
+                                              },
+                                              [_vm._v("full name")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              {
+                                                staticStyle: { width: "40%" },
+                                                attrs: { scope: "col" }
+                                              },
+                                              [_vm._v("Address")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              {
+                                                staticStyle: { width: "15%" },
+                                                attrs: { scope: "col" }
+                                              },
+                                              [_vm._v("Phone Number")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("th", {
+                                              staticStyle: { width: "20%" },
+                                              attrs: { scope: "col" }
+                                            }),
+                                            _vm._v(" "),
+                                            _c("th", {
+                                              staticStyle: { width: "10%" },
+                                              attrs: { scope: "col" }
+                                            })
+                                          ])
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("tbody", [
+                                        _c("tr", [
+                                          _c(
+                                            "th",
+                                            { attrs: { scope: "row" } },
+                                            [_vm._v("Liew Wai Xing")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("td", [
+                                            _vm._v(
+                                              "TTDI PLAZA, C-2-8 & C-2-9, JALAN WAN KADIR 3, TAMAN TUN DR ISMAIL, 60000 KUALA LUMPUR, WILAYAH PERSEKETUAN KUALA LUMPUR"
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("td", [_vm._v("01234556789")]),
+                                          _vm._v(" "),
+                                          _c("td", [
+                                            _vm._v(
+                                              "DEFAULT SHIPPING & BILLING ADDRESS"
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("td", [
+                                            _c(
+                                              "label",
+                                              { staticClass: "align-middle" },
+                                              [
+                                                _c("input", {
+                                                  attrs: {
+                                                    type: "radio",
+                                                    name: "addressChoosed",
+                                                    checked: "",
+                                                    value: "#"
+                                                  }
+                                                })
+                                              ]
+                                            )
+                                          ])
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("tr", [
+                                          _c(
+                                            "th",
+                                            { attrs: { scope: "row" } },
+                                            [_vm._v("Liew Wai Xing")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("td", [
+                                            _vm._v(
+                                              "NO.5 LORONG TEKNOLOGI B, NOUVELLE INDUSTRIAL PARK, TAMAN SAINS SELANGOR 1, PETALING JAYA, KOTA DAMANSARA, 47301 PETALING JAYA, SELANGOR"
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("td", [_vm._v("01234556789")]),
+                                          _vm._v(" "),
+                                          _c("td"),
+                                          _vm._v(" "),
+                                          _c("td", [
+                                            _c("label", [
+                                              _c("input", {
+                                                attrs: {
+                                                  type: "radio",
+                                                  name: "addressChoosed",
+                                                  value: "#"
+                                                }
+                                              })
+                                            ])
+                                          ])
+                                        ])
+                                      ])
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "container p-4" }, [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "row justify-content-center"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-4 text-center" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "cartPage-modal-button",
+                                              attrs: {
+                                                type: "button",
+                                                "data-dismiss": "modal"
+                                              }
+                                            },
+                                            [_vm._v("Cancel")]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-4 text-center" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "cartPage-modal-button",
+                                              attrs: {
+                                                type: "submit",
+                                                "data-dismiss": "modal"
+                                              }
+                                            },
+                                            [_vm._v("Save")]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ])
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "modal fade",
+                      attrs: { id: "createAddress" }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "modal-dialog modal-dialog-centered modal-xl"
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "modal-content text-uppercase" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "container p-4 text-left cartPage-popUp-title"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "font-weight-bold" },
+                                    [_vm._v("shipping & billing detail")]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "container p-4 col-8" },
+                                [
+                                  _c("form", [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "row justify-content-center mb-4"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "col-2 align-self-center"
+                                          },
+                                          [_c("label", [_vm._v("Full Name")])]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "col-10" }, [
+                                          _c("input", {
+                                            staticClass: "form-control",
+                                            attrs: {
+                                              type: "text",
+                                              required: "required"
+                                            }
+                                          })
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "row justify-content-center mb-4"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "col-2 align-self-center"
+                                          },
+                                          [_c("label", [_vm._v("Telephone")])]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "col-10" }, [
+                                          _c("input", {
+                                            staticClass: "form-control",
+                                            attrs: {
+                                              type: "text",
+                                              required: "required"
+                                            }
+                                          })
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "row justify-content-center mb-3"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "col-2 align-self-center"
+                                          },
+                                          [_c("label", [_vm._v("Address")])]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "col-10" }, [
+                                          _c("textarea", {
+                                            staticClass: "form-control",
+                                            attrs: {
+                                              row: "5",
+                                              required: "required"
+                                            }
+                                          })
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "row justify-content-center mb-3"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "col-5 offset-2" },
+                                          [
+                                            _c(
+                                              "select",
+                                              { staticClass: "form-control" },
+                                              [
+                                                _c(
+                                                  "option",
+                                                  { attrs: { selected: "" } },
+                                                  [_vm._v("City")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "option",
+                                                  { attrs: { value: "#" } },
+                                                  [_vm._v("Sample 1")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "option",
+                                                  { attrs: { value: "#" } },
+                                                  [_vm._v("Sample 2")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "option",
+                                                  { attrs: { value: "#" } },
+                                                  [_vm._v("Sample 3")]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "col-5" }, [
+                                          _c("input", {
+                                            staticClass: "form-control",
+                                            attrs: {
+                                              type: "text",
+                                              required: "required",
+                                              placeholder: "Zip Code"
+                                            }
+                                          })
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "row justify-content-center mb-3"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "col-5 offset-2" },
+                                          [
+                                            _c(
+                                              "select",
+                                              { staticClass: "form-control" },
+                                              [
+                                                _c(
+                                                  "option",
+                                                  { attrs: { selected: "" } },
+                                                  [_vm._v("State")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "option",
+                                                  { attrs: { value: "#" } },
+                                                  [_vm._v("Sample 1")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "option",
+                                                  { attrs: { value: "#" } },
+                                                  [_vm._v("Sample 2")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "option",
+                                                  { attrs: { value: "#" } },
+                                                  [_vm._v("Sample 3")]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "col-5" }, [
+                                          _c(
+                                            "select",
+                                            { staticClass: "form-control" },
+                                            [
+                                              _c(
+                                                "option",
+                                                { attrs: { selected: "" } },
+                                                [_vm._v("Country")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "option",
+                                                { attrs: { value: "#" } },
+                                                [_vm._v("Sample 1")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "option",
+                                                { attrs: { value: "#" } },
+                                                [_vm._v("Sample 2")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "option",
+                                                { attrs: { value: "#" } },
+                                                [_vm._v("Sample 3")]
+                                              )
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "container p-4" },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "row justify-content-center"
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass: "col-6 text-center"
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "cartPage-modal-button",
+                                                    attrs: {
+                                                      type: "button",
+                                                      "data-dismiss": "modal"
+                                                    }
+                                                  },
+                                                  [_vm._v("Cancel")]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass: "col-6 text-center"
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "cartPage-modal-button",
+                                                    attrs: {
+                                                      type: "submit",
+                                                      "data-dismiss": "modal"
+                                                    }
+                                                  },
+                                                  [_vm._v("Save")]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("div", { staticClass: "row justify-content-between" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "cartPage-section-title-container text-uppercase font-weight-bold"
+                      },
+                      [_vm._v("Contact:")]
+                    ),
+                    _vm._v("\n              0123753638\n            ")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "col-4 cartPage-pointer-cursor text-right align-self-center",
+                      attrs: { "data-toggle": "modal", href: "#editContact" }
+                    },
+                    [_vm._v("\n              Edit\n            ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "modal fade", attrs: { id: "editContact" } },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "modal-dialog modal-dialog-centered modal-xl"
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "modal-content text-uppercase" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "container p-4 text-left cartPage-popUp-title"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "font-weight-bold" },
+                                    [_vm._v("edit contact")]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "container p-4 col-8" },
+                                [
+                                  _c("form", [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "row justify-content-center mb-4"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "col-2 align-self-center"
+                                          },
+                                          [_c("label", [_vm._v("Contact")])]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "col-10" }, [
+                                          _c("input", {
+                                            staticClass: "form-control",
+                                            attrs: {
+                                              type: "text",
+                                              required: "required"
+                                            }
+                                          })
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "container p-4" },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "row justify-content-center"
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass: "col-6 text-center"
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "cartPage-modal-button",
+                                                    attrs: {
+                                                      type: "button",
+                                                      "data-dismiss": "modal"
+                                                    }
+                                                  },
+                                                  [_vm._v("Cancel")]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass: "col-6 text-center"
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "cartPage-modal-button",
+                                                    attrs: {
+                                                      type: "submit",
+                                                      "data-dismiss": "modal"
+                                                    }
+                                                  },
+                                                  [_vm._v("Save")]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("div", { staticClass: "row justify-content-between" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "cartPage-section-title-container text-uppercase font-weight-bold"
+                      },
+                      [_vm._v("Email:")]
+                    ),
+                    _vm._v("\n              cincaiuser@gmail.com\n            ")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "col-4 cartPage-pointer-cursor text-right align-self-center",
+                      attrs: { "data-toggle": "modal", href: "#editEmail" }
+                    },
+                    [_vm._v("\n              Edit\n            ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "modal fade", attrs: { id: "editEmail" } },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "modal-dialog modal-dialog-centered modal-xl"
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "modal-content text-uppercase" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "container p-4 text-left cartPage-popUp-title"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "font-weight-bold" },
+                                    [_vm._v("edit email")]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "container p-4 col-8" },
+                                [
+                                  _c("form", [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "row justify-content-center mb-4"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "col-2 align-self-center"
+                                          },
+                                          [_c("label", [_vm._v("email")])]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "col-10" }, [
+                                          _c("input", {
+                                            staticClass: "form-control",
+                                            attrs: {
+                                              type: "text",
+                                              required: "required"
+                                            }
+                                          })
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "container p-4" },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "row justify-content-center"
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass: "col-6 text-center"
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "cartPage-modal-button",
+                                                    attrs: {
+                                                      type: "button",
+                                                      "data-dismiss": "modal"
+                                                    }
+                                                  },
+                                                  [_vm._v("Cancel")]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass: "col-6 text-center"
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "cartPage-modal-button",
+                                                    attrs: {
+                                                      type: "submit",
+                                                      "data-dismiss": "modal"
+                                                    }
+                                                  },
+                                                  [_vm._v("Save")]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-12" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "cartPage-section-title-container text-uppercase font-weight-bold"
+                      },
+                      [_vm._v("Remarks:")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "cartPage-remark-input",
+                      attrs: { type: "text" }
+                    })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "pt-4" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-12" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "cartPage-section-title-container text-uppercase font-weight-bold"
+                      },
+                      [_vm._v("Collection")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "cartPage-select" }, [
+                      _c(
+                        "select",
+                        {
+                          staticClass: "form-control",
+                          attrs: { id: "collectionType" }
+                        },
+                        [
+                          _c(
+                            "option",
+                            {
+                              attrs: { value: "selfCollection", selected: "" }
+                            },
+                            [_vm._v("Self-Collection")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "delivery" } }, [
+                            _vm._v("Delivery")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "pt-4 pb-4 cartPage-selfCollection-container",
+                  attrs: { id: "selfCollectionSelected" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-12" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "cartPage-section-title-container text-uppercase font-weight-bold"
+                        },
+                        [_vm._v("Address:")]
+                      ),
+                      _vm._v(
+                        "\n              TTDI Plaza, C-2-8 & C-2-9, Jalan Wan Kadir 3, Taman Tun Dr Ismail, 60000 Kuala Lumpur, Wilayah Perseketuan Kuala Lumpur\n              "
+                      ),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "cartPage-section-title-container text-uppercase font-weight-bold pt-3"
+                        },
+                        [_vm._v("Contact:")]
+                      ),
+                      _vm._v("\n              0123753638\n            ")
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "pt-4 pb-1" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-12" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "cartPage-section-title-container text-uppercase font-weight-bold"
+                      },
+                      [_vm._v("Payment Method")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "cartPage-select" }, [
+                      _c("select", { staticClass: "form-control" }, [
+                        _c(
+                          "option",
+                          { attrs: { value: "creditCard", selected: "" } },
+                          [_vm._v("Credit Card")]
+                        ),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "onlineBanking" } }, [
+                          _vm._v("Online Banking")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "cash" } }, [
+                          _vm._v("Cash")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "instalment" } }, [
+                          _vm._v("Instalment")
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "pt-4 pb-2" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "row justify-content-between cartPage-totalPrice-container font-weight-bold"
+                  },
+                  [
+                    _c("div", { staticClass: "col-2" }, [
+                      _vm._v(" \n              TOTAL\n            ")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6 text-right" }, [
+                      _vm._v(" \n              RM88.00\n            ")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row pt-2 pb-2" }, [
+                _c("div", { staticClass: "col-12" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "cartPage-promoCode-button p-3",
+                      attrs: { type: "submit" }
+                    },
+                    [_vm._v("Checkout")]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=template&id=6be11e62&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=template&id=6be11e62& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: " col-12 pb-3 mb-4 bg-white cartPage-shadow" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12 col-lg-3" }, [
+          _c("div", { staticClass: "text-center" }, [
+            _c("img", {
+              staticClass: "img-thumbnail cart-image",
+              attrs: { src: _vm.item.image }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12 col-lg-9" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "row cartPage-title-container justify-content-between mr-0 ml-0"
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "cartPage-title-price-container col-6 col-sm-5"
+                },
+                [
+                  _c("div", { staticClass: "cartPage-title" }, [
+                    _vm._v("Price: RM" + _vm._s(_vm.item.price))
+                  ])
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "row cartPage-detail-content-container" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-12" }, [
+                  _c("span", { staticClass: "cartPage-detail-title" }, [
+                    _vm._v("Book Name:")
+                  ]),
+                  _vm._v("\n                " + _vm._s(_vm.item.title)),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "cartPage-detail-title" }, [
+                    _vm._v("Author:")
+                  ]),
+                  _vm._v("\n                " + _vm._s(_vm.author.name)),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "cartPage-detail-title" }, [
+                    _vm._v("Language:")
+                  ]),
+                  _vm._v("\n                " + _vm._s(_vm.item.language)),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "cartPage-detail-title" }, [
+                    _vm._v("Rating:")
+                  ]),
+                  _vm._v("\n                " + _vm._s(_vm.item.rating) + "/5"),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "cartPage-detail-title" }, [
+                    _vm._v("Description:")
+                  ]),
+                  _vm._v(
+                    " \n                " +
+                      _vm._s(_vm.item.description) +
+                      "\n                "
+                  ),
+                  _c("br")
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "cartPage-title-detail-container col-6" }, [
+      _c("div", { staticClass: "cartPage-title" }, [_vm._v("Details:")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row mt-2" }, [
+      _c(
+        "div",
+        { staticClass: "col-12 cartPage-garbage-numOfOrderBar-container" },
+        [
+          _c("input", {
+            staticClass: "cartPage-numOfOrderBar mr-4",
+            attrs: { type: "number", value: "1", min: "1" }
+          }),
+          _vm._v(" "),
+          _c("button", { staticClass: "cartPage-garbage-button" }, [
+            _c("i", {
+              staticClass: "fa fa-trash",
+              attrs: { "aria-hidden": "true" }
+            })
+          ])
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/catalogues/catalogSearchComponent.vue?vue&type=template&id=f28ca59c&":
 /*!************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/client/Vue/catalogues/catalogSearchComponent.vue?vue&type=template&id=f28ca59c& ***!
@@ -38086,7 +39965,11 @@ var render = function() {
         _c("div", { staticClass: "catalogue-books-buttons-div" }, [
           _c("a", { attrs: { href: "/books/" + _vm.book.id } }, [_vm._m(0)]),
           _vm._v(" "),
-          _vm._m(1)
+          _c(
+            "a",
+            { attrs: { href: "books/" + _vm.book.id + "/add-to-cart" } },
+            [_vm._m(1)]
+          )
         ])
       ])
     ]
@@ -38127,7 +40010,7 @@ var staticRenderFns = [
           staticClass: "fa fa-shopping-cart catalogue-books-buttons-icon",
           attrs: { "aria-hidden": "true" }
         }),
-        _vm._v("\n        Buy\n      ")
+        _vm._v("\n          Buy\n        ")
       ]
     )
   }
@@ -51148,6 +53031,8 @@ if (token) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./Vue/cart/cartComponent.vue": "./resources/js/client/Vue/cart/cartComponent.vue",
+	"./Vue/cart/partials/displayCartItemsComponent.vue": "./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue",
 	"./Vue/catalogues/catalogSearchComponent.vue": "./resources/js/client/Vue/catalogues/catalogSearchComponent.vue",
 	"./Vue/catalogues/partials/bestsellerComponent.vue": "./resources/js/client/Vue/catalogues/partials/bestsellerComponent.vue",
 	"./Vue/catalogues/partials/catalogDisplayComponent.vue": "./resources/js/client/Vue/catalogues/partials/catalogDisplayComponent.vue",
@@ -51174,6 +53059,144 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./resources/js/client sync recursive \\.vue$/";
+
+/***/ }),
+
+/***/ "./resources/js/client/Vue/cart/cartComponent.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/client/Vue/cart/cartComponent.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _cartComponent_vue_vue_type_template_id_35a6040d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cartComponent.vue?vue&type=template&id=35a6040d& */ "./resources/js/client/Vue/cart/cartComponent.vue?vue&type=template&id=35a6040d&");
+/* harmony import */ var _cartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cartComponent.vue?vue&type=script&lang=js& */ "./resources/js/client/Vue/cart/cartComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _cartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _cartComponent_vue_vue_type_template_id_35a6040d___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _cartComponent_vue_vue_type_template_id_35a6040d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/client/Vue/cart/cartComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/client/Vue/cart/cartComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/client/Vue/cart/cartComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_cartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./cartComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/cart/cartComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_cartComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/client/Vue/cart/cartComponent.vue?vue&type=template&id=35a6040d&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/client/Vue/cart/cartComponent.vue?vue&type=template&id=35a6040d& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_cartComponent_vue_vue_type_template_id_35a6040d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./cartComponent.vue?vue&type=template&id=35a6040d& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/cart/cartComponent.vue?vue&type=template&id=35a6040d&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_cartComponent_vue_vue_type_template_id_35a6040d___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_cartComponent_vue_vue_type_template_id_35a6040d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _displayCartItemsComponent_vue_vue_type_template_id_6be11e62___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./displayCartItemsComponent.vue?vue&type=template&id=6be11e62& */ "./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=template&id=6be11e62&");
+/* harmony import */ var _displayCartItemsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./displayCartItemsComponent.vue?vue&type=script&lang=js& */ "./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _displayCartItemsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _displayCartItemsComponent_vue_vue_type_template_id_6be11e62___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _displayCartItemsComponent_vue_vue_type_template_id_6be11e62___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_displayCartItemsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./displayCartItemsComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_displayCartItemsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=template&id=6be11e62&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=template&id=6be11e62& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_displayCartItemsComponent_vue_vue_type_template_id_6be11e62___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./displayCartItemsComponent.vue?vue&type=template&id=6be11e62& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/client/Vue/cart/partials/displayCartItemsComponent.vue?vue&type=template&id=6be11e62&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_displayCartItemsComponent_vue_vue_type_template_id_6be11e62___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_displayCartItemsComponent_vue_vue_type_template_id_6be11e62___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

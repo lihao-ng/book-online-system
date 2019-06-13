@@ -59,7 +59,11 @@ class BookService extends TransformerService {
     });
   }
 
-  public function addCart(Book $book) {
+  public function addCart(Request $request, Book $book) {
+    if(!$book->stock) {
+      return back()->with('error', 'Sorry, the selected book is currently running low of stocks!');
+    }
+
     return $this->bookCustomerService->addBookToCart($book);
   }
 
