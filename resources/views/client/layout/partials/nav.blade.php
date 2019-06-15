@@ -26,6 +26,10 @@
             <li class="nav-item">
               <a class="nav-link text-light" href="#">My Account</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{{ route('customer.logout') }}">Log Out</a>
+            </li>
             @endif
           @endif
           

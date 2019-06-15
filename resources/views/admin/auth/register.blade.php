@@ -38,7 +38,7 @@
                   <i class="fa fa-key" aria-hidden="true"></i>
                 </span>
               </div>
-              <input type="text" name="password" class="form-control" placeholder="Password">
+              <input type="password" name="password" class="form-control" placeholder="Password">
             </div>
 
             <h6 class="card-subtitle mb-2">Confirmed Password<span style="color:red;">*</span></h6>
@@ -48,7 +48,7 @@
                   <i class="fa fa-key" aria-hidden="true"></i>
                 </span>
               </div>
-              <input type="text" name="password_confirmation" class="form-control" placeholder="Retype Password">
+              <input type="password" name="password_confirmation" class="form-control" placeholder="Retype Password">
             </div>
 
             <button type="submit" class="btn btn-tertiary btn-lg mb-3 w-100">Register</button>

@@ -64,13 +64,17 @@ Route::middleware(['ifAuth:customers', 'client.auth'])->group(function(){
   Route::post('customer/address','Client\CustomersController@addAddress')->name('customer.address');
   Route::post('customer/mobile','Client\CustomersController@updateMobile')->name('customer.mobile');
   Route::post('customer/email','Client\CustomersController@updateEmail')->name('customer.email');
+
+  Route::get('customer-logout','Client\AuthController@logout')->name('customer.logout');
 });
 
 Route::middleware('guest')->group(function(){
   Route::get('login','Client\AuthController@showLogin')->name('customer.login.show');
   Route::post('login','Client\AuthController@login')->name('customer.login');
 
-  Route::get('customerRegister','Client\PagesController@customerRegister')->name('customerRegister');
+  Route::get('register','Client\AuthController@showRegister')->name('customer.register.show');
+  Route::post('register','Client\AuthController@register')->name('customer.register');
+
 });
 
 Route::get('/','Client\PagesController@home')->name('home');

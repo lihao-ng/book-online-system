@@ -28,7 +28,7 @@
                   <i class="fa fa-key" aria-hidden="true"></i>
                 </span>
               </div>
-              <input type="text" name="password" class="form-control" placeholder="Password">
+              <input type="password" name="password" class="form-control" placeholder="Password">
             </div>
 
             <button type="submit" class="btn btn-tertiary btn-lg mb-3 w-100">Log In</button>
