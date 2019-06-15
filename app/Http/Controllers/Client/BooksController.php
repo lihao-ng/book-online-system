@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Services\Client\BookService;
 
 class BooksController extends Controller {
-  protected $path = 'client.pages.books.';
+  protected $path = 'client.books.';
   protected $bookService;
 
   public function __construct(BookService $bookService) {
@@ -23,7 +23,8 @@ class BooksController extends Controller {
   }
 
   public function show(Request $request, Book $book) {
-    $randomBooks = $this->bookService->transformCollection(Book::where('id', '!=', $book->id)->get()->random(4));
+    $randomBooks = Book::where('id', '!=', $book->id)->get();
+    $randomBooks = $randomBooks == null ? $this->bookService->transformCollection($randomBooks->random(4)) : [];
     $relatedBooks = $this->getRelatedBooks($book);
     $book = $this->bookService->transform($book);
 
@@ -46,5 +47,9 @@ class BooksController extends Controller {
 
   public function search(Request $request) {
     return $this->bookService->search($request);
+  }
+
+  public function addCart(Request $request, Book $book) {
+    return $this->bookService->addCart($request, $book);
   }
 }

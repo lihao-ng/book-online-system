@@ -40,8 +40,6 @@ class AdminService extends TransformerService {
       "email" => 'required|email|unique:users'
     ]);
 
-    
-
     Admin::create([
       'name' => $request->name,
       'email' => $request->email,

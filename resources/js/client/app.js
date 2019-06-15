@@ -1,5 +1,6 @@
 require('../bootstrap');
 
+window.swal = require('sweetalert2');
 window.Vue = require('vue');
 window.VuePaginate = require('vue-paginate');
 

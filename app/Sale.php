@@ -4,14 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sale extends Model
-{
-    protected $fillable = [
-        'id', 'cart_item_id', 'price'
-    ];
+class Sale extends Model {
+  protected $fillable = [
+    'customer_id', 'address', 'remark', 'collection', 'payment'
+  ];
 
-    public function cartItem()
-    {
-        return $this->belongsTo('App\CartItem');
-    }
+  public function customer() {
+    return $this->belongsTo('App\Customer');
+  }
+
+  public function books() {
+    return $this->belongsToMany('App\Book', 'book_sales', 'sale_id', 'book_id')->withPivot('amount')->withTimestamps();
+  }
 }

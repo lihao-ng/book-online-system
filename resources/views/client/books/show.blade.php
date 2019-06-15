@@ -34,7 +34,9 @@
 								<p class="product-price">RM {{ $book['price'] }}</p>
 								<p class="product-stock-available">{{ $book['stock'] }} in stock</p>
 								<input type="text" class="product-quantity" step="1" min="1" max="260" name="quantity" value="1" inputmode="numeric" title="Qty">
-								<button class="product-add-to-cart-button">Add to cart</button>				 
+								<a href="{{ route('books.add.cart', $book['id']) }}">
+									<button class="product-add-to-cart-button">Add to cart</button>				 
+								</a>
 							</div>
 						</div>
 					</div>
