@@ -13,7 +13,7 @@ class CategoryService extends TransformerService {
     return $this->transformCollection($categories);
   }
 
-  public function transform($category){
+  public function transform($category) {
     return [
       'id' => $category->id,
       'name' => $category->name

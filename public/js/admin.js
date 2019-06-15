@@ -86684,6 +86684,8 @@ __webpack_require__(/*! ./scripts/bootstrap-datetimepicker-setup */ "./resources
 
 __webpack_require__(/*! ./scripts/chart-setup */ "./resources/js/admin/scripts/chart-setup.js");
 
+__webpack_require__(/*! ./scripts/live-file */ "./resources/js/admin/scripts/live-file.js");
+
 var app = new Vue({
   el: '#admin-app'
 });
@@ -86882,6 +86884,43 @@ $(function () {
       }
     });
   }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/live-file.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/scripts/live-file.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var _pictureUploader = function _pictureUploader(e) {
+  var input = $(this);
+  var files = this.files;
+  var pictureTag = $(input.data('target'));
+
+  if (!files && files.length == 0) {
+    return;
+  }
+
+  var reader = new FileReader();
+
+  reader.onload = function (e) {
+    if (pictureTag.is("div")) {
+      pictureTag.css('background-image', "url('".concat(e.target.result, "')"));
+      pictureTag.find('.hidden-message').hide();
+    } else if (pictureTag.is("img")) {
+      pictureTag.attr('src', e.target.result);
+    }
+  };
+
+  reader.readAsDataURL(files[0]);
+  return;
+};
+
+$().ready(function () {
+  $('.on__file__change').on('change', _pictureUploader);
 });
 
 /***/ }),

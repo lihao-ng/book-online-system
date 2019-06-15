@@ -24,8 +24,14 @@ Route::prefix('admin')->name('admin.')->group(function(){
     });
   });
 
-  Route::middleware(['auth', 'admin.auth'])->group(function(){
+  Route::middleware(['ifAuth:admins', 'admin.auth'])->group(function(){
     Route::get('dashboard','Admin\DashboardController@dashboard')->name('dashboard');
+
+    Route::get('logout','Admin\AuthController@logout')->name('logout');
+
+    Route::get('settings','Admin\DashboardController@viewProfile')->name('profile.show');
+    Route::post('settings','Admin\DashboardController@updateProfile')->name('profile.update');
+    Route::put('settings/password', "Admin\DashboardController@updatePassword")->name("password.change");
 
     Route::post('admins/search','Admin\AdminsController@search')->name('admins.search');
     Route::resource('admins', 'Admin\AdminsController')->except(['show']);
@@ -47,9 +53,25 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 // Client Routes
 
-// Route::middleware(['auth', 'client.auth'])->group(function(){
-  // Put in authenticated client routes here
-// });
+Route::middleware(['ifAuth:customers', 'client.auth'])->group(function(){
+  Route::get('books/{book}/add-to-cart','Client\BooksController@addCart')->name('books.add.cart');
+  
+  Route::post('cart-update','Client\CartsController@update')->name('cart.update');
+  Route::post('cart-delete','Client\CartsController@delete')->name('cart.delete');
+  Route::post('checkout','Client\CartsController@checkout')->name('checkout');
+
+  Route::get('cart','Client\CustomersController@showCart')->name('show.cart');
+  Route::post('customer/address','Client\CustomersController@addAddress')->name('customer.address');
+  Route::post('customer/mobile','Client\CustomersController@updateMobile')->name('customer.mobile');
+  Route::post('customer/email','Client\CustomersController@updateEmail')->name('customer.email');
+});
+
+Route::middleware('guest')->group(function(){
+  Route::get('login','Client\AuthController@showLogin')->name('customer.login.show');
+  Route::post('login','Client\AuthController@login')->name('customer.login');
+
+  Route::get('customerRegister','Client\PagesController@customerRegister')->name('customerRegister');
+});
 
 Route::get('/','Client\PagesController@home')->name('home');
 Route::get('/cartPage','Client\PagesController@cartPage')->name('cartPage');

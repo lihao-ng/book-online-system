@@ -13777,6 +13777,18 @@ a:active {
   display: block;
 }
 
+.swal2-confirm {
+  background-color: #28a745 !important;
+}
+
+.swal2-confirm.btn-danger {
+  background-color: #dc3545 !important;
+}
+
+.swal2-cancel {
+  background-color: #ffc107 !important;
+}
+
 .search-bar {
   background-color: white;
 }
@@ -15112,5 +15124,21 @@ tr:nth-child(even) {
   color: #2f2b35;
   background-color: white;
   border: 1px solid #2f2b35;
+}
+
+.register-main-container {
+  background-color: #edf3f4;
+}
+
+.register-title {
+  font-size: 35px;
+}
+
+.register-labels {
+  font-size: 15px;
+}
+
+.register-column {
+  text-align: left;
 }
 

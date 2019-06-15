@@ -13801,6 +13801,18 @@ a:active {
   display: block;
 }
 
+.swal2-confirm {
+  background-color: #28a745 !important;
+}
+
+.swal2-confirm.btn-danger {
+  background-color: #dc3545 !important;
+}
+
+.swal2-cancel {
+  background-color: #ffc107 !important;
+}
+
 /**
  * @author zhixin wen <wenzhixin2010@gmail.com>
  * version: 1.14.2
@@ -14237,6 +14249,11 @@ div.fixed-table-scroll-outer {
 .wrap-space {
   white-space: pre-line;
   margin: 0;
+}
+
+.img-thumbnail-profile {
+  height: 180px;
+  width: 180px;
 }
 
 .stranger-wrapper {
@@ -14888,17 +14905,5 @@ div.fixed-table-scroll-outer {
   z-index: 0;
   background-color: #edf3f4 !important;
   color: black !important;
-}
-
-.swal2-confirm {
-  background-color: #28a745 !important;
-}
-
-.swal2-confirm.btn-danger {
-  background-color: #dc3545 !important;
-}
-
-.swal2-cancel {
-  background-color: #ffc107 !important;
 }
 
