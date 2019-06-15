@@ -443,7 +443,6 @@
                   <select class="form-control">
                               <option value="creditCard" selected>Credit Card</option>
                               <option value="onlineBanking">Online Banking</option>
-                              <option value="cash">Cash</option>
                               <option value="instalment">Instalment</option>
                   </select>
                 </div>
