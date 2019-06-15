@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }}</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <title>{{ config('app.name') }}</title>  
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link href="{{ asset('css/client.css') }}" rel="stylesheet">
-
     @yield('styles')
   </head>
 

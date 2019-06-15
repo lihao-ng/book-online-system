@@ -26,4 +26,8 @@ class PagesController extends Controller {
   public function contactUs(){
     return view($this->path . 'contact');
   }
+
+  public function customerRegister(){
+    return view($this->path . 'customerRegister');
+  }
 }

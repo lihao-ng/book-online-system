@@ -69,6 +69,8 @@ Route::middleware(['ifAuth:customers', 'client.auth'])->group(function(){
 Route::middleware('guest')->group(function(){
   Route::get('login','Client\AuthController@showLogin')->name('customer.login.show');
   Route::post('login','Client\AuthController@login')->name('customer.login');
+
+  Route::get('customerRegister','Client\PagesController@customerRegister')->name('customerRegister');
 });
 
 Route::get('/','Client\PagesController@home')->name('home');

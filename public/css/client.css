@@ -15087,3 +15087,19 @@ tr:nth-child(even) {
   }
 }
 
+.register-main-container {
+  background-color: #edf3f4;
+}
+
+.register-title {
+  font-size: 35px;
+}
+
+.register-labels {
+  font-size: 15px;
+}
+
+.register-column {
+  text-align: left;
+}
+
