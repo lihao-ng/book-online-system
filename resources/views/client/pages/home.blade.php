@@ -123,7 +123,9 @@
 		<img src="images/bookstore.jpg" class="browse-collection-image">
 		<!-----change this to background image-------->
 		<div class="browse-collection-word">Browse Through Our Complete Library</div>
-		<button type="button" class="btn btn-primary browse-collection-button">BROWSE COLLECTION</button>
+		<a href="{{ route('books.index') }}">
+			<button type="button" class="btn btn-primary browse-collection-button">BROWSE COLLECTION</button>
+		</a>
 	</div>
 </div>
 
