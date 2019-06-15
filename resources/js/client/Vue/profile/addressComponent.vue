@@ -1,20 +1,20 @@
 <template>
-  <div>
-    <div class="row justify-content-center pt-4 pb-2">
-      <div class="col-12 align-self-center register-column">
-        <label class="register-labels">Addresses:</label>
-        <div class="btn btn-primary" @click="onAddressClick">Add Address</div>
+  <div class="row pb-4">
+    <div class="col-12">
+      <label class="contactUs-title pr-2">Address</label> 
+      <div class="contactUs-addbtn btn p-1" @click="onAddressClick">Add</div>
+    </div>
+    <div class="col-12">
+      <div class="row mt-2" v-for="(address, index) in addresses" :key="index">
+        <div class="col-11">
+          <input type="text" name="addresses[]" class="form-control" placeholder="Enter Address" v-model="address.address">
+        </div>
+        <div class="col-1">
+          <i class="fa fa-remove" @click="onAddressDelete(index)"></i>
+        </div>
       </div>
     </div>
-    <div class="row justify-content-center mt-2" v-for="(address, index) in addresses" :key="index">                          
-      <div class="col-11">
-        <input type="text" name="addresses[]" class="form-control" placeholder="Enter Address" v-model="address.address">
-      </div>
-      <div class="col-1">
-        <i class="fa fa-remove" @click="onAddressDelete(index)"></i>
-      </div>
-    </div>
-  </div> 
+  </div>
 </template>
 
 <script>

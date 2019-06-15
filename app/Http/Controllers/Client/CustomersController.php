@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Customer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\Client\CustomerService;
@@ -34,5 +35,18 @@ class CustomersController extends Controller {
     $customer = current_user()->customer;
 
     return $this->customerService->updateEmail($request, $customer);
+  }
+
+  public function editProfile(){
+    $customer = current_user()->customer;
+    $customer['email'] = $customer->user->email;
+    $customer['addresses'] = $customer->addresses;
+
+    return view($this->path . 'edit-profile', ['customer' => $customer]);
+  }
+
+  public function updateProfile(Request $request){
+    $customer = current_user()->customer;
+    return $this->customerService->updateProfile($request, $customer);
   }
 }

@@ -61,6 +61,8 @@ Route::middleware(['ifAuth:customers', 'client.auth'])->group(function(){
   Route::post('checkout','Client\CartsController@checkout')->name('checkout');
 
   Route::get('cart','Client\CustomersController@showCart')->name('show.cart');
+  Route::get('edit-profile','Client\CustomersController@editProfile')->name('customer.edit.profile');
+  Route::post('update-profile','Client\CustomersController@updateProfile')->name('customer.update.profile');
   Route::post('customer/address','Client\CustomersController@addAddress')->name('customer.address');
   Route::post('customer/mobile','Client\CustomersController@updateMobile')->name('customer.mobile');
   Route::post('customer/email','Client\CustomersController@updateEmail')->name('customer.email');
@@ -74,14 +76,12 @@ Route::middleware('guest')->group(function(){
 
   Route::get('register','Client\AuthController@showRegister')->name('customer.register.show');
   Route::post('register','Client\AuthController@register')->name('customer.register');
-
 });
 
 Route::get('/','Client\PagesController@home')->name('home');
 
 Route::get('contact-us','Client\PagesController@contactUs')->name('contact');
 Route::post('contact-us','Client\PagesController@sendContactUs')->name('contact.send');
-Route::get('/editProfile','Client\PagesController@editProfile')->name('editProfile');
 
 Route::post('books/search','Client\BooksController@search')->name('books.search');
 Route::resource('books','Client\BooksController')->only(['index', 'show']);

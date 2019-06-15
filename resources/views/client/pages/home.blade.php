@@ -15,7 +15,9 @@
 			<div class="carousel-caption d-none d-block">
 				<p class="carousel-subtitle">Reading is the best gift of humanity</p>
 				<h5 class="carousel-title">Keep Reading</h5>
-				<button type="button" class="btn btn-dark text-light carousel-button">See more</button>
+				<a href="{{ route('books.index') }}">
+					<button type="button" class="btn btn-dark text-light carousel-button">See more</button>
+				</a>
 			</div>	
 		</div>		
 		<div class="carousel-item">
@@ -23,7 +25,9 @@
 			<div class="carousel-caption d-none d-block">			    
 				<p class="carousel-subtitle">Reading is the best gift of humanity</p>
 				<h5 class="carousel-title">Keep Reading</h5>
-				<button type="button" class="btn btn-dark text-light carousel-button">See more</button>
+				<a href="{{ route('books.index') }}">
+					<button type="button" class="btn btn-dark text-light carousel-button">See more</button>
+				</a>
 			</div>
 		</div>
 		<div class="carousel-item">
@@ -31,7 +35,9 @@
 			<div class="carousel-caption d-none d-block">			    
 				<p class="carousel-subtitle">Reading is the best gift of humanity</p>
 				<h5 class="carousel-title">Keep Reading</h5>
-				<button type="button" class="btn btn-dark text-light carousel-button">See more</button>
+				<a href="{{ route('books.index') }}">
+					<button type="button" class="btn btn-dark text-light carousel-button">See more</button>
+				</a>
 			</div>
 		</div>
 	</div>  

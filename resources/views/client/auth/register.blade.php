@@ -15,7 +15,7 @@
   <div class="container-fluid py-5">       
     <div class="container-fluid bg-white p-3 mb-4 contactUs-shadow" style="width: 50%">
       <div class="text-uppercase">
-        <div class="text-center container p-3 col-11">
+        <div class="container p-3 col-11">
           {!! Form::open(['route' => 'customer.register', 'class' => 'form', 'id' => 'form-validation']) !!}
             <div class="row justify-content-center pt-4 pb-2">
               <div class="col-12 align-self-center register-column">
