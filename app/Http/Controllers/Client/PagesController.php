@@ -42,4 +42,8 @@ class PagesController extends Controller {
 
     return view($this->path . 'contact');
   }
+
+  public function editProfile(){
+    return view($this->path . 'editProfile');
+  }
 }

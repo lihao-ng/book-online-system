@@ -16,7 +16,7 @@ Admins
 
 <div class="row pl-15">
   <div class="col-12 page-title">
-    <h3>Create Author</h3>
+    <h3>Create Admin</h3>
   </div>
 </div>
 

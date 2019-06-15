@@ -78,8 +78,10 @@ Route::middleware('guest')->group(function(){
 });
 
 Route::get('/','Client\PagesController@home')->name('home');
+
 Route::get('contact-us','Client\PagesController@contactUs')->name('contact');
 Route::post('contact-us','Client\PagesController@sendContactUs')->name('contact.send');
+Route::get('/editProfile','Client\PagesController@editProfile')->name('editProfile');
 
 Route::post('books/search','Client\BooksController@search')->name('books.search');
 Route::resource('books','Client\BooksController')->only(['index', 'show']);
