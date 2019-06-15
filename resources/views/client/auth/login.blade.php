@@ -28,7 +28,7 @@
                 <label class="customerLogin-title">Password</label>
               </div>
               <div class="col-9">
-                {{ Form::text('password', null, ['class' => 'form-control', 'required', 'placeholder' => "Password"]) }}
+                {{ Form::password('password', ['class' => 'form-control', 'required', 'placeholder' => "Password"]) }}
               </div>
             </div>
             <div class="row pb-3">
@@ -47,7 +47,7 @@
           <div class="row mb-3">
             <div class="col-12 text-center">
               <div class="customerLogin-SignUp-container">
-               Doesn't have an account? <a class="customerLogin-SignUp" href="#">Sign Up now!</a>
+               Doesn't have an account? <a class="customerLogin-SignUp" href="{{ route('customer.register.show') }}">Sign Up now!</a>
              </div>
            </div>
          </div>

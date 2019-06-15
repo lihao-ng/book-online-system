@@ -64,19 +64,23 @@ Route::middleware(['ifAuth:customers', 'client.auth'])->group(function(){
   Route::post('customer/address','Client\CustomersController@addAddress')->name('customer.address');
   Route::post('customer/mobile','Client\CustomersController@updateMobile')->name('customer.mobile');
   Route::post('customer/email','Client\CustomersController@updateEmail')->name('customer.email');
+
+  Route::get('customer-logout','Client\AuthController@logout')->name('customer.logout');
 });
 
 Route::middleware('guest')->group(function(){
   Route::get('login','Client\AuthController@showLogin')->name('customer.login.show');
   Route::post('login','Client\AuthController@login')->name('customer.login');
 
-  Route::get('customerRegister','Client\PagesController@customerRegister')->name('customerRegister');
+  Route::get('register','Client\AuthController@showRegister')->name('customer.register.show');
+  Route::post('register','Client\AuthController@register')->name('customer.register');
+
 });
 
 Route::get('/','Client\PagesController@home')->name('home');
-Route::get('/cartPage','Client\PagesController@cartPage')->name('cartPage');
-Route::get('/contactUs','Client\PagesController@contactUs')->name('contactUs');
-Route::get('/customerLogin','Client\PagesController@customerLogin')->name('customerLogin');
+
+Route::get('contact-us','Client\PagesController@contactUs')->name('contact');
+Route::post('contact-us','Client\PagesController@sendContactUs')->name('contact.send');
 Route::get('/editProfile','Client\PagesController@editProfile')->name('editProfile');
 
 Route::post('books/search','Client\BooksController@search')->name('books.search');

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Client;
 use App\Book;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactUs;
 use App\Services\Client\BookService;
 
 class PagesController extends Controller {
@@ -27,8 +29,18 @@ class PagesController extends Controller {
     return view($this->path . 'contact');
   }
 
-  public function customerRegister(){
-    return view($this->path . 'customerRegister');
+  public function sendContactUs(Request $request){
+    $admin = 'nglihao98@gmail.com';
+
+    $this->validate($request, [
+      "name" => "required",
+      "email" => "required|email",
+      "customerMessage" => "required"
+    ]);
+
+    Mail::to($admin)->send(new ContactUs($request->name, $request->email, $request->customerMessage));
+
+    return view($this->path . 'contact');
   }
 
   public function editProfile(){

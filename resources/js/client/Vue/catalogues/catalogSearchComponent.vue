@@ -68,27 +68,7 @@
               </div>
             </div>
           </div>
-          <!-- categories -->
-         <!--  <div class="row justify-content-center">
-            <div class="col">
-              <div class="container book-categories-container">
-                <p class="right-section-title">PRODUCT CATEGORIES</p>
-                <a class="categories-button" href="#">Drama</a>
-                <ul class="book-categories-list">
-                  <li><a class="categories-button" href="#">Insipration</a></li>
-                  <li><a class="categories-button" href="#">Love story</a></li>             
-                </ul>
-                <a class="categories-button" href="#">Life style</a>
-                <ul class="book-categories-list">
-                  <li><a class="categories-button" href="#">Business</a></li>
-                  <li><a class="categories-button" href="#">Culture</a></li>              
-                </ul>
-                <a class="categories-button" href="#">Business</a>
-                <a class="categories-button" href="#">Culture</a>
-              </div>
-            </div>
-          </div> -->
-          <!-- Products -->
+          
           <div class="row">
             <div class="col">
               <div class="container catalogue-side-books-container">
