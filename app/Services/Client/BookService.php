@@ -64,7 +64,22 @@ class BookService extends TransformerService {
       return back()->with('error', 'Sorry, the selected book is currently running low of stocks!');
     }
 
-    return $this->bookCustomerService->addBookToCart($book);
+    return $this->bookCustomerService->addBookToCart($request, $book);
+  }
+
+  public function validateStock($items) {
+    $bookName = null;
+
+    foreach ($items as $item) {
+      $book = $item->book;
+
+      if($item->amount > $book->stock) {
+        $bookName = $book->title;
+        break;
+      }
+    }
+
+    return $bookName;
   }
 
   public function transform($book){

@@ -14,12 +14,16 @@ class Customer extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function address() {
-        return $this->hasOne('App\Address');
+    public function addresses() {
+        return $this->hasMany('App\Address');
     }
 
     public function books() {
-        return $this->belongsToMany('App\Book', 'carts', 'customer_id', 'book_id')->withTimestamps();
+        return $this->belongsToMany('App\Book', 'carts', 'customer_id', 'book_id')->withPivot('amount')->withTimestamps();
+    }
+
+    public function sales() {
+        return $this->hasMany('App\Sale');
     }
 
     public function bookRatings() {

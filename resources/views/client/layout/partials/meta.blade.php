@@ -8,7 +8,7 @@
 
     <title>{{ config('app.name') }}</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-    <link href="{{ mix('css/client.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/client.css') }}" rel="stylesheet">
 
     @yield('styles')
   </head>
@@ -20,7 +20,7 @@
       </div>
     </div>
     
-    <script src="{{ mix('js/client.js') }}"></script>
+    <script src="{{ asset('js/client.js') }}"></script>
     @yield('scripts')
   </body>
 </html>

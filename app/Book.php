@@ -18,7 +18,11 @@ class Book extends Model {
   }
 
   public function customers() {
-    return $this->belongsToMany('App\Customer', 'carts', 'book_id', 'customer_id')->withTimestamps();
+    return $this->belongsToMany('App\Customer', 'carts', 'book_id', 'customer_id')->withPivot('amount')->withTimestamps();
+  }
+
+  public function sales() {
+    return $this->belongsToMany('App\Sale', 'book_sales', 'sale_id', 'book_id')->withPivot('amount')->withTimestamps();
   }
 
   public function ratings() {
