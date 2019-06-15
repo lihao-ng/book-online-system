@@ -1,0 +1,40 @@
+.editProfile-main-container {
+    background-color: $primary-color;
+ }
+
+ .editProfile-main-title {
+    font-size: 35px;
+    padding-top: 2%;
+    color: $tertiary-color;
+ }
+
+ .editProfile-fullContent-container {
+    width:60%;
+ }
+
+ .editProfile-shadow {	
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ .editProfile-profilePic {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    background: $tertiary-color;
+ }
+
+ .contactUs-addbtn {
+    &:hover{
+        color:$tertiary-color;
+        background-color: white;
+        border: 1px solid $tertiary-color;
+    }
+
+    border: transparent;
+    background-color: $tertiary-color;
+    color:white;
+    font-size:12px;
+    text-transform: uppercase;
+ }
+
+

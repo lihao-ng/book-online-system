@@ -30,4 +30,8 @@ class PagesController extends Controller {
   public function customerRegister(){
     return view($this->path . 'customerRegister');
   }
+
+  public function editProfile(){
+    return view($this->path . 'editProfile');
+  }
 }
