@@ -24,7 +24,7 @@
           @if(current_user())
           @if(current_user()->isCustomer())
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">My Account</a>
+            <a class="nav-link text-light" href="{{ route('customer.edit.profile') }}">My Account</a>
           </li>
 
           <li class="nav-item">

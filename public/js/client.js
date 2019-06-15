@@ -43222,75 +43222,68 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("div", { staticClass: "row justify-content-center pt-4 pb-2" }, [
-        _c("div", { staticClass: "col-12 align-self-center register-column" }, [
-          _c("label", { staticClass: "register-labels" }, [
-            _vm._v("Addresses:")
+  return _c("div", { staticClass: "row pb-4" }, [
+    _c("div", { staticClass: "col-12" }, [
+      _c("label", { staticClass: "contactUs-title pr-2" }, [_vm._v("Address")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "contactUs-addbtn btn p-1",
+          on: { click: _vm.onAddressClick }
+        },
+        [_vm._v("Add")]
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "col-12" },
+      _vm._l(_vm.addresses, function(address, index) {
+        return _c("div", { key: index, staticClass: "row mt-2" }, [
+          _c("div", { staticClass: "col-11" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: address.address,
+                  expression: "address.address"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                name: "addresses[]",
+                placeholder: "Enter Address"
+              },
+              domProps: { value: address.address },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(address, "address", $event.target.value)
+                }
+              }
+            })
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "btn btn-primary",
-              on: { click: _vm.onAddressClick }
-            },
-            [_vm._v("Add Address")]
-          )
+          _c("div", { staticClass: "col-1" }, [
+            _c("i", {
+              staticClass: "fa fa-remove",
+              on: {
+                click: function($event) {
+                  return _vm.onAddressDelete(index)
+                }
+              }
+            })
+          ])
         ])
-      ]),
-      _vm._v(" "),
-      _vm._l(_vm.addresses, function(address, index) {
-        return _c(
-          "div",
-          { key: index, staticClass: "row justify-content-center mt-2" },
-          [
-            _c("div", { staticClass: "col-11" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: address.address,
-                    expression: "address.address"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  name: "addresses[]",
-                  placeholder: "Enter Address"
-                },
-                domProps: { value: address.address },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(address, "address", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-1" }, [
-              _c("i", {
-                staticClass: "fa fa-remove",
-                on: {
-                  click: function($event) {
-                    return _vm.onAddressDelete(index)
-                  }
-                }
-              })
-            ])
-          ]
-        )
-      })
-    ],
-    2
-  )
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -56921,6 +56914,8 @@ files.keys().map(function (key) {
 
 __webpack_require__(/*! ./scripts/_cartPage.js */ "./resources/js/client/scripts/_cartPage.js");
 
+__webpack_require__(/*! ./scripts/live-file */ "./resources/js/client/scripts/live-file.js");
+
 var app = new Vue({
   el: '#client-app'
 }); // require('./vendors/noUiSlider.js');
@@ -56957,6 +56952,43 @@ $(function () {
       $('#selfCollectionSelected').hide();
     }
   });
+});
+
+/***/ }),
+
+/***/ "./resources/js/client/scripts/live-file.js":
+/*!**************************************************!*\
+  !*** ./resources/js/client/scripts/live-file.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var _pictureUploader = function _pictureUploader(e) {
+  var input = $(this);
+  var files = this.files;
+  var pictureTag = $(input.data('target'));
+
+  if (!files && files.length == 0) {
+    return;
+  }
+
+  var reader = new FileReader();
+
+  reader.onload = function (e) {
+    if (pictureTag.is("div")) {
+      pictureTag.css('background-image', "url('".concat(e.target.result, "')"));
+      pictureTag.find('.hidden-message').hide();
+    } else if (pictureTag.is("img")) {
+      pictureTag.attr('src', e.target.result);
+    }
+  };
+
+  reader.readAsDataURL(files[0]);
+  return;
+};
+
+$().ready(function () {
+  $('.on__file__change').on('change', _pictureUploader);
 });
 
 /***/ }),
