@@ -84,13 +84,13 @@
 
 <!-----------------------featured book------------------------------------------->
 <div class="container-fluid">
-	<div class="row">
+	<div class="row" style="background-color: white">
 		<div class="offset-lg-1 col-12 col-md-12 col-lg-3 my-auto pb-5 py-5 featured-books-description-col">
 			<p class="featured-book-word">Featured Book</p>
 			<p class="featured-book-title">How to make thousands online</p>
 			<p class="featured-book-author">Anggi Krisna</p>
 			<p class="featured-book-description">From advanced selectors to generated content to web fonts, and from gradients, shadows, and rounded corners to elegant animations, CSS3 hold a universe of creative possibilities. No one can better guide you through these galaxies than Dan Cederholm.</p>
-			<button type="button" class="btn btn-dark text-light">Get this book</button>
+			<button type="button" class="btn btn-dark text-light" style="border-radius: 20px">Get this book</button>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4 pb-5 py-5 my-auto" align="center">
 			<img src="images/featured1.jpg" class="featured-book-image">
@@ -110,34 +110,42 @@
 	<div class="row popular-courses-display justify-content-center">  
 		@foreach($soldBooks as $soldBook)
 		<div class="col-sm-12 col-md-6 col-lg-2 p-md-1 p-sm-2 mx-lg-4">	 
-			<div class="popular-courses-container pb-5">
+			<div class="popular-courses-container pb-4">
 				<img src="{{ $soldBook['image'] }}" class="popular-courses-image mt-2">
-				<p class="popular-courses-name d-inline-block mt-4">{{ $soldBook['title'] }}</p>		 
-				<a href="{{ route('books.add.cart', $ratingBook['id']) }}">	
-					<button type="button" class="btn btn-dark text-light d-inline-block float-right mt-3 mr-3">Buy</button>
-				</a>
+				<div class="row justify-content-center popular-courses-details">
+					<div class="col-8 popular-courses-name">			
+						<p class="d-inline-block">{{ $soldBook['title'] }}</p>
+					</div>
+					<div class="col-4">	 
+						<a href="{{ route('books.add.cart', $ratingBook['id']) }}">	
+							<button type="button" class="btn btn-dark text-light popular-courses-button d-inline-block float-right">Buy</button>
+						</a>
+					</div>
+				</div>
 			</div>
-		</div>	
-		@endforeach
-	</div>
+		</div>
+		@endforeach	
+	</div>		
 	@endif
 </div>
 
 <!-----------------------browse collection------------------------------------------->
 <div class="container-fluid">
 	<div class="row browse-collection-image-filter">
-		<img src="images/bookstore.jpg" class="browse-collection-image">
+		<img src="images/bookstore2.jpg" class="browse-collection-image">
 		<!-----change this to background image-------->
 		<div class="browse-collection-word">Browse Through Our Complete Library</div>
 		<a href="{{ route('books.index') }}">
-			<button type="button" class="btn btn-primary browse-collection-button">BROWSE COLLECTION</button>
+			<button type="button" class="btn btn-primary browse-collection-button">BROWSE COLLECTION
+				<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+			</button>
 		</a>
 	</div>
 </div>
 
 <!-----------------------informative section------------------------------------------->
 <div class="container-fluid">
-	<div class="row justify-content-center py-5" align="center">
+	<div class="row justify-content-center py-5" align="center" style="background-color: white">
 		<div class="col-lg-3">
 			<i class="fa fa-book informative-section-icons py-4" style="color: #27c8ea" aria-hidden="true"></i>
 			<p class="informative-section-titles">Tons of Books</p>
