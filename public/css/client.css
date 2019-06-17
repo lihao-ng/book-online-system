@@ -13809,10 +13809,14 @@ a:active {
   border: none;
   width: 100%;
   height: 35px;
-  background-color: black;
+  background-color: #2f2b35;
   margin-top: 10px;
   border-radius: 20px;
   font-size: 13px;
+}
+
+.search-bar-find-button:hover {
+  background-color: #515570;
 }
 
 @media (max-width: 768px) {
@@ -13859,7 +13863,13 @@ a:active {
   margin-top: 2%;
   margin-bottom: 17%;
   float: left;
-  width: 20%;
+  width: 13%;
+  background-color: #2f2b35;
+  border: none;
+}
+
+.carousel-button:hover {
+  background-color: #515570;
 }
 
 .title-display {
@@ -13969,7 +13979,7 @@ a:active {
   color: #d7e1ef;
   padding-top: 3%;
   padding-bottom: 2%;
-  background-color: #33373d;
+  background-color: #2f2b35;
   font-size: 35px;
   text-align: center;
 }
@@ -13993,7 +14003,25 @@ a:active {
 }
 
 .popular-courses-name {
-  font-size: 20px;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+  margin-top: 25px;
+}
+
+.popular-courses-details {
+  width: 100%;
+  margin: 0;
+}
+
+.popular-courses-button {
+  height: 30%;
+  margin-top: 25px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 5px;
 }
 
 .browse-collection-image-filter {
@@ -14024,10 +14052,10 @@ a:active {
   top: 50%;
   font-size: 38px;
   color: white;
-  width: 680px;
+  width: 750px;
   height: 56px;
   margin-top: -28px;
-  margin-left: -340px;
+  margin-left: -375px;
 }
 
 .browse-collection-button {
@@ -14036,8 +14064,8 @@ a:active {
   top: 65%;
   background: none;
   border: none;
-  width: 190px;
-  margin-left: -95px;
+  width: 230px;
+  margin-left: -115px;
 }
 
 .informative-section-icons {
@@ -14093,11 +14121,29 @@ a:active {
     margin-bottom: 12%;
     float: none;
   }
+
+  .popular-courses-name {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .popular-courses-button {
+    margin: 0;
+    font-size: 20px;
+    height: 50%;
+  }
+
+  .browse-collection-word {
+    font-size: 30px;
+    width: 585px;
+    margin-left: -292.5px;
+  }
 }
 
 @media (max-width: 768px) {
   .books-container {
     padding-bottom: 0;
+    margin-bottom: 20px;
   }
 
   .books-name {
@@ -14138,6 +14184,12 @@ a:active {
     font-size: 8px;
     width: 85px;
   }
+
+  .browse-collection-word {
+    font-size: 22px;
+    width: 430px;
+    margin-left: -215px;
+  }
 }
 
 @media (max-width: 460px) {
@@ -14151,6 +14203,18 @@ a:active {
 
   .carousel-subtitle {
     font-size: 12px;
+  }
+
+  .browse-collection-word {
+    font-size: 16px;
+    width: 315px;
+    margin-left: -157.5px;
+  }
+
+  .browse-collection-button {
+    font-size: 12px;
+    width: 180px;
+    margin-left: -90px;
   }
 }
 
@@ -14191,6 +14255,7 @@ a:active {
 
 .nav-bar-cart-icon {
   font-size: 30px;
+  margin-right: 40px;
 }
 
 @media (max-width: 992px) {
@@ -14865,14 +14930,6 @@ tr:nth-child(even) {
   font-size: 26px;
   font-weight: 300;
   line-height: 40px;
-}
-
-.product-review-title {
-  font-size: 26px;
-  font-weight: 300;
-  line-height: 40px;
-  color: #cacaca;
-  margin-left: 20px;
 }
 
 .product-review-title:hover {

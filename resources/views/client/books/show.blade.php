@@ -102,8 +102,7 @@
 		<div class="col-xl-9 col-11 product-outer-container mb-5">
 			<div class="row justify-content-center">
 				<div class="col-11 description-review-title-container">
-					<p class="product-description-title d-inline">Description</p>
-					<a class="product-review-title d-inline" href="#">Reviews(2)</a>
+					<p class="product-description-title d-inline">Description</p>					
 				</div>
 			</div>
 			<div class="row justify-content-center">
