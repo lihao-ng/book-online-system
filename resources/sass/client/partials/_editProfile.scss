@@ -9,7 +9,7 @@
  }
 
  .editProfile-fullContent-container {
-    width:60%;
+    width:70%;
  }
 
  .editProfile-shadow {	
@@ -24,18 +24,26 @@
     background: $tertiary-color;
  }
 
- .contactUs-addbtn {
-    &:hover{
-        color:$tertiary-color;
-        background-color: white;
-        border: 1px solid $tertiary-color;
-    }
 
-    border: transparent;
-    background-color: $tertiary-color;
-    color:white;
-    font-size:12px;
-    text-transform: uppercase;
+ @media (max-width: 992px) {
+   .editProfile-fullContent-container{
+      width:80%;
+   }
  }
+
+@media (max-width: 576px) {
+   .editProfile-profilePic {
+      width: 200px;
+      height: 200px;
+   }
+
+   .editProfile-fullContent-container{
+      width:95%;
+   }
+
+   .editProfile-main-title {
+      font-size: 27px;
+   }
+}
 
 

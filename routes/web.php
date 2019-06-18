@@ -89,3 +89,8 @@ Route::resource('books','Client\BooksController')->only(['index', 'show']);
 Route::post('authors/search','Client\AuthorsController@search')->name('authors.search');
 
 Route::post('categories/search','Client\CategoriesController@search')->name('categories.search');
+
+Route::post('categories/search','Client\CategoriesController@search')->name('categories.search');
+
+Route::get('forgetPassword','Client\PagesController@forgetPassword')->name('forgetPassword');
+Route::get('requestPassword','Client\PagesController@requestPassword')->name('requestPassword');

@@ -15156,7 +15156,7 @@ tr:nth-child(even) {
 }
 
 .editProfile-fullContent-container {
-  width: 60%;
+  width: 70%;
 }
 
 .editProfile-shadow {
@@ -15171,18 +15171,25 @@ tr:nth-child(even) {
   background: #2f2b35;
 }
 
-.contactUs-addbtn {
-  border: transparent;
-  background-color: #2f2b35;
-  color: white;
-  font-size: 12px;
-  text-transform: uppercase;
+@media (max-width: 992px) {
+  .editProfile-fullContent-container {
+    width: 80%;
+  }
 }
 
-.contactUs-addbtn:hover {
-  color: #2f2b35;
-  background-color: white;
-  border: 1px solid #2f2b35;
+@media (max-width: 576px) {
+  .editProfile-profilePic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .editProfile-fullContent-container {
+    width: 95%;
+  }
+
+  .editProfile-main-title {
+    font-size: 27px;
+  }
 }
 
 .register-main-container {
@@ -15199,5 +15206,35 @@ tr:nth-child(even) {
 
 .register-column {
   text-align: left;
+}
+
+.forgetPassword-main-container {
+  background-color: #edf3f4;
+}
+
+.forgetPassword-main-title {
+  font-size: 35px;
+  padding-top: 2%;
+  color: #2f2b35;
+}
+
+.forgetPassword-fullContent-container {
+  width: 55%;
+}
+
+.forgetPassword-shadow {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (max-width: 992px) {
+  .forgetPassword-fullContent-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .forgetPassword-fullContent-container {
+    width: 95%;
+  }
 }
 
