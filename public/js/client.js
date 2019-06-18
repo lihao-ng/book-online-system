@@ -41188,7 +41188,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid cartPage-main-container" }, [
-    _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "container-fluid " }, [
       _c(
         "div",
         {
@@ -41209,7 +41209,7 @@ var render = function() {
     _c("div", { staticClass: "row justify-content-center cartPage-font" }, [
       _c(
         "div",
-        { staticClass: "cartPage-cart-section row" },
+        { staticClass: "cartPage-cart-section" },
         [
           _vm.items.length
             ? _c(

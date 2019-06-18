@@ -15,7 +15,7 @@
         {!! Form::model($customer, ['route' => ['customer.update.profile'], 'enctype' => 'multipart/form-data', 'class' => 'form']) !!}
         <div class="container">
           <div class="justify-content-center pt-3 pb-5 text-center">
-            <img src="{{ avatar_picture_url(current_user()->avatar) }}" id="avatar-pic" class="editProfile-profilePic mx-auto"></img>
+            <img src="{{ avatar_picture_url(current_user()->avatar) }}" id="avatar-pic" class="editProfile-profilePic mx-auto">
           </div>
           {{ Form::file('avatar', ['class' =>'editProfile-inputProfilePic on__file__change', 'id' => 'file-picker', 'data-target' => '#avatar-pic']) }}
           <div class="row  pt-4 pb-3">

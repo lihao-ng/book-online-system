@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid cartPage-main-container">
-    <div class="container-fluid">
+    <div class="container-fluid ">
       <div class="cartPage-mycart-title font-weight-bold text-center mb-4">
         My Cart
       </div>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="row justify-content-center cartPage-font">
-      <div class="cartPage-cart-section row">
+      <div class="cartPage-cart-section">
         <paginate name="itemPagination" :list="items" :per="3" v-if="items.length">
           <display-cart-items-component v-for="(item, index) in paginated('itemPagination')" :default-item="item" :index="index" :key="item.id" @onItemChanged="onItemChange" @onItemDeleted="onItemDelete"></display-cart-items-component>
         </paginate>
