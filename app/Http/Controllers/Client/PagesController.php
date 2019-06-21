@@ -29,15 +29,6 @@ class PagesController extends Controller {
     return view($this->path . 'contact');
   }
 
-  public function forgetPassword(){
-    return view($this->path . 'forgetPassword');
-  }
-
-  public function requestPassword(){
-    return view($this->path . 'requestPassword');
-  }
-
-
   public function sendContactUs(Request $request){
     $admin = 'nglihao98@gmail.com';
 
