@@ -33,7 +33,7 @@
             </div>
             <div class="row pb-3">
               <div class="col-12 text-right">
-                <a class="customerLogin-forgetPassword" href="#">forget password?</a>
+                <a class="customerLogin-forgetPassword" href="{{ route('request.email.show') }}">forget password?</a>
               </div>
             </div>
             <div class="container p-4 mb-2">

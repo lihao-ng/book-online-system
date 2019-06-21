@@ -76,6 +76,12 @@ Route::middleware('guest')->group(function(){
 
   Route::get('register','Client\AuthController@showRegister')->name('customer.register.show');
   Route::post('register','Client\AuthController@register')->name('customer.register');
+
+  Route::get('request-email','Client\AuthController@showRequestEmail')->name('request.email.show');
+  Route::post('request-email','Client\AuthController@requestEmail')->name('request.email');
+
+  Route::get('request-password/{Code}','Client\AuthController@showRequestPassword')->name('request.password.show');
+  Route::post('request-password/{Code}','Client\AuthController@requestPassword')->name('request.password');
 });
 
 Route::get('/','Client\PagesController@home')->name('home');
@@ -89,8 +95,3 @@ Route::resource('books','Client\BooksController')->only(['index', 'show']);
 Route::post('authors/search','Client\AuthorsController@search')->name('authors.search');
 
 Route::post('categories/search','Client\CategoriesController@search')->name('categories.search');
-
-Route::post('categories/search','Client\CategoriesController@search')->name('categories.search');
-
-Route::get('forgetPassword','Client\PagesController@forgetPassword')->name('forgetPassword');
-Route::get('requestPassword','Client\PagesController@requestPassword')->name('requestPassword');

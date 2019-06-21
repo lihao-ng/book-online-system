@@ -48,4 +48,8 @@ class User extends Authenticatable
     public function isAdmin(){
         return $this->role === 1;
     }
+
+    public function resets() {
+        return $this->hasMany('App\PasswordReset');
+    }
 }
