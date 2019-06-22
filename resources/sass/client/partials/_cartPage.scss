@@ -166,6 +166,28 @@
    }
 }
 
+.itemPagination {
+   list-style: none;
+   margin-right: 50px;
+   text-align: center
+}
+
+.itemPagination li {
+   display: inline-block;
+   font-weight: bold;
+   margin-left: 50px;
+
+}
+
+.itemPagination li:hover {
+   cursor: pointer;
+   color: #878b91;
+
+}
+
+.cartPage-cart-section {
+   margin-right: 40px
+}
 
 
 
@@ -180,6 +202,15 @@
 
    .cartPage-promoCode-title-container {
       font-size: 14px;
+   }
+
+   .itemPagination li {      
+      margin-left: 20px;
+
+   }
+
+   .itemPagination  {
+      text-align: left
    }
 }
 

@@ -14454,6 +14454,27 @@ a:active {
   border: 1px solid #2f2b35;
 }
 
+.itemPagination {
+  list-style: none;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.itemPagination li {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+.itemPagination li:hover {
+  cursor: pointer;
+  color: #878b91;
+}
+
+.cartPage-cart-section {
+  margin-right: 40px;
+}
+
 @media (max-width: 576px) {
   .cartPage-title-container {
     font-size: 19px;
@@ -14465,6 +14486,14 @@ a:active {
 
   .cartPage-promoCode-title-container {
     font-size: 14px;
+  }
+
+  .itemPagination li {
+    margin-left: 20px;
+  }
+
+  .itemPagination {
+    text-align: left;
   }
 }
 
@@ -14728,7 +14757,9 @@ ul.book-categories-list {
 
 .bookPagination {
   list-style: none;
-  margin-left: -50px;
+  text-align: center;
+  padding: 0;
+  margin-right: 40px;
 }
 
 .bookPagination li {
@@ -14781,10 +14812,6 @@ ul.book-categories-list {
   .book-categories-container {
     width: 95%;
   }
-
-  .bookPagination {
-    margin-left: 30px;
-  }
 }
 
 @media (max-width: 767px) {
@@ -14812,6 +14839,7 @@ ul.book-categories-list {
 
   .bookPagination {
     margin-left: 0px;
+    margin-right: 0px;
   }
 
   .bookPagination li {
@@ -14825,7 +14853,11 @@ ul.book-categories-list {
   }
 
   .bookPagination {
-    margin-left: -30px;
+    margin-left: 20px;
+  }
+
+  .bookPagination li {
+    margin-left: 12px;
   }
 }
 
