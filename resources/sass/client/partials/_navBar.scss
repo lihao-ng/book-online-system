@@ -3,9 +3,6 @@
 	top: 0;
 }
 
-.nav-middle-buttons {
-	
-}
 
 .nav-bar-burger {
 	color: white;
@@ -16,7 +13,12 @@
 .nav-bar-logo {	
 	color: white;
 	font-size: 30px;
-	margin-left: 5%
+	margin-left: 5%;
+	font-weight: bold;
+}
+
+.nav-bar-logo:hover {
+	color: #d5dce8;
 }
 
 .nav-hamburger {
@@ -64,4 +66,11 @@
 	// 	margin-left: 7%
 	
 	// }
+}
+
+@media (max-width: 600px) {
+	.nav-bar-cart-icon {
+	    margin-right: 10px;
+	    margin-top: 15px;
+	}
 }

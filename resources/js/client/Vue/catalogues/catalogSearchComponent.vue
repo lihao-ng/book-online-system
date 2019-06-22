@@ -49,7 +49,7 @@
     <div class="container-fluid"> 
       <div class="row catalogue-books-display py-5 justify-content-center">
         <!-- book catalogues -->
-        <div class="col-xl-7 col-lg-8">
+        <div class="col-xl-7 col-lg-8 booksTable">
           <paginate name="bookPagination" :list="searchResults" :per="9" v-if="searchResults.length">
             <div class="row justify-content-center">
               <catalog-display-component :default-book="searchResult" v-for="(searchResult, index) in paginated('bookPagination')" :key="index"></catalog-display-component>
