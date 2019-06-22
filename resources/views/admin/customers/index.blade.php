@@ -8,11 +8,11 @@
 <div class="card bootstrap-table">
   <div class="card-body table-full-width">
     <div class="toolbar d-flex">
-      <a href="{{ route('admin.customers.create') }}" class="ml-2">
+      <!-- <a href="{{ route('admin.customers.create') }}" class="ml-2">
         <button class="btn btn-secondary" name="create">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
-      </a>
+      </a> -->
     </div>
     <table id="bootstrap-table" class="table" data-url="{{ route('admin.customers.index') }}" data-icons="icons">
       <thead>

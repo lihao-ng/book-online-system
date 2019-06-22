@@ -6,6 +6,7 @@ use Storage;
 use Validator;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Routing\UrlGenerator;
 
 class ImageLibraryService {
   public function create(Request $request) { 
@@ -38,11 +39,13 @@ class ImageLibraryService {
   }
 
   public function fullPath($image) {
+    $baseUrl = url('/');
+
     if($image) {
-      return env('APP_URL') . '/storage/media/' . $image;
+      return $baseUrl . '/storage/media/' . $image;
     }
 
-   return env('APP_URL') . '/images/logo.jpg';
+    return $baseUrl . '/images/logo.jpg';
   }
 
   public function validateImage($file) {

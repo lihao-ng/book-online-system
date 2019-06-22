@@ -12,6 +12,7 @@ use App\Mail\PasswordResetMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Routing\UrlGenerator;
 
 class AuthController extends Controller {
   protected $path = 'client.auth.';
@@ -84,6 +85,8 @@ class AuthController extends Controller {
   }
 
   public function requestEmail(Request $request){
+    $baseUrl = url('/');
+
     $this->validate($request, [
       "email" => "required|email"
     ]);
@@ -99,7 +102,7 @@ class AuthController extends Controller {
       'code' => md5(str_random(30) . time())
     ]);
 
-    $codeUrl = env('APP_URL') . '/request-password/' . $passwordReset->code;
+    $codeUrl = $baseUrl . '/request-password/' . $passwordReset->code;
 
     Mail::to($userExist->email)->send(new PasswordResetMail($userExist->email, $codeUrl));
 

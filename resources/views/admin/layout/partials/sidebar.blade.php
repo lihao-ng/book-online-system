@@ -28,7 +28,7 @@
       Books
     </li>
   </a>
-  <a href="#">
+  <a href="{{ route('admin.sales.index') }}">
     <li class="{{ is_active('sales') }}">
       <i class="fa fa-money" aria-hidden="true"></i>
       Sales

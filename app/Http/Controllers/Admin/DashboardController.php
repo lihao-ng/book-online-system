@@ -16,7 +16,6 @@ class DashboardController extends Controller {
   protected $path = 'admin.dashboard.';
 
   public function dashboard() {
-    // $sales = Sale
     $admins = User::where('role', 1)->count();
     $customers = User::where('role', 0)->count();
     $books = Book::orderBy('sold', 'DESC')->limit(5)->get();

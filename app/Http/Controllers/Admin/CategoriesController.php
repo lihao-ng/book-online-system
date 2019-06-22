@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\BookCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\Admin\CategoryService;
@@ -40,6 +41,7 @@ class CategoriesController extends Controller {
   }
 
   public function destroy(Category $category) {
+    BookCategory::where('category_id', $category->id)->delete();
     $category->delete();
     return success();
   }
