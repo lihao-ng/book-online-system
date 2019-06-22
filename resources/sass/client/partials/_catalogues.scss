@@ -43,9 +43,10 @@
 }
 
 .catalogue-books-name {
-	font-size: 15px;
+	font-size: 16px;
 	padding-top: 10%;
 	margin-bottom: 0;
+	font-weight: bold;
 }
 
 .catalogue-books-author {
@@ -54,11 +55,12 @@
 }
 
 .catalogue-books-price {
-	font-size: 20px;
+	font-size: 15px;
+	margin-bottom: 8px;
+    margin-top: 5px;
 }
 
-.catalogue-books-detail-button {
-	color: 595858;
+.catalogue-books-detail-button {	
 	font-size: 13px;
 	width: 45%;
 	height: 30px;
@@ -143,14 +145,18 @@
   	overflow: hidden;
 	font-size: 14px;
 	margin-bottom: 5px;
+	margin-right: 15px;
+	color: black;
 }
 
 .stars-icon {
 	width: 10px;
+	color: black;
 }
 
 .book-price {
 	font-size: 13px;
+	color: black;
 }
 
 .book-categories-container {
@@ -170,6 +176,30 @@ ul.book-categories-list {
 	color: black;
 	font-size: 13px;
 	margin-left: 5px;
+}
+
+.bookPagination {
+	list-style: none;	
+	text-align: center;
+	padding: 0;
+	margin-right: 40px;
+}
+
+.bookPagination li {
+	display: inline-block;
+	font-weight: bold;
+	margin-left: 50px;
+
+}
+
+.bookPagination li:hover {
+	cursor: pointer;
+	color: #878b91;
+
+}
+
+.booksTable {
+	margin-right: 45px;
 }
 
 @media (max-width: 1200px) {
@@ -209,6 +239,8 @@ ul.book-categories-list {
 	}
 }
 
+	
+
 @media (max-width: 767px) {	
 
 	.catalogue-books-row {
@@ -233,9 +265,27 @@ ul.book-categories-list {
 		margin-bottom: 8%;		 
 	}
 
+	.bookPagination {		
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	.bookPagination li {		
+		margin-left: 20px;
+
+	}
+
 	@media (max-width: 400px) {
 		.side-books-description-col {
 			padding-left: 20px
+		}
+		
+		.bookPagination {
+			margin-left: 20px;
+		}
+
+		.bookPagination li {		
+			margin-left: 12px;
 		}
 	}
 }

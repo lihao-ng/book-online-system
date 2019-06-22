@@ -50,7 +50,7 @@
               </div>
             </div>
 
-            <address-component></address-component>
+            <address-component class="address-bar pt-4"></address-component>
 
             <div class="row justify-content-center pt-4 pb-2">
               <div class="col-12 align-self-center register-column">
