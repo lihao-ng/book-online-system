@@ -179,8 +179,10 @@ ul.book-categories-list {
 }
 
 .bookPagination {
-	list-style: none;
-	margin-left: -50px;
+	list-style: none;	
+	text-align: center;
+	padding: 0;
+	margin-right: 40px;
 }
 
 .bookPagination li {
@@ -235,12 +237,9 @@ ul.book-categories-list {
 	.book-categories-container {
 		width: 95%;
 	}
-
-	.bookPagination {		
-		margin-left: 30px;
-
-	}
 }
+
+	
 
 @media (max-width: 767px) {	
 
@@ -268,7 +267,7 @@ ul.book-categories-list {
 
 	.bookPagination {		
 		margin-left: 0px;
-
+		margin-right: 0px;
 	}
 
 	.bookPagination li {		
@@ -280,10 +279,13 @@ ul.book-categories-list {
 		.side-books-description-col {
 			padding-left: 20px
 		}
+		
+		.bookPagination {
+			margin-left: 20px;
+		}
 
-		.bookPagination {		
-			margin-left: -30px;
-
+		.bookPagination li {		
+			margin-left: 12px;
 		}
 	}
 }

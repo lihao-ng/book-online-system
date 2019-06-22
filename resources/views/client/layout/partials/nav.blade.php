@@ -11,7 +11,7 @@
          </button>
 
          <div id="navbarNavDropdown" class="navbar-collapse collapse nav-bar-elements">        
-          <ul class="navbar-nav nav-dropdown nav-middle-buttons">
+          <ul class="navbar-nav nav-dropdown nav-middle-buttons ml-2">
             <li class="nav-item dropdown">                
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Action</a>
@@ -19,7 +19,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light ml-5" href="{{ route('books.index') }}">Bookstore
+              <a class="nav-link text-light ml-2" href="{{ route('books.index') }}">Bookstore
               <i class="fa fa-book ml-1" aria-hidden="true"></i>
               </a>
             </li>
