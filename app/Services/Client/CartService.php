@@ -43,6 +43,8 @@ class CartService extends TransformerService {
   }
 
   public function checkout(Request $request) {
+    $customer = current_user();
+
     $request->validate([
       "address" => 'required',
       "items" => 'required',
@@ -62,10 +64,38 @@ class CartService extends TransformerService {
       ], 422);
     }
 
-    $this->saleService->create($request);
-    $this->clearCart();
+    $orders = $this->saleService->create($request);
+    // $this->clearCart();
+    $items = $this->generateOrder($orders);
+    $sum = $this->getSum($items);
+    $pdf = app('dompdf.wrapper')->loadView('client.receipts.receipt', ['orders' => $items, 'sum' => $sum, 'customer' => $customer, 'address' => $request->address, 'payment' => $request->payment, 'collection' => $request->collection]);
+    
+    return $pdf->download('invoice.pdf');
+  }
 
-    return route('show.cart');
+  public function generateOrder($orders) {
+    $books = [];
+
+    foreach($orders as $order) {
+      $item = [];
+      $item['book'] = $order->book;
+      $item['amount'] = $order->amount;
+      $item['total'] = $order->book->price * $order->amount;
+
+      array_push($books, $item);
+    }
+
+    return $books;
+  }
+
+  public function getSum($items) {
+    $sum = 0;
+
+    foreach($items as $item) {
+      $sum += $item['total'];
+    }
+
+    return $sum;
   }
 
   public function clearCart() {
