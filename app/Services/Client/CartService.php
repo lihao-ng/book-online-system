@@ -65,7 +65,7 @@ class CartService extends TransformerService {
     }
 
     $orders = $this->saleService->create($request);
-    // $this->clearCart();
+    $this->clearCart(); 
     $items = $this->generateOrder($orders);
     $sum = $this->getSum($items);
     $pdf = app('dompdf.wrapper')->loadView('client.receipts.receipt', ['orders' => $items, 'sum' => $sum, 'customer' => $customer, 'address' => $request->address, 'payment' => $request->payment, 'collection' => $request->collection]);
