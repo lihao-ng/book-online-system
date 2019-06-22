@@ -3,6 +3,7 @@
 namespace App\Services\Client;
 
 use App\Sale;
+use App\Book;
 use App\BookSale;
 use Illuminate\Http\Request;
 use App\Services\TransformerService;
@@ -28,6 +29,10 @@ class SaleService extends TransformerService {
         'sale_id' => $sale->id,
         'amount' => $item->amount
       ]);
+
+      $book = Book::find($item->id);
+      $book->stock -= $item->amount;
+      $book->save();
     }
   }
 

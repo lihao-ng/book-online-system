@@ -34,9 +34,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::put('settings/password', "Admin\DashboardController@updatePassword")->name("password.change");
 
     Route::post('admins/search','Admin\AdminsController@search')->name('admins.search');
-    Route::resource('admins', 'Admin\AdminsController')->except(['show']);
+    Route::resource('admins', 'Admin\AdminsController')->except(['show', 'edit', 'update']);
 
-    Route::resource('customers', 'Admin\CustomersController');
+    Route::resource('customers', 'Admin\CustomersController')->except(['show', 'edit', 'update', 'delete']);
+
+    Route::resource('sales', 'Admin\SalesController')->except(['show', 'edit', 'update']);
 
     Route::post('books/search','Admin\BooksController@search')->name('books.search');
     Route::post('books/{book}','Admin\BooksController@update')->name('books.post.update'); // bug with form data - unable to use PUT or PATCH

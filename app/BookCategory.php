@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class BookCategory extends Pivot {
-  protected $table = 'author_categories';
+  protected $table = 'book_categories';
 
   protected $fillable = [
     'book_id', 'category_id'

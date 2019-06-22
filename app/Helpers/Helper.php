@@ -2,6 +2,7 @@
 
 use App\User;
 use Carbon\Carbon;
+use Illuminate\Routing\UrlGenerator;
 
 function have_admin() {
   $admin = User::where('role', 1)->count();
@@ -35,11 +36,13 @@ function directory_path($option = ''){
 }
 
 function avatar_picture_url($url){
+  $baseUrl = url('/');
+
   if($url) {
-    return env('APP_URL') . '/storage/media/' . $url;
+    return $baseUrl . '/storage/media/' . $url;
   }
 
-  return env('APP_URL') . '/images/logo.jpg';
+  return $baseUrl . '/images/logo.jpg';
 }
 
 function avatar_picture_exists($url){

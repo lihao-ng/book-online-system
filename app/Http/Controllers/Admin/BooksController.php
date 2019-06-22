@@ -3,6 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Book;
+use App\AuthorBook;
+use App\BookCategory;
+use App\Cart;
+use App\BookSale;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\Admin\BookService;
@@ -50,7 +55,14 @@ class BooksController extends Controller {
   }
 
   public function destroy(Book $book) {
-        //
+    AuthorBook::where('book_id', $book->id)->delete();
+    BookCategory::where('book_id', $book->id)->delete();
+    Cart::where('book_id', $book->id)->delete();
+    BookSale::where('book_id', $book->id)->delete();
+  
+    $book->delete();
+
+    return success();
   }
 
   public function search(Request $request) {

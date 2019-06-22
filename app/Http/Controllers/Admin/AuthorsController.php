@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Author;
+use App\AuthorBook;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\Admin\AuthorService;
@@ -46,7 +47,9 @@ class AuthorsController extends Controller {
   }
 
   public function destroy(Author $author) {
+    AuthorBook::where('author_id', $author->id)->delete();
     $author->delete();
+
     return success();
   }
 

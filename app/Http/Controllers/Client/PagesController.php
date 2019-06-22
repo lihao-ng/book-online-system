@@ -40,6 +40,6 @@ class PagesController extends Controller {
 
     Mail::to($admin)->send(new ContactUs($request->name, $request->email, $request->customerMessage));
 
-    return view($this->path . 'contact');
+    return redirect()->route('contact')->with('success', 'Message has been sent!');
   }
 }
