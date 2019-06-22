@@ -19,12 +19,14 @@ class SaleService extends TransformerService {
       'payment' => $request->payment
     ]);
 
-    $this->createBookSaleRecord(json_decode(json_encode($request->items)), $sale);
+    return $this->createBookSaleRecord(json_decode(json_encode($request->items)), $sale);
   }
 
   public function createBookSaleRecord($items, $sale) {
+    $orders = [];
+
     foreach($items as $item) {
-      BookSale::create([
+      $bookSale = BookSale::create([
         'book_id' => $item->id,
         'sale_id' => $sale->id,
         'amount' => $item->amount
@@ -33,7 +35,11 @@ class SaleService extends TransformerService {
       $book = Book::find($item->id);
       $book->stock -= $item->amount;
       $book->save();
+
+      array_push($orders, $bookSale);
     }
+
+    return $orders;
   }
 
   public function transform($author){

@@ -299,9 +299,15 @@
           payment: payment
         }
 
-        axios.post('/checkout', data)
+        axios.post('/checkout', data, {responseType: 'arraybuffer'})
         .then(({data}) => {
           this.items = [];
+          let blob = new Blob([data], { type: 'application/pdf' });
+          let link = document.createElement('a');
+          link.href = window.URL.createObjectURL(blob);
+          link.download = 'test.pdf';
+          link.click();
+
           swal.fire(
             'Great!',
             'Your items have been checkout and is being prepared!',
@@ -309,7 +315,9 @@
             )
         }, (error) => {
           this.error.show = true;
-          this.error.message = _.values(error.response.data.errors)[0];
+          var errors = JSON.parse(Buffer.from(error.response.data).toString('utf8'));
+          var errorObj =  _.values(errors)[0];
+          this.error.message = errorObj[Object.keys(errorObj)[0]];
           $(window).scrollTop(0);
         });
       }
