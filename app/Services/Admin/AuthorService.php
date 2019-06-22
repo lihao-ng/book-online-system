@@ -76,6 +76,18 @@ class AuthorService extends TransformerService {
       'books.*' => 'required'
     ]);
 
+    
+    $file = $request->file('image');
+    $ifValid = $this->imageLibraryService->validateImage($file);
+    
+    if(!$ifValid) {
+      return response()->json([
+        'errors' => [
+          'image' => ['Must be an image, 2000KB and the min dimension of 640x960']
+        ]
+      ], 422);
+    }
+
     $fileName = $this->imageLibraryService->update($request, $author->image);
 
     $author->name = $request->name;

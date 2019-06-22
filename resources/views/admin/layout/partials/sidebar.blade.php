@@ -1,5 +1,5 @@
 <ul class="sidebar-nav">
-  <a href="#">
+  <a href="{{ route('home') }}">
     <li class="sidebar-brand">
       <h2>BOOKIE</h2>
     </li>
