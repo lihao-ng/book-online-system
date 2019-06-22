@@ -100,7 +100,7 @@ class BookService extends TransformerService {
     if(!$ifValid) {
       return response()->json([
         'errors' => [
-          'image' => ['Must be an image or 2000KB']
+          'image' => ['Must be an image, 2000KB and the min dimension of 640x960']
         ]
       ], 422);
     }

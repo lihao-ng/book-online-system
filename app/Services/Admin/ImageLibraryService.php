@@ -52,7 +52,7 @@ class ImageLibraryService {
     $fileArray = ['image' => $file];
 
     $rules = [
-      'image' => 'nullable|image|max:2000'
+      'image' => 'nullable|image|max:2000|dimensions:min_width=640,min_height=960'
     ];
 
     $validator = Validator::make($fileArray, $rules);
