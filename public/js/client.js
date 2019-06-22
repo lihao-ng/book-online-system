@@ -42725,7 +42725,7 @@ var render = function() {
         [
           _c(
             "div",
-            { staticClass: "col-xl-7 col-lg-8" },
+            { staticClass: "col-xl-7 col-lg-8 booksTable" },
             [
               _vm.searchResults.length
                 ? _c(

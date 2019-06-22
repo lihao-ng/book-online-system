@@ -13905,9 +13905,10 @@ a:active {
 }
 
 .books-name {
-  font-size: 15px;
+  font-size: 16px;
   padding-top: 10%;
   margin-bottom: 0;
+  font-weight: bold;
 }
 
 .books-author {
@@ -13916,11 +13917,10 @@ a:active {
 }
 
 .books-price {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .books-detail-button {
-  color: 595858;
   font-size: 13px;
   width: 45%;
   height: 30px;
@@ -13929,6 +13929,10 @@ a:active {
   border: 1px solid #becee8;
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
+}
+
+.book-detail-button:hover {
+  background-color: #dee5ef;
 }
 
 .books-buy-button {
@@ -14233,6 +14237,11 @@ a:active {
   color: white;
   font-size: 30px;
   margin-left: 5%;
+  font-weight: bold;
+}
+
+.nav-bar-logo:hover {
+  color: #d5dce8;
 }
 
 .nav-hamburger {
@@ -14271,6 +14280,13 @@ a:active {
     color: white;
     font-size: 30px;
     margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-bar-cart-icon {
+    margin-right: 10px;
+    margin-top: 15px;
   }
 }
 
@@ -14577,9 +14593,10 @@ a:active {
 }
 
 .catalogue-books-name {
-  font-size: 15px;
+  font-size: 16px;
   padding-top: 10%;
   margin-bottom: 0;
+  font-weight: bold;
 }
 
 .catalogue-books-author {
@@ -14588,11 +14605,12 @@ a:active {
 }
 
 .catalogue-books-price {
-  font-size: 20px;
+  font-size: 15px;
+  margin-bottom: 8px;
+  margin-top: 5px;
 }
 
 .catalogue-books-detail-button {
-  color: 595858;
   font-size: 13px;
   width: 45%;
   height: 30px;
@@ -14675,14 +14693,18 @@ a:active {
   overflow: hidden;
   font-size: 14px;
   margin-bottom: 5px;
+  margin-right: 15px;
+  color: black;
 }
 
 .stars-icon {
   width: 10px;
+  color: black;
 }
 
 .book-price {
   font-size: 13px;
+  color: black;
 }
 
 .book-categories-container {
@@ -14702,6 +14724,26 @@ ul.book-categories-list {
   color: black;
   font-size: 13px;
   margin-left: 5px;
+}
+
+.bookPagination {
+  list-style: none;
+  margin-left: -50px;
+}
+
+.bookPagination li {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+.bookPagination li:hover {
+  cursor: pointer;
+  color: #878b91;
+}
+
+.booksTable {
+  margin-right: 45px;
 }
 
 @media (max-width: 1200px) {
@@ -14739,6 +14781,10 @@ ul.book-categories-list {
   .book-categories-container {
     width: 95%;
   }
+
+  .bookPagination {
+    margin-left: 30px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -14763,11 +14809,23 @@ ul.book-categories-list {
   .catalogue-books-buy-button {
     margin-bottom: 8%;
   }
+
+  .bookPagination {
+    margin-left: 0px;
+  }
+
+  .bookPagination li {
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 767px) and (max-width: 400px) {
   .side-books-description-col {
     padding-left: 20px;
+  }
+
+  .bookPagination {
+    margin-left: -30px;
   }
 }
 
@@ -15206,6 +15264,22 @@ tr:nth-child(even) {
 
 .register-column {
   text-align: left;
+}
+
+.address-bar {
+  padding-bottom: 0.5rem !important;
+}
+
+.contactUs-title {
+  font-family: "Montserrat";
+}
+
+.contactUs-addbtn {
+  background-color: #2f2b35;
+  color: white;
+  height: 25px;
+  line-height: 15px;
+  margin-top: -3px;
 }
 
 .forgetPassword-main-container {

@@ -76,9 +76,10 @@
 }
 
 .books-name {
-	font-size: 15px;
+	font-size: 16px;
 	padding-top: 10%;
 	margin-bottom: 0;
+	font-weight: bold;
 }
 
 .books-author {
@@ -87,11 +88,10 @@
 }
 
 .books-price {
-	font-size: 20px;
+	font-size: 15px;
 }
 
-.books-detail-button {
-	color: 595858;
+.books-detail-button {	
 	font-size: 13px;
 	width: 45%;
 	height: 30px;
@@ -99,8 +99,11 @@
 	background-color: transparent;
 	border: 1px solid #becee8;
 	border-bottom-left-radius: 30px;
-  	border-top-left-radius: 30px;
-	
+  	border-top-left-radius: 30px;	
+}
+
+.book-detail-button:hover {
+	background-color: #dee5ef;
 }
 
 .books-buy-button {
