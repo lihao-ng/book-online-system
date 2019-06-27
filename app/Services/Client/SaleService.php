@@ -33,6 +33,7 @@ class SaleService extends TransformerService {
       ]);
 
       $book = Book::find($item->id);
+      $book->sold += $item->amount;
       $book->stock -= $item->amount;
       $book->save();
 

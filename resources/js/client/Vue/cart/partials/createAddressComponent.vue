@@ -17,7 +17,7 @@
               <label>Address</label>
             </div>
             <div class="col-10">
-              <textarea class="form-control" row="5" required="required" v-model="address"></textarea>
+              <textarea class="form-control" row="5" required="required" v-model="createAddress"></textarea>
             </div>
           </div>
           <div class="container p-4">
@@ -40,7 +40,7 @@
   export default{
     data: function(){
       return {
-        address: "",
+        createAddress: "",
         error: {
           show: false,
           message: "The address you entered is invalid or it already exists!"
@@ -51,14 +51,14 @@
       onSubmit: function(e) {
         e.preventDefault();
 
-        axios.post('customer/address', {address: this.address})
+        axios.post('customer/address', {address: this.createAddress})
         .then(({data}) => {
           if(!this.error.show) {
             this.error.show = false;
-          }
-          this.address = data;          
+          }       
           $('#createAddress').modal('hide');
-          this.$emit('onAddressAdded', this.address);
+          this.createAddress = "";
+          this.$emit('onAddressAdded', data);
         }, (error) => {
           this.error.show = true;
         });

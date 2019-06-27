@@ -11,7 +11,7 @@
   <div class="row justify-content-center" align="center"> 
     <div class="col-sm-12 col-md-6 col-lg-5 m-2">
       <input type="text" class="search-bar-elements text-secondary pl-2 w-100" placeholder="Enter Title" v-model="book.title" v-on-clickaway="closeList" @keyup="onInputChange" @click="onInputChange">
-      <div class="dropdown">
+      <div class="vue-dropdown">
         <div class="dropdown-menu" :class="{ show: haveData }">
           <div class="dropdown-item text-capitalize" v-for="(searchBook, index) in books" v-bind:key="index" @click="onSearchClick(searchBook)" v-if="haveData">
             <div class="row">
