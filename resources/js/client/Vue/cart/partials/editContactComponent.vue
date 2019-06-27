@@ -43,7 +43,7 @@
         mobile: "",
         error: {
           show: false,
-          message: "The address you entered is invalid or it already exists!"
+          message: "The contact you entered is invalid or it already exists!"
         }
       };
     },

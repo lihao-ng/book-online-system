@@ -9,12 +9,13 @@
       cursor: pointer;
       padding: 8px 16px;
       color: $black;
+      white-space: pre-line;
 
       &:first-child {
         border-top-left-radius: calc(0.25rem - 1px);
         border-top-right-radius: calc(0.25rem - 1px);
       }
-    }
+    } 
   }
 
   .w-110 {

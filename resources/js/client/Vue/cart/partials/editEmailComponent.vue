@@ -44,7 +44,7 @@
         email: "",
         error: {
           show: false,
-          message: "The address you entered is invalid or it already exists!"
+          message: "The email you entered is invalid or it already exists!"
         }
       };
     },
