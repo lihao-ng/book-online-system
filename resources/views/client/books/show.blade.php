@@ -62,6 +62,7 @@
 			</div>			
 		</div>
 	</div>
+
 	<div class="row justify-content-center">
 		<div class="col-xl-9 col-11 product-outer-container">
 			<div class="row justify-content-center">
