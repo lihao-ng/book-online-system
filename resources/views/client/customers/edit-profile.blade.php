@@ -42,7 +42,7 @@
               {{ Form::text('mobile', null, ['class' => 'form-control', 'required', 'placeholder' => "Enter Mobile Number"]) }}
             </div>
           </div>
-          
+          {{-- this is pointless. --}}
           <address-component :default-addresses="{{ json_encode($customer->addresses) }}"></address-component>
 
           <div class="container p-4">
